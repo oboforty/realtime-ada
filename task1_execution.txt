@@ -1,0 +1,27 @@
+f1 executing, time is now 0.000006800
+f2 executing, time is now 0.000019100
+f3 executing, time is now 0.500204600
+f1 executing, time is now 1.000621600
+f2 executing, time is now 1.000639500
+f1 executing, time is now 2.000405900
+f2 executing, time is now 2.000423800
+f3 executing, time is now 2.500892700
+f1 executing, time is now 3.000742700
+f2 executing, time is now 3.000752700
+f1 executing, time is now 4.001310000
+f2 executing, time is now 4.001315300
+f3 executing, time is now 4.500713900
+...
+f1 executing, time is now 56.000693700
+f2 executing, time is now 56.000698600
+f3 executing, time is now 56.500275700
+f1 executing, time is now 57.000447500
+f2 executing, time is now 57.000452100
+f1 executing, time is now 58.000541000
+f2 executing, time is now 58.000545700
+f3 executing, time is now 58.512966100
+f1 executing, time is now 59.012829300
+f2 executing, time is now 59.012835700
+f1 executing, time is now 60.001245400
+f2 executing, time is now 60.001252400
+f3 executing, time is now 60.501015000
