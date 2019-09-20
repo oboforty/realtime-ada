@@ -123,7 +123,12 @@ procedure cyclic_wd is
 
             -- syncronize delay time
             Exec_Overtime := f3_End_Time - f3_Start_Time - Period;
-            Next_Time := Next_Time + (1-Exec_Overtime);
+
+            Put(Duration'Image(1.0-Exec_Overtime));
+            Put("  ");
+
+            Next_Time := Next_Time + (1.0 - Exec_Overtime);
+            Start_time := Start_Time + (1.0 - Exec_Overtime);
 
          end if;
       end if;
