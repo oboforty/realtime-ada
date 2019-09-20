@@ -1,19 +1,22 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-D:\uu\semester 3\real time systems\labs\lab-1\proj\ada_rt.gpr
+D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr
 20190918141824
 [BOUND OBJECT FILES]
-D:\uu\semester 3\real time systems\labs\lab-1\proj\obj\main.o
+D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--LD:\uu\semester 3\real time systems\labs\lab-1\proj\obj\
--LD:\uu\semester 3\real time systems\labs\lab-1\proj\obj\
+-LD:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\obj\
+-LD:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\obj\
 -LC:/gnat/2019/lib/gcc/x86_64-pc-mingw32/8.3.1/adalib/
 -static
 -static-libgcc
+C:/gnat/2019/lib/gcc/x86_64-pc-mingw32/8.3.1/adalib/libgnarl.a
 C:/gnat/2019/lib/gcc/x86_64-pc-mingw32/8.3.1/adalib/libgnat.a
--Wl,--stack=0x2000000
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads
