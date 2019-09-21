@@ -1,144 +1,212 @@
---Cyclic scheduler with a watchdog:
+--Process commnication: Ada lab part 3
 
 with Ada.Calendar;
 with Ada.Text_IO;
-with Ada.Numerics.discrete_Random;
+with Ada.Numerics.Discrete_Random;
+with Ada.Numerics.Float_Random;
 
 use Ada.Calendar;
 use Ada.Text_IO;
+use Ada.Numerics.Float_Random;
 
--- add packages to use randam number generator
+
+procedure comm1 is
+    Message: constant String := "Process communication";
+
+    -- rnd delay
+    type Rand_Draw is range 1..5;
+    package Rand_Int is new Ada.Numerics.Discrete_Random(Rand_Draw);
+    seed : Rand_Int.Generator;
 
 
-procedure cyclic_wd is
-  Message: constant String := "Cyclic scheduler";
-  -- change/add your declarations here
-  Start_Time: Time := Clock;
-  Period: Duration := 0.5; -- 0.5s absolute delay time
-  Next_Time : Time := Start_Time + Period;
+    -- random number
+    G: Generator;
 
-  s: Integer := 0;
-  Period_rnd: Duration := 0.0;
-
-  -- RND delay
-  type Rand_Draw is range 4..6;
-  package Rand_Int is new Ada.Numerics.Discrete_Random(Rand_Draw);
-   seed : Rand_Int.Generator; Num : Rand_Draw;
-
-   f3_started_flag: Boolean := False;
-   f3_deadline_flag: Boolean := False;
-
-   frame_f1: Integer := 2;
-   frame_f3: Integer := 4;
-
-   -- Entries
-
-  procedure f1 is
-    Message: constant String := "f1 executing, time is now";
+  function Rnd(MAX: Integer) return Float is
   begin
-    Put(Message);
-    Put_Line(Duration'Image(Clock - Start_Time));
-  end f1;
+    return Float'Rounding(Float(Max)*Random(G));
+  end Rnd;
 
-  procedure f2 is
-    Message: constant String := "f2 executing, time is now";
-  begin
-    Put(Message);
-    Put_Line(Duration'Image(Clock - Start_Time));
-  end f2;
-
-  procedure f3 is
-    Message: constant String := "f3 executing, time is now";
-    f_rnd: float := 0.0;
-  begin
-    Put(Message);
-    Put_Line(Duration'Image(Clock - Start_Time));
-
-    -- add a random delay here
-    Num := Rand_Int.Random(seed);
-    f_rnd := 0.1 * Float(Num);
-    Period_rnd := Duration(f_rnd);
-
-      Put("      RND: ");
-      Put_Line(Rand_Draw'Image(Num));
-
-    delay Duration(Period_rnd);
-  end f3;
-
-  task Watchdog is
+  -- BUFFER: --
+  task buffer is
       -- add your task entries for communication
-      entry F3Finished;
-  end Watchdog;
-  task body Watchdog is
+    entry put(X: in integer);
+    entry get(x: out integer);
+    entry terminate_task;
+  end buffer;
+
+  task body buffer is
+    Message: constant String := "buffer executing";
+      -- change/add your local declarations here
+      exit_task: Boolean := False;
+
+    -- circular queue implementation
+    size: constant Integer := 10;
+    type circular_queue is array(0..size) of Integer;
+    queue : circular_queue;
+    counter: Integer := 0;
+    head: Integer := 0;
+    tail: Integer := 0;
   begin
-      loop
-         -- add your task code inside this loop
-         if f3_started_flag then
+    Put_Line(Message);
 
-            select
-               accept F3Finished;
-               f3_started_flag := False;
-            or
-               delay 0.5;
-
-               -- missed the deadline of F3
-               Put("  F3 Missed deadline!  ");
-               Put_Line(Duration'Image(Clock - Start_Time));
-
-               -- set the flag for main
-               f3_deadline_flag := True;
-            end select;
-
-         end if;
-      end loop;
-  end Watchdog;
-
-
-      f3_Start_Time: Time;
-      f3_End_Time: Time;
-      Exec_Overtime: Duration;
-
-  begin
+    Main_Loop:
     loop
-      -- change/add your code inside this loop
+      -- add your task code inside this loop
 
-      if (s mod 2 = 0) then
-        f1;
-        f2;
+      -- wait for until the queue gets free space
+      if (counter /= size) then
+        select
+          accept put(x: in integer) do
+            -- circular queue put
+            queue(tail) := x;
+
+            counter := counter + 1;
+            tail := (tail mod size) + 1;
+
+          end put;
+        or
+          -- don't wait forever, because it might block the other entry
+          delay 1.0;
+        end select;
       end if;
 
-      if (s mod 4 = 1) then
-         f3_started_flag := True;
-         f3_Start_Time := Clock;
-         f3;
-         f3_End_Time := Clock;
-         Watchdog.F3Finished;
+      -- wait for until the queue has values
+      if (counter > 0) then
+        select
 
-         -- check if F3 has missed its deadline (set by Watchdog)
-         if f3_deadline_flag then
-            -- Shift the execution frames by 2 (1s):
+          accept get(x: out integer) do
+            -- circular queue get
+            x := queue(head);
 
-            -- reset the flag
-            f3_deadline_flag := False;
-
-            -- syncronize delay time
-            Exec_Overtime := f3_End_Time - f3_Start_Time - Period;
-
-            Put(Duration'Image(1.0-Exec_Overtime));
-            Put("  ");
-
-            Next_Time := Next_Time + (1.0 - Exec_Overtime);
-            Start_time := Start_Time + (1.0 - Exec_Overtime);
-
-         end if;
+            counter := counter - 1;
+            head := (head mod size) + 1;
+          end get;
+        or
+          -- don't wait forever, because it might block the other entry
+          delay 1.0;
+        end select;
       end if;
 
-      s := s + 1;
+      --if (counter = size) then
+      --  Put_Line("ERR: COUNTER IS <0");
+      --end if;
 
 
-      -- absolute delay
-      delay until Next_Time;
-      Next_Time := Next_Time + Period;
+      -- wait for the termination signal
+      select
+        accept terminate_task do
+          exit_task := True;
+        end terminate_task;
+      or
+        delay 0.1;
+      end select;
 
-    end loop;
-end cyclic_wd;
+      if (exit_task) then
+        exit Main_Loop;
+      end if;
+
+      if (counter < 0) then
+        Put_Line("ERR: COUNTER IS <0");
+      end if;
+
+
+    end loop Main_Loop;
+  end buffer;
+
+
+  -- PRODUCER: --
+  task producer is
+    -- add your task entries for communication
+    entry terminate_task;
+  end producer;
+
+  task body producer is
+    Message: constant String := "producer executing";
+                -- change/add your local declarations here
+
+    -- rnd number generator
+    Num : Integer;
+    exit_task: Boolean := False;
+  begin
+     --Put_Line(Message);
+     Main_Loop:
+     loop
+      -- your task code inside this loop
+      -- random delay
+      --delay Duration'Rnd(3);
+
+      -- random number
+      Num := Integer(Rnd(20));
+
+      Put("Producer: -> ");
+      Put_Line(Integer'Image(Num));
+
+      -- put it into the queue
+      buffer.put(Num);
+
+      -- wait for the termination signal
+      select
+        accept terminate_task do
+          exit_task := True;
+        end terminate_task;
+      or
+        delay 0.1;
+      end select;
+
+      if (exit_task) then
+        exit Main_Loop;
+      end if;
+
+      delay Duration(Rnd(3));
+    end loop Main_Loop;
+  end producer;
+
+
+  -- CONSUMER --
+  task consumer is
+            -- add your task entries for communication
+  end consumer;
+
+  task body consumer is
+    Message: constant String := "consumer executing";
+    -- change/add your local declarations here
+    Num: Integer;
+    SumNumbers: Integer := 0;
+  begin
+    --Put_Line(Message);
+    Main_Cycle:
+    loop
+      -- add your task code inside this loop
+      buffer.get(Num);
+
+      Put("Consumer: <- ");
+      Put_Line(Integer'Image(Num));
+
+      SumNumbers := SumNumbers + Num;
+
+      if (SumNumbers > 100) then
+        Put_Line("Big");
+
+        -- terminate other two running tasks
+        producer.terminate_task;
+        buffer.terminate_task;
+
+        exit Main_Cycle;
+
+      end if;
+
+      delay Duration(Rnd(2));
+    end loop Main_Cycle;
+
+    -- add your code to stop executions of other tasks
+    exception
+      when TASKING_ERROR =>
+        Put_Line("Buffer finished before producer");
+    Put_Line("Ending the consumer");
+
+  end consumer;
+begin
+  --Put_Line(Message);
+  null;
+end comm1;
