@@ -10,7 +10,7 @@ use Ada.Text_IO;
 -- add packages to use randam number generator
 
 
-procedure cyclic_wd is
+procedure main is
   Message: constant String := "Cyclic scheduler";
   -- change/add your declarations here
   Start_Time: Time := Clock;
@@ -124,21 +124,22 @@ procedure cyclic_wd is
             -- syncronize delay time
             Exec_Overtime := f3_End_Time - f3_Start_Time - Period;
 
-            Put(Duration'Image(1.0-Exec_Overtime));
-            Put("  ");
+            Put_Line(Duration'Image(1.0-Exec_Overtime));
+            --Put_Line(Duration'Image(Exec_Overtime));
 
-            Next_Time := Next_Time + (1.0 - Exec_Overtime);
-            Start_time := Start_Time + (1.0 - Exec_Overtime);
-
+            --Next_Time := Next_Time + (1.0 - Exec_Overtime);
+            -- Next_Time has an old value before f3 misses its deadline ;) 
+            Next_Time := f3_End_Time + (1.0 - Exec_Overtime);
+            --Start_time := Start_Time + (1.0 - Exec_Overtime);
+            -- NO Need to reset Start_Time
          end if;
       end if;
 
       s := s + 1;
-
 
       -- absolute delay
       delay until Next_Time;
       Next_Time := Next_Time + Period;
 
     end loop;
-end cyclic_wd;
+end main;
