@@ -1,0 +1,41 @@
+f1 executing, time is now 0.000254000
+f2 executing, time is now 0.000259400
+f3 executing, time is now 0.514701700
+      RND:  6
+  F3 Missed deadline!   1.015222400
+f1 executing, time is now 1.124465200
+f2 executing, time is now 1.124484300
+f1 executing, time is now 2.016624200
+f2 executing, time is now 2.016631000
+f3 executing, time is now 2.514197900
+      RND:  4
+f1 executing, time is now 3.014114000
+f2 executing, time is now 3.014120900
+f1 executing, time is now 4.013857100
+f2 executing, time is now 4.013862800
+f3 executing, time is now 4.513756000
+      RND:  6
+  F3 Missed deadline!   5.014048300
+f1 executing, time is now 5.123594200
+f2 executing, time is now 5.123600300
+f1 executing, time is now 6.013374800
+f2 executing, time is now 6.013382200
+f3 executing, time is now 6.514270600
+      RND:  6
+  F3 Missed deadline!   7.029806000
+f1 executing, time is now 7.124134700
+f2 executing, time is now 7.124140600
+f1 executing, time is now 8.013935300
+f2 executing, time is now 8.013941000
+f3 executing, time is now 8.513812800
+      RND:  5
+  F3 Missed deadline!   9.014136200
+f1 executing, time is now 9.014168000
+f2 executing, time is now 9.014173100
+f1 executing, time is now 10.013459600
+f2 executing, time is now 10.013464200
+f3 executing, time is now 10.501437700
+      RND:  5
+  F3 Missed deadline!   11.003110900
+f1 executing, time is now 11.003234100
+f2 executing, time is now 11.003241900

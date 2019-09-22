@@ -1,8 +1,35 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_file>
-    <file_marker current="true" column=" 7" line=" 19" >
+  <Project >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\lab 1\task3.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 204" >
+      <vfs_project />
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\lab 1\task3.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
+      <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\ada_rt.gpr</vfs_project>
       <vfs_file>D:\uu\semester 3\real time systems\labs\lab-1\realtime-ada\proj\src\main.adb</vfs_file>
     </file_marker>

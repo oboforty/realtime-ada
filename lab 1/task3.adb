@@ -11,23 +11,18 @@ use Ada.Numerics.Float_Random;
 
 
 procedure comm1 is
-    Message: constant String := "Process communication";
+  Message: constant String := "Process communication";
 
-    -- rnd delay
-    type Rand_Draw is range 1..5;
-    package Rand_Int is new Ada.Numerics.Discrete_Random(Rand_Draw);
-    seed : Rand_Int.Generator;
-
-
-    -- random number
-    G: Generator;
+  -- random number generator
+  G: Generator;
 
   function Rnd(MAX: Integer) return Float is
   begin
+    -- generates a random round float in the range of [0, MAX]
     return Float'Rounding(Float(Max)*Random(G));
   end Rnd;
 
-  -- BUFFER: --
+  -- BUFFER TASK: a task that accepts and input numbers and stores them in a buffer --
   task buffer is
       -- add your task entries for communication
     entry put(X: in integer);
@@ -37,13 +32,14 @@ procedure comm1 is
 
   task body buffer is
     Message: constant String := "buffer executing";
-      -- change/add your local declarations here
-      exit_task: Boolean := False;
+    -- change/add your local declarations here
+    exit_task: Boolean := False;
 
-    -- circular queue implementation
+    -- circular queue implementation: implements a FIFO buffer
     size: constant Integer := 10;
     type circular_queue is array(0..size) of Integer;
     queue : circular_queue;
+    -- number of elements stored in the buffer
     counter: Integer := 0;
     head: Integer := 0;
     tail: Integer := 0;
@@ -67,7 +63,7 @@ procedure comm1 is
           end put;
         or
           -- don't wait forever, because it might block the other entry
-          delay 1.0;
+          delay 0.2;
         end select;
       end if;
 
@@ -84,16 +80,11 @@ procedure comm1 is
           end get;
         or
           -- don't wait forever, because it might block the other entry
-          delay 1.0;
+          delay 0.2;
         end select;
       end if;
 
-      --if (counter = size) then
-      --  Put_Line("ERR: COUNTER IS <0");
-      --end if;
-
-
-      -- wait for the termination signal
+      -- wait for a termination signal
       select
         accept terminate_task do
           exit_task := True;
@@ -102,11 +93,13 @@ procedure comm1 is
         delay 0.1;
       end select;
 
+      -- termination signal was given; stop execution
       if (exit_task) then
         exit Main_Loop;
       end if;
 
       if (counter < 0) then
+        -- unexpected error happened (this line should never execute in theory)
         Put_Line("ERR: COUNTER IS <0");
       end if;
 
@@ -115,35 +108,32 @@ procedure comm1 is
   end buffer;
 
 
-  -- PRODUCER: --
+  -- PRODUCER TASK: creates random numbers and passes them to the buffer --
   task producer is
     -- add your task entries for communication
     entry terminate_task;
   end producer;
-
   task body producer is
     Message: constant String := "producer executing";
-                -- change/add your local declarations here
+    -- change/add your local declarations here
 
-    -- rnd number generator
+    -- rnd number to be added to the buffer
     Num : Integer;
     exit_task: Boolean := False;
   begin
-     --Put_Line(Message);
+     Put_Line(Message);
      Main_Loop:
      loop
       -- your task code inside this loop
-      -- random delay
-      --delay Duration'Rnd(3);
 
-      -- random number
+      -- get random integer to push
       Num := Integer(Rnd(20));
 
-      Put("Producer: -> ");
+      Put("Producer -> ");
       Put_Line(Integer'Image(Num));
 
       -- put it into the queue
-      buffer.put(Num);
+      -- @TODO: protected buffer
 
       -- wait for the termination signal
       select
@@ -158,55 +148,56 @@ procedure comm1 is
         exit Main_Loop;
       end if;
 
-      delay Duration(Rnd(3));
+      -- random delay: 1 to 3 seconds
+      delay Duration(Rnd(2)+1.0);
     end loop Main_Loop;
   end producer;
 
 
-  -- CONSUMER --
+  -- CONSUMER TASK: retrieves integers from the buffer and outputs them --
   task consumer is
-            -- add your task entries for communication
+    -- add your task entries for communication
   end consumer;
-
   task body consumer is
     Message: constant String := "consumer executing";
     -- change/add your local declarations here
     Num: Integer;
     SumNumbers: Integer := 0;
   begin
-    --Put_Line(Message);
+    Put_Line(Message);
+
     Main_Cycle:
     loop
       -- add your task code inside this loop
-      buffer.get(Num);
+      -- @TODO: protected buffer
 
-      Put("Consumer: <- ");
+      Put("Consumer <- ");
       Put_Line(Integer'Image(Num));
 
+      -- add up received numbers and quit when it's over 100
       SumNumbers := SumNumbers + Num;
 
       if (SumNumbers > 100) then
-        Put_Line("Big");
-
-        -- terminate other two running tasks
-        producer.terminate_task;
-        buffer.terminate_task;
+        -- first, the consumer stops its own main cycle
+        Put_Line("SumNumbers > 100. Quitting program...");
 
         exit Main_Cycle;
-
       end if;
 
-      delay Duration(Rnd(2));
+      -- random delay, 1 - 4 seconds
+      delay Duration(Rnd(3)+1.0);
     end loop Main_Cycle;
 
     -- add your code to stop executions of other tasks
+    -- send signal to terminate other two running tasks as well
+    Put_Line("Ending the consumer");
+    producer.terminate_task;
+
     exception
       when TASKING_ERROR =>
         Put_Line("Buffer finished before producer");
-    Put_Line("Ending the consumer");
 
   end consumer;
 begin
-  --Put_Line(Message);
-  null;
+  Put_Line(Message);
 end comm1;
