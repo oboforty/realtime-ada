@@ -1,4 +1,4 @@
---Process commnication: Ada lab part 4
+--Process commnication: Ada lab part 3
 
 with Ada.Calendar;
 with Ada.Text_IO;
@@ -11,7 +11,13 @@ use Ada.Numerics.Float_Random;
 
 
 procedure comm1 is
-  Message: constant String := "Process communication; No Buffer Task";
+  Message: constant String := "Process communication With protected buffer";
+
+  -- circular queue implementation: implements a FIFO buffer
+  -- max size of the circular buffer:
+  size: constant Integer := 10;
+  type circular_queue is array(0..size) of Integer;
+  queue : circular_queue;
 
   -- random number generator
   G: Generator;
@@ -21,6 +27,47 @@ procedure comm1 is
     -- generates a random round float in the range of [0, MAX]
     return Float'Rounding(Float(Max)*Random(G));
   end Rnd;
+
+
+  -- BUFFER OBJECT: a protected, shared object that accepts and input numbers and stores them in a buffer --
+  protected buffer is
+    -- add entries of protected object here
+    entry put(X: in integer);
+    entry get(x: out integer);
+  private
+    -- add local declarations
+
+    -- number of elements stored in the buffer
+    counter: Integer := 0;
+    head: Integer := 0;
+    tail: Integer := 0;
+  end buffer;
+
+  protected body buffer is
+    -- add definitions of protected entries here
+
+    entry put(x: in integer)
+      when counter < size is
+    begin
+      -- circular queue put
+      queue(tail) := x;
+
+      counter := counter + 1;
+      tail := (tail mod size) + 1;
+
+    end put;
+
+    entry get(x: out integer)
+      when counter > 0 is
+    begin
+      -- circular queue get
+      x := queue(head);
+
+      counter := counter - 1;
+      head := (head mod size) + 1;
+    end get;
+
+  end buffer;
 
 
   -- PRODUCER TASK: creates random numbers and passes them to the buffer --
@@ -47,7 +94,6 @@ procedure comm1 is
       Put("Producer -> ");
       Put_Line(Integer'Image(Num));
 
-      -- put it into the queue
       buffer.put(Num);
 
       -- wait for the termination signal
@@ -103,12 +149,11 @@ procedure comm1 is
       delay Duration(Rnd(3)+1.0);
     end loop Main_Cycle;
 
+    -- add your code to stop executions of other tasks
     -- send signal to terminate other two running tasks as well
     Put_Line("Ending the consumer");
     producer.terminate_task;
-    buffer.terminate_task;
 
-    -- add your code to stop executions of other tasks
     exception
       when TASKING_ERROR =>
         Put_Line("Buffer finished before producer");

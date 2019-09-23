@@ -133,7 +133,7 @@ procedure comm1 is
       Put_Line(Integer'Image(Num));
 
       -- put it into the queue
-      -- @TODO: protected buffer
+      buffer.put(Num);
 
       -- wait for the termination signal
       select
@@ -169,7 +169,7 @@ procedure comm1 is
     Main_Cycle:
     loop
       -- add your task code inside this loop
-      -- @TODO: protected buffer
+      buffer.get(Num);
 
       Put("Consumer <- ");
       Put_Line(Integer'Image(Num));
