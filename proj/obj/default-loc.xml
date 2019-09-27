@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Locations >
+<Locations>
   <Project>
     <vfs_file />
     <file_marker column=" 1" line=" 1" >
@@ -9,13 +9,6 @@
     <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>D:\uu\semester 3\real time systems\labs\lab-2\src\tasks.adb</vfs_file>
-    </file_marker>
-  </Project>
-  <Project >
-    <vfs_file >D:\uu\semester 3\real time systems\lab\proj\ada_rt.gpr</vfs_file>
-    <file_marker current="true" column=" 1" line=" 1">
-      <vfs_project >D:\uu\semester 3\real time systems\lab\proj\ada_rt.gpr</vfs_project>
-      <vfs_file >D:\uu\semester 3\real time systems\lab\proj\src\main.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>
