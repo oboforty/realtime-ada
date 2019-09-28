@@ -14,31 +14,56 @@ package Tasks is
 
   procedure Background;
 
-  private
 
   -- TASKS
   task MotorTask is
     -- Define priority
+    pragma Priority (System.Priority'First + 4);
     pragma Storage_Size(4096);
   end MotorTask;
 
   task ButtonpressTask is
     -- Define priority
+    pragma Priority (System.Priority'First + 3);
     pragma Storage_Size(4096);
   end ButtonpressTask;
 
+  -- task DistanceTask is
+    -- Define priority
+    -- pragma Priority (System.Priority'First + 2);
+  --  pragma Storage_Size(4096);
+  -- end DistanceTask;
+
   task DisplayTask is
     -- Define priority
+    pragma Priority (System.Priority'First + 1);
     pragma Storage_Size(4096);
   end DisplayTask;
 
-  --  Define used sensor ports  --
+
+  -- Records
+  type Driving_Command_Type is
+    record
+      duration: Integer;
+      speed: PWM_Value;
+
+      update_priority: Integer := 0;
+    end record;
+
+  driving_command: Driving_Command_Type;
+
+  PRIO_IDLE: Integer := 1;
+  PRIO_BUTTON: Integer := 3;
+  --PRIO_DISTANCE: Integer := ?;
+
+
+  private
+
+  --  Init sensors --
   -- [4] Light Sensor
   PhotoDetector : Light_Sensor := Make(Sensor_4, Floodlight_On => False);
 
   -- [1] Push/Touch sensor
   Bumper : Touch_Sensor (Sensor_1);
-
-  --  Init sensors --
 
 end Tasks;
