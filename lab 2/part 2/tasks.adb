@@ -30,12 +30,12 @@ package body Tasks is
     end Signal;
   end Event;
 
-   -------------
-   --  Tasks  --
-   -------------
+  -------------
+  --  Tasks  --
+  -------------
 
   task body MotorTask is
-    Speed : constant PWM_Value := 100;
+    Speed : constant PWM_Value := -100;
     Stop : constant PWM_Value := 0;
 
     Next_Time : Time := Clock;
@@ -54,16 +54,12 @@ package body Tasks is
       -- Start the motors on button push
       Event.wait(TouchOnEvent);
       Set_Power(Motor_A, Speed, False);
-      Forward(Motor_A);
       Set_Power(Motor_B, Speed, False);
-      Forward(Motor_B);
 
       -- -- Stop the motors on buttonr release
       Event.wait(TouchOffEvent);
       Set_Power(Motor_A, Stop, False);
-      Forward(Motor_A);
       Set_Power(Motor_B, Stop, False);
-      Forward(Motor_B);
 
       -- 10 ms absolute delay
       Next_Time := Next_Time + Milliseconds(300);
@@ -81,11 +77,7 @@ package body Tasks is
     -- task body starts here ---
     Put_Line ("Hello World!");
 
-    loop
-      -- TODO: In order for MotorcontrolTask to have priority over EventdispatcherTask, make sure to assign a lower priority to the latter.
-
-      -- TODO: add absolute delay
-      
+    loop      
       -- reset button termination
       if NXT.AVR.Button = Power_Button then
         Power_Down;

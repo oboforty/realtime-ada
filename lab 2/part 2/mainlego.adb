@@ -3,10 +3,10 @@ with System;
 
 procedure mainlego is
 
-   pragma Priority (System.Priority'First);
+  pragma Priority (System.Priority'First);
 
 begin
 
-   Tasks.Background;
+  Tasks.Background;
 
 end mainlego;

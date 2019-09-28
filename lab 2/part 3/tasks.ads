@@ -6,6 +6,7 @@ with NXT.Display;   use NXT.Display;
 with NXT.Last_Chance;
 with NXT.Light_Sensors; use NXT.Light_Sensors;
 with NXT.Light_Sensors.Ctors; use NXT.Light_Sensors.Ctors;
+with NXT.Touch_Sensors;  use NXT.Touch_Sensors;
 with System;
 
 
@@ -13,20 +14,30 @@ package Tasks is
 
   procedure Background;
 
-  task HelloworldTask is
-    -- define its priority higher than the main procedure --
-    pragma Priority (System.Priority'First + 1);
-
-    --  task memory allocation --
-    pragma Storage_Size (4096);
-  end HelloworldTask;
-
   private
-  --  Define periods and times  --
+
+  -- TASKS
+  task MotorTask is
+    -- Define priority
+    pragma Storage_Size(4096);
+  end MotorTask;
+
+  task ButtonpressTask is
+    -- Define priority
+    pragma Storage_Size(4096);
+  end ButtonpressTask;
+
+  task DisplayTask is
+    -- Define priority
+    pragma Storage_Size(4096);
+  end DisplayTask;
 
   --  Define used sensor ports  --
   -- [4] Light Sensor
   PhotoDetector : Light_Sensor := Make(Sensor_4, Floodlight_On => False);
+
+  -- [1] Push/Touch sensor
+  Bumper : Touch_Sensor (Sensor_1);
 
   --  Init sensors --
 

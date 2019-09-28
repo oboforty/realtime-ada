@@ -1,0 +1,3053 @@
+Archive member included because of file (symbol)
+
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+                              ./a-reatim.o (__aeabi_uidiv)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+                              ./nxt-audio.o (__aeabi_idiv)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+                              ./a-reatim.o (__aeabi_ldivmod)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+                              ./a-reatim.o (__aeabi_uldivmod)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o) (__gnu_ldivmod_helper)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o) (__divdi3)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o) (__udivdi3)
+/home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o) (__clzsi2)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+vector_ram       0x00200000         0x00000040
+ram              0x00202000         0x0000e000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD b~task1.o
+LOAD vectors.o
+LOAD init.o
+LOAD main.o
+LOAD irq.o
+LOAD context_switch-bb-arm.o
+LOAD ./ada.o
+LOAD ./interfac.o
+LOAD ./i-c.o
+LOAD ./system.o
+LOAD ./a-except.o
+LOAD ./s-bb.o
+LOAD ./s-maccod.o
+LOAD ./s-parame.o
+LOAD ./s-stoele.o
+LOAD ./s-bbpara.o
+LOAD ./s-bbpere.o
+LOAD ./s-multip.o
+LOAD ./s-bcprmu.o
+LOAD ./s-bbperi.o
+LOAD ./s-bbthqu.o
+LOAD ./s-bbthre.o
+LOAD ./s-bbinte.o
+LOAD ./s-bbtime.o
+LOAD ./s-bbcppr.o
+LOAD ./s-bbprot.o
+LOAD ./s-musplo.o
+LOAD ./s-osinte.o
+LOAD ./s-mufalo.o
+LOAD ./s-tasinf.o
+LOAD ./s-taspri.o
+LOAD ./s-tasdeb.o
+LOAD ./s-taprop.o
+LOAD ./s-unstyp.o
+LOAD ./a-reatim.o
+LOAD ./a-retide.o
+LOAD ./s-taskin.o
+LOAD ./a-tags.o
+LOAD ./s-secsta.o
+LOAD ./s-taprob.o
+LOAD ./s-tpobmu.o
+LOAD ./s-tposen.o
+LOAD ./s-interr.o
+LOAD ./a-interr.o
+LOAD ./s-tasres.o
+LOAD ./s-tarest.o
+LOAD ./memory_compare.o
+LOAD ./memory_copy.o
+LOAD ./memory_set.o
+LOAD ./nxt.o
+LOAD ./nxt-malloc.o
+LOAD ./nxt-registers.o
+LOAD ./nxt-audio.o
+LOAD ./nxt-buffers.o
+LOAD ./nxt-filtering.o
+LOAD ./nxt-last_chance.o
+LOAD ./nxt-fonts.o
+LOAD ./nxt-priorities.o
+LOAD ./nxt-spi.o
+LOAD ./nxt-lcd.o
+LOAD ./nxt-display.o
+LOAD ./nxt-twi.o
+LOAD ./nxt-avr_io.o
+LOAD ./nxt-avr.o
+LOAD ./nxt-sensor_ports.o
+LOAD ./nxt-light_sensors.o
+LOAD ./nxt-light_sensors-ctors.o
+LOAD ./nxt-touch_sensors.o
+LOAD ./tasks.o
+LOAD ./task1.o
+LOAD /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a
+LOAD /home/lego/Documents/gnatmindstorms2011/lib/gcc/arm-eabi/4.5.3/rts-ravenscar-sfp/adalib/libgnarl.a
+LOAD /home/lego/Documents/gnatmindstorms2011/lib/gcc/arm-eabi/4.5.3/rts-ravenscar-sfp/adalib/libgnat.a
+                0x00200000                RAM_BASE = 0x200000
+                0x00010000                RAM_SIZE = 0x10000
+
+.vectors        0x00200000       0x40 load address 0x00202000
+ *(.vectors)
+ .vectors       0x00200000       0x3c vectors.o
+                0x00200040                . = ALIGN (0x10)
+ *fill*         0x0020003c        0x4 00
+                0x00200000                __vectors_ram_start__ = ADDR (.vectors)
+                0x00200040                __vectors_ram_end__ = (ADDR (.vectors) + SIZEOF (.vectors))
+                0x00202000                __vectors_load_start__ = LOADADDR (.vectors)
+                0x00202040                __vectors_load_end__ = (LOADADDR (.vectors) + SIZEOF (.vectors))
+
+.text           0x00202040     0x6cc0
+                0x00202040                . = ALIGN (0x10)
+ *(*.text *.text.* *.glue*)
+ .glue_7        0x00000000        0x0 linker stubs
+ .glue_7t       0x00000000        0x0 linker stubs
+ .text          0x00202040      0x234 b~task1.o
+                0x00202040                adainit
+                0x00202254                main
+ .text          0x00202274        0x0 vectors.o
+ .text          0x00202274      0x270 init.o
+                0x00202274                start
+                0x002023d0                undef_handler
+                0x002023d4                swi_handler
+                0x002023d8                prefetch_abort_handler
+                0x002023dc                data_abort_handler
+                0x002023f8                reserved_handler
+ .text          0x002024e4       0x38 main.o
+                0x002024e4                nxt_main
+                0x002024f4                data_abort_pc
+                0x002024f8                data_abort_C
+                0x002024fc                __aeabi_unwind_cpp_pr0
+ .text          0x0020251c       0x48 irq.o
+                0x0020251c                irq_handler
+ .text          0x00202564       0x2c context_switch-bb-arm.o
+                0x00202564                context_switch
+ .text          0x00202590        0x0 ./ada.o
+ .text          0x00202590        0x0 ./interfac.o
+ .text          0x00202590        0x8 ./i-c.o
+                0x00202590                interfaces__c__char_arrayIP
+                0x00202594                interfaces__c__wchar_arrayIP
+ .text          0x00202598        0x0 ./system.o
+ .text          0x00202598       0x10 ./a-except.o
+                0x00202598                ada__exceptions__raise_exception
+ .text          0x002025a8        0x0 ./s-bb.o
+ .text          0x002025a8        0x8 ./s-maccod.o
+                0x002025a8                system__machine_code__asm_input_operand_listIP
+                0x002025ac                system__machine_code__asm_output_operand_listIP
+ .text          0x002025b0        0xc ./s-parame.o
+                0x002025b0                system__parameters__adjust_storage_size
+ .text          0x002025bc       0x58 ./s-stoele.o
+                0x002025bc                system__storage_elements__storage_arrayIP
+                0x002025c0                system__storage_elements__to_address
+                0x002025c4                system__storage_elements__to_integer
+                0x002025c8                system__storage_elements__Oadd
+                0x002025d0                system__storage_elements__Oadd__2
+                0x002025d8                system__storage_elements__Osubtract
+                0x002025e0                system__storage_elements__Osubtract__2
+                0x002025e8                system__storage_elements__Omod
+ .text          0x00202614        0x0 ./s-bbpara.o
+ .text          0x00202614        0xc ./s-bbpere.o
+                0x00202614                system__bb__peripherals__registers__Taic_smr_arrayBIP
+                0x00202618                system__bb__peripherals__registers__Taic_svr_arrayBIP
+                0x0020261c                system__bb__peripherals__registers__Tadc_cdrBIP
+ .text          0x00202620        0x8 ./s-multip.o
+                0x00202620                system__multiprocessors__number_of_cpus
+ .text          0x00202628       0x14 ./s-bcprmu.o
+                0x00202628                system__bb__cpu_primitives__multiprocessors__current_cpu
+                0x00202630                system__bb__cpu_primitives__multiprocessors__poke_cpu
+                0x00202634                system__bb__cpu_primitives__multiprocessors__start_cpu
+                0x00202638                system__bb__cpu_primitives__multiprocessors__start_all_cpus
+ .text          0x0020263c       0x1c ./s-bbperi.o
+                0x0020263c                system__bb__peripherals__initialize_board
+                0x00202640                system__bb__peripherals__level_of_interrupt
+                0x00202648                system__bb__peripherals__priority_of_interrupt
+                0x00202650                system__bb__peripherals__ticks_per_second
+ .text          0x00202658      0x36c ./s-bbthqu.o
+                0x00202658                system__bb__threads__queues__change_priority
+                0x002026d0                system__bb__threads__queues__current_priority
+                0x00202700                system__bb__threads__queues__extract
+                0x00202738                system__bb__threads__queues__extract_first_alarm
+                0x00202774                system__bb__threads__queues__first_thread
+                0x0020279c                system__bb__threads__queues__get_next_alarm_time
+                0x002027c0                system__bb__threads__queues__insert
+                0x00202854                system__bb__threads__queues__insert_alarm
+                0x002028e0                system__bb__threads__queues__running_thread
+                0x00202904                system__bb__threads__queues__wakeup_expired_alarms
+                0x00202950                system__bb__threads__queues__yield
+ .text          0x002029c4      0x314 ./s-bbthre.o
+                0x002029c4                system__bb__threads__thread_descriptorIP
+                0x002029d8                system__bb__threads__Tslave_stacksBIP
+                0x002029dc                system__bb__threads__Tslave_stacks_tableBIP
+                0x002029e0                system__bb__threads__get_affinity
+                0x002029e8                system__bb__threads__get_cpu
+                0x002029f8                system__bb__threads__get_atcb
+                0x00202a0c                system__bb__threads__get_priority
+                0x00202a14                system__bb__threads__initialize
+                0x00202ae8                system__bb__threads__initialize_slave_environment
+                0x00202b80                system__bb__threads__set_atcb
+                0x00202b98                system__bb__threads__set_priority
+                0x00202bbc                system__bb__threads__sleep
+                0x00202bf8                system__bb__threads__thread_create
+                0x00202c90                system__bb__threads__thread_self
+                0x00202ca0                system__bb__threads__wakeup
+ .text          0x00202cd8      0x1e0 ./s-bbinte.o
+                0x00202cdc                system__bb__interrupts__Tinterrupt_handlersBIP
+                0x00202d10                system__bb__interrupts__attach_handler__2
+                0x00202d34                system__bb__interrupts__attach_handler
+                0x00202d5c                system__bb__interrupts__current_interrupt
+                0x00202d6c                irq_handler_ada
+                0x00202df0                system__bb__interrupts__within_interrupt_stack
+                0x00202df8                system__bb__interrupts__initialize_interrupts
+                0x00202e60                system__bb__interrupts__enable_interrupt
+                0x00202e7c                system__bb__interrupts__disable_interrupt
+                0x00202e98                system__bb__interrupts___elabb
+ .text          0x00202eb8      0x10c ./s-bbtime.o
+                0x00202f0c                system__bb__time__update_alarm
+                0x00202f10                system__bb__time__clock
+                0x00202f20                system__bb__time__delay_until
+                0x00202f74                system__bb__time__get_next_timeout
+                0x00202f84                system__bb__time__initialize_timers
+ .text          0x00202fc4       0x40 ./s-bbcppr.o
+                0x00202fc4                system__bb__cpu_primitives__Tcontext_bufferBIP
+                0x00202fc8                system__bb__cpu_primitives__initialize_context
+                0x00202fd8                system__bb__cpu_primitives__initialize_floating_point
+                0x00202fdc                system__bb__cpu_primitives__disable_interrupts
+                0x00202fec                system__bb__cpu_primitives__enable_interrupts
+ .text          0x00203004      0x11c ./s-bbprot.o
+                0x00203004                system__bb__protection__enter_kernel
+                0x00203014                context_switch_needed
+                0x00203034                system__bb__protection__leave_kernel
+ .text          0x00203120       0x24 ./s-musplo.o
+                0x00203120                system__multiprocessors__spin_locks__spin_lockIP
+                0x0020312c                system__multiprocessors__spin_locks__lock
+                0x00203130                system__multiprocessors__spin_locks__locked
+                0x00203138                system__multiprocessors__spin_locks__try_lock
+                0x00203140                system__multiprocessors__spin_locks__unlock
+ .text          0x00203144        0x0 ./s-osinte.o
+ .text          0x00203144      0x110 ./s-mufalo.o
+                0x00203144                system__multiprocessors__fair_locks__Tspinning_arrayBIP
+                0x00203148                system__multiprocessors__fair_locks__fair_lockIP
+                0x00203158                system__multiprocessors__fair_locks__initialize
+                0x00203178                system__multiprocessors__fair_locks__lock
+                0x002031e0                system__multiprocessors__fair_locks__locked
+                0x002031f4                system__multiprocessors__fair_locks__next_spinning
+                0x00203204                system__multiprocessors__fair_locks__try_lock
+                0x00203218                system__multiprocessors__fair_locks__unlock
+ .text          0x00203254        0x0 ./s-tasinf.o
+ .text          0x00203254       0x1c ./s-taspri.o
+                0x00203254                system__task_primitives__private_dataIP
+ .text          0x00203270       0x24 ./s-tasdeb.o
+                0x00203270                system__tasking__debug__add_task_id
+ .text          0x00203294      0x1a8 ./s-taprop.o
+                0x00203294                system__task_primitives__operations__self
+                0x002032a4                system__task_primitives__operations__sleep
+                0x002032b4                system__task_primitives__operations__delay_until
+                0x002032e4                system__task_primitives__operations__monotonic_clock
+                0x002032f4                system__task_primitives__operations__wakeup
+                0x00203308                system__task_primitives__operations__set_priority
+                0x0020331c                system__task_primitives__operations__get_priority
+                0x00203330                system__task_primitives__operations__get_affinity
+                0x00203344                system__task_primitives__operations__get_cpu
+                0x00203358                system__task_primitives__operations__get_thread_id
+                0x00203360                system__task_primitives__operations__enter_task
+                0x0020338c                system__task_primitives__operations__initialize_tcb
+                0x00203394                system__task_primitives__operations__create_task
+                0x002033d4                system__task_primitives__operations__initialize
+                0x002033fc                system__task_primitives__operations__initialize_slave
+                0x00203420                system__task_primitives__operations__is_task_context
+ .text          0x0020343c        0x4 ./s-unstyp.o
+                0x0020343c                system__unsigned_types__packed_bytes1IP
+ .text          0x00203440      0x7a4 ./a-reatim.o
+                0x00203440                ada__real_time__Omultiply
+                0x0020354c                ada__real_time__Omultiply__2
+                0x00203560                ada__real_time__Oadd
+                0x002035c4                ada__real_time__Oadd__2
+                0x00203628                ada__real_time__Oadd__3
+                0x00203680                ada__real_time__Osubtract
+                0x002036e8                ada__real_time__Osubtract__2
+                0x00203764                ada__real_time__Osubtract__3
+                0x002037c4                ada__real_time__Osubtract__4
+                0x002037fc                ada__real_time__Odivide
+                0x0020387c                ada__real_time__Odivide__2
+                0x002038cc                ada__real_time__clock
+                0x002038dc                ada__real_time__microseconds
+                0x00203918                ada__real_time__milliseconds
+                0x00203950                ada__real_time__minutes
+                0x00203980                ada__real_time__nanoseconds
+                0x002039bc                ada__real_time__seconds
+                0x002039e8                ada__real_time__split
+                0x00203a30                ada__real_time__time_of
+                0x00203a58                ada__real_time__to_duration
+                0x00203b54                ada__real_time__to_time_span
+                0x00203b98                ada__real_time___elabb
+                0x00203ba8                ada__real_time___elabs
+ .text          0x00203be4       0x40 ./a-retide.o
+                0x00203be4                ada__real_time__delays__delay_until
+                0x00203c18                ada__real_time__delays__to_duration
+ .text          0x00203c24      0x2d0 ./s-taskin.o
+                0x00203c24                system__tasking__E5sIP
+                0x00203c30                system__tasking__activation_chainIP
+                0x00203c3c                system__tasking__Tenvironment_tableBIP
+                0x00203c40                __gnat_get_secondary_stack
+                0x00203c54                system__tasking__initialize_atcb
+                0x00203cc0                system__tasking__initialize
+                0x00203e34                __gnat_initialize_slave
+                0x00203edc                system__tasking__self
+                0x00203eec                system__tasking__storage_size
+ .text          0x00203ef4      0x1f8 ./a-tags.o
+                0x00203ef4                ada__tags__tag_tableIP
+                0x00203f28                ada__tags__address_arrayIP
+                0x00203f5c                ada__tags__type_specific_dataIP
+                0x00203f90                ada__tags__dispatch_table_wrapperIP
+                0x00203fb4                ada__tags__no_dispatch_table_wrapperIP
+                0x00203fb8                ada__tags__expanded_name
+                0x0020403c                ada__tags__external_tag
+                0x002040c0                ada__tags__parent_tag
+ .text          0x002040ec       0x8c ./s-secsta.o
+                0x002040ec                system__secondary_stack__memoryIP
+                0x002040f0                system__secondary_stack__ss_allocate
+                0x00204138                system__secondary_stack__ss_init
+                0x0020414c                system__secondary_stack__ss_mark
+                0x00204160                system__secondary_stack__ss_release
+ .text          0x00204178       0xf8 ./s-taprob.o
+                0x00204178                system__tasking__protected_objects__entry_bodyIP
+                0x00204188                system__tasking__protected_objects__protectionIP
+                0x0020419c                system__tasking__protected_objects__initialize_protection
+                0x002041c4                system__tasking__protected_objects__lock
+                0x00204230                system__tasking__protected_objects__unlock
+                0x00204260                system__tasking__protected_objects___elabb
+ .text          0x00204270      0x14c ./s-tpobmu.o
+                0x00204270                system__tasking__protected_objects__multiprocessors__wakeup_served_entry
+                0x002042d8                system__tasking__protected_objects__multiprocessors__entry_call_listIP
+                0x002042ec                system__tasking__protected_objects__multiprocessors__served
+                0x0020438c                system__tasking__protected_objects__multiprocessors___elabb
+ .text          0x002043bc      0x1ec ./s-tposen.o
+                0x002043bc                system__tasking__protected_objects__single_entry__complete_single_entry_body
+                0x002043c0                system__tasking__protected_objects__single_entry__initialize_protection_entry
+                0x002043f4                system__tasking__protected_objects__single_entry__lock_entry
+                0x00204408                system__tasking__protected_objects__single_entry__protected_count_entry
+                0x00204418                system__tasking__protected_objects__single_entry__protected_single_entry_call
+                0x002044fc                system__tasking__protected_objects__single_entry__protected_single_entry_caller
+                0x00204508                system__tasking__protected_objects__single_entry__service_entry
+                0x00204594                system__tasking__protected_objects__single_entry__unlock_entry
+ .text          0x002045a8      0x144 ./s-interr.o
+                0x002045a8                system__interrupts__default_handler
+                0x002045d8                system__interrupts__E3sIP
+                0x002045e4                system__interrupts__handler_itemIP
+                0x002045f4                system__interrupts__handler_arrayIP
+                0x00204634                system__interrupts__install_handler
+                0x00204674                system__interrupts__install_restricted_handlers
+ .text          0x002046ec       0xb0 ./a-interr.o
+                0x002046ec                ada__interrupts__E3sIP
+                0x002046f8                ada__interrupts__attach_handler
+                0x00204714                ada__interrupts__current_handler
+                0x00204728                ada__interrupts__detach_handler
+                0x0020473c                ada__interrupts__exchange_handler
+                0x00204760                ada__interrupts__is_attached
+                0x00204774                ada__interrupts__is_reserved
+                0x00204788                ada__interrupts__reference
+ .text          0x0020479c        0x0 ./s-tasres.o
+ .text          0x0020479c      0x248 ./s-tarest.o
+                0x0020484c                system__tasking__restricted__stages__activate_restricted_tasks
+                0x002048e0                system__tasking__restricted__stages__complete_restricted_activation
+                0x002048e4                system__tasking__restricted__stages__complete_restricted_task
+                0x002048fc                system__tasking__restricted__stages__create_restricted_task
+                0x002049a8                system__tasking__restricted__stages__finalize_global_tasks
+                0x002049c0                system__tasking__restricted__stages__restricted_terminated
+                0x002049d4                system__tasking__restricted__stages___elabb
+ .text          0x002049e4       0x6c ./memory_compare.o
+                0x002049e4                memcmp
+ .text          0x00204a50       0xe8 ./memory_copy.o
+                0x00204a50                memcpy
+                0x00204aa0                memmove
+ .text          0x00204b38       0x4c ./memory_set.o
+                0x00204b38                memset
+ .text          0x00204b84        0x0 ./nxt.o
+ .text          0x00204b84       0x14 ./nxt-malloc.o
+                0x00204b84                __gnat_malloc
+ .text          0x00204b98        0x0 ./nxt-registers.o
+ .text          0x00204b98      0xa7c ./nxt-audio.o
+                0x002050fc                nxt__audio__waveformIP
+                0x00205100                nxt__audio__Tsample_bufferBIP
+                0x00205104                nxt__audio__Tdouble_bufferBIP
+                0x00205108                nxt__audio__TamplificationBIP
+                0x0020510c                nxt__audio__generatorTVIP
+                0x00205170                nxt__audio__Tsound_sampleBIP
+                0x00205174                nxt__audio__play_tone
+                0x002053e0                nxt__audio__play_sample
+                0x0020549c                nxt__audio__time_remaining
+                0x00205560                nxt__audio__mute
+                0x00205570                nxt__audio__unmute
+                0x00205580                nxt__audio___elabb
+ .text          0x00205614        0x0 ./nxt-buffers.o
+ .text          0x00205614        0x0 ./nxt-filtering.o
+ .text          0x00205614       0xa4 ./nxt-last_chance.o
+                0x00205614                __gnat_last_chance_handler
+ .text          0x002056b8        0x0 ./nxt-fonts.o
+ .text          0x002056b8        0x0 ./nxt-priorities.o
+ .text          0x002056b8      0x1fc ./nxt-spi.o
+                0x0020572c                nxt__spi__spiTVIP
+                0x00205780                nxt__spi__send
+                0x002057fc                nxt__spi___elabb
+ .text          0x002058b4      0x134 ./nxt-lcd.o
+                0x002058b4                nxt__lcd__lcd_lineIP
+                0x002058b8                nxt__lcd__command
+                0x002058d8                nxt__lcd__set_all_pixels_on
+                0x002058e8                nxt__lcd__set_inverse_display
+                0x002058f8                nxt__lcd__write
+                0x0020597c                nxt__lcd__power_on
+ .text          0x002059e8      0x648 ./nxt-display.o
+                0x002059e8                nxt__display__TscreenBIP
+                0x002059ec                nxt__display__screen_update
+                0x00205afc                nxt__display__clear_screen_noupdate
+                0x00205b4c                nxt__display__clear_screen
+                0x00205b5c                nxt__display__set_pos
+                0x00205b70                nxt__display__newline_noupdate
+                0x00205c0c                nxt__display__put_noupdate
+                0x00205cb8                nxt__display__put
+                0x00205cc8                nxt__display__put_noupdate__2
+                0x00205d0c                nxt__display__put__2
+                0x00205d1c                nxt__display__put_line
+                0x00205d30                nxt__display__newline
+                0x00205d40                nxt__display__put_hex
+                0x00205d7c                nxt__display__put_hex__2
+                0x00205db8                nxt__display__put_hex__3
+                0x00205de8                nxt__display__put_noupdate__3
+                0x00205ebc                nxt__display__put_noupdate__4
+                0x00205fe4                put_exception
+                0x00206020                nxt__display___elabb
+ .text          0x00206030      0x328 ./nxt-twi.o
+                0x00206220                nxt__twi__twiTVIP
+                0x00206278                nxt__twi__send
+                0x002062a4                nxt__twi__recv
+                0x002062d0                nxt__twi___elabb
+ .text          0x00206358      0x37c ./nxt-avr_io.o
+                0x00206358                nxt__avr_io__Tpwm_output_valuesBIP
+                0x0020635c                nxt__avr_io__Tmotor_braking_modesBIP
+                0x00206360                nxt__avr_io__Tport_bitsBIP
+                0x00206364                nxt__avr_io__sensor_power_controlIP
+                0x00206368                nxt__avr_io__outgoing_avr_messageIP
+                0x0020636c                nxt__avr_io__Traw_adc_inputsBIP
+                0x00206370                nxt__avr_io__incoming_avr_messageIP
+                0x00206374                nxt__avr_io__Toutgoing_message_as_bytesBIP
+                0x00206378                nxt__avr_io__Tincoming_message_as_bytesBIP
+                0x0020637c                nxt__avr_io__send_initialization
+                0x002063a0                nxt__avr_io__send_to_avr
+                0x00206400                nxt__avr_io__receive_from_avr
+                0x00206470                nxt__avr_io__power_down_message
+                0x0020647c                nxt__avr_io__set_sensor_power_message
+                0x002065b8                nxt__avr_io__set_motor_message
+                0x0020666c                nxt__avr_io__raw_inputs
+                0x00206688                nxt__avr_io__decoded_button
+                0x002066cc                nxt__avr_io__battery_reading
+ .text          0x002066d4      0x63c ./nxt-avr.o
+                0x002066d4                nxt__avr__outgoing_messages__insertXn
+                0x00206788                nxt__avr__outgoing_messages__removeXn
+                0x0020684c                nxt__avr__outgoing_messages__emptyXn
+                0x00206870                nxt__avr__outgoing_messages__fullXn
+                0x00206898                nxt__avr__outgoing_messages__clearXn
+                0x002068cc                nxt__avr__outgoing_messages__extentXn
+                0x002068e8                nxt__avr__button_inputs__filteredXn
+                0x0020693c                nxt__avr__outgoing_messages__contentIPXn
+                0x00206940                nxt__avr__outgoing_messages__bufferIPXn
+                0x00206974                nxt__avr__button_inputs__filterIPXn
+                0x0020698c                nxt__avr__pumpTKVIP
+                0x00206a18                nxt__avr__power_down
+                0x00206b78                nxt__avr__set_power
+                0x00206bb4                nxt__avr__set_input_power
+                0x00206be8                nxt__avr__await_data_available
+                0x00206c5c                nxt__avr___elabb
+ .text          0x00206d10      0x234 ./nxt-sensor_ports.o
+                0x00206d10                nxt__sensor_ports__Tdigital_pinsBIP
+                0x00206d14                nxt__sensor_ports__port_pinsIP
+                0x00206d18                nxt__sensor_ports__set_pin_mode
+                0x00206db4                nxt__sensor_ports__current_state
+                0x00206ddc                nxt__sensor_ports__set_pin_state
+                0x00206e04                nxt__sensor_ports__reset
+                0x00206e7c                nxt__sensor_ports__reset_all_ports
+                0x00206ea8                nxt__sensor_ports__set_input_power
+                0x00206eb8                nxt__sensor_ports___elabs
+ .text          0x00206f44      0x148 ./nxt-light_sensors.o
+                0x00206f44                nxt__light_sensors___alignment
+                0x00206f4c                nxt__light_sensors___size
+                0x00206f58                nxt__light_sensors__id
+                0x00206f60                nxt__light_sensors__normalized_light_value
+                0x00206f80                nxt__light_sensors__calibrate_low
+                0x00206f9c                nxt__light_sensors__calibrate_high
+                0x00206fb8                nxt__light_sensors__set_high
+                0x00206fc0                nxt__light_sensors__set_low
+                0x00206fc8                nxt__light_sensors__get_high
+                0x00206fd0                nxt__light_sensors__get_low
+                0x00206fd8                nxt__light_sensors__floodlight_color
+                0x00206fec                nxt__light_sensors__floodlight_on
+                0x00206ff4                nxt__light_sensors__light_value
+                0x00207038                nxt__light_sensors__enable_floodlight
+                0x00207060                nxt__light_sensors__light_sensorIP
+ .text          0x0020708c       0xc8 ./nxt-light_sensors-ctors.o
+                0x0020708c                nxt__light_sensors__ctors__make
+ .text          0x00207154       0x50 ./nxt-touch_sensors.o
+                0x00207154                nxt__touch_sensors___alignment
+                0x0020715c                nxt__touch_sensors___size
+                0x00207168                nxt__touch_sensors__pressed
+                0x0020718c                nxt__touch_sensors__touch_sensorIP
+ .text          0x002071a4      0x52c ./tasks.o
+                0x002071a4                tasks__event__wait_B5s
+                0x002071ac                tasks__helloworldtaskTKB
+                0x00207238                tasks__motortaskTKB
+                0x00207320                tasks__event__wait_E4s
+                0x00207368                tasks__eventTVIP
+                0x00207394                tasks__P2sIP
+                0x0020739c                tasks__motortaskTKVIP
+                0x00207418                tasks__eventdispatchertaskTKVIP
+                0x00207494                tasks__helloworldtaskTKVIP
+                0x00207510                tasks__background
+                0x00207514                tasks__event__signalN
+                0x00207524                tasks__event__signalP
+                0x00207558                tasks__eventdispatchertaskTKB
+                0x002075e0                tasks___elabb
+                0x00207610                tasks___elabs
+ .text          0x002076d0       0x10 ./task1.o
+                0x002076d0                _ada_task1
+ .text          0x002076e0      0x114 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+                0x002076e0                __udivsi3
+                0x002076e0                __aeabi_uidiv
+                0x002077d4                __aeabi_uidivmod
+ .text          0x002077f4      0x148 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+                0x002077f4                __aeabi_idiv
+                0x002077f4                __divsi3
+                0x0020791c                __aeabi_idivmod
+ .text          0x0020793c        0x4 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+                0x0020793c                __aeabi_ldiv0
+                0x0020793c                __aeabi_idiv0
+ .text          0x00207940       0x44 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+                0x00207940                __aeabi_ldivmod
+ .text          0x00207984       0x3c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+                0x00207984                __aeabi_uldivmod
+ .text          0x002079c0       0x80 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                0x002079c0                __gnu_ldivmod_helper
+                0x00207a00                __gnu_uldivmod_helper
+ .text          0x00207a40      0x4b8 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                0x00207a40                __divdi3
+ .text          0x00207ef8      0x44c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                0x00207ef8                __udivdi3
+ .text          0x00208344       0x48 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+                0x00208344                __clzsi2
+                0x00208390                . = ALIGN (0x10)
+ *fill*         0x0020838c        0x4 00
+ *(*.rodata *.rodata.*)
+ .rodata        0x00208390      0x1ec b~task1.o
+                0x00208390                __gnat_ada_main_program_name
+                0x0020839c                __gnat_version
+                0x002083c0                task1B
+                0x002083c4                systemS
+                0x002083c8                system__taskingB
+                0x002083cc                system__taskingS
+                0x002083d0                ada__exceptionsB
+                0x002083d4                ada__exceptionsS
+                0x002083d8                adaS
+                0x002083dc                system__secondary_stackB
+                0x002083e0                system__secondary_stackS
+                0x002083e4                system__storage_elementsB
+                0x002083e8                system__storage_elementsS
+                0x002083ec                system__task_primitivesS
+                0x002083f0                system__os_interfaceS
+                0x002083f4                system__bbS
+                0x002083f8                system__bb__cpu_primitivesB
+                0x002083fc                system__bb__cpu_primitivesS
+                0x00208400                interfacesS
+                0x00208404                system__bb__interruptsB
+                0x00208408                system__bb__interruptsS
+                0x0020840c                system__bb__peripheralsB
+                0x00208410                system__bb__peripheralsS
+                0x00208414                system__bb__peripherals__registersS
+                0x00208418                system__bb__timeB
+                0x0020841c                system__bb__timeS
+                0x00208420                system__bb__protectionB
+                0x00208424                system__bb__protectionS
+                0x00208428                system__bb__parametersS
+                0x0020842c                system__parametersB
+                0x00208430                system__parametersS
+                0x00208434                system__bb__threadsB
+                0x00208438                system__bb__threadsS
+                0x0020843c                system__bb__cpu_primitives__multiprocessorsB
+                0x00208440                system__bb__cpu_primitives__multiprocessorsS
+                0x00208444                system__multiprocessorsB
+                0x00208448                system__multiprocessorsS
+                0x0020844c                system__bb__threads__queuesB
+                0x00208450                system__bb__threads__queuesS
+                0x00208454                system__machine_codeS
+                0x00208458                system__task_primitives__operationsB
+                0x0020845c                system__task_primitives__operationsS
+                0x00208460                system__tasking__debugB
+                0x00208464                system__tasking__debugS
+                0x00208468                system__task_infoB
+                0x0020846c                system__task_infoS
+                0x00208470                tasksB
+                0x00208474                tasksS
+                0x00208478                ada__real_timeB
+                0x0020847c                ada__real_timeS
+                0x00208480                ada__real_time__delaysB
+                0x00208484                ada__real_time__delaysS
+                0x00208488                ada__tagsB
+                0x0020848c                ada__tagsS
+                0x00208490                nxtS
+                0x00208494                nxt__avrB
+                0x00208498                nxt__avrS
+                0x0020849c                memory_compareB
+                0x002084a0                memory_compareS
+                0x002084a4                interfaces__cS
+                0x002084a8                nxt__avr_ioB
+                0x002084ac                nxt__avr_ioS
+                0x002084b0                memory_setB
+                0x002084b4                memory_setS
+                0x002084b8                nxt__twiB
+                0x002084bc                nxt__twiS
+                0x002084c0                ada__interruptsB
+                0x002084c4                ada__interruptsS
+                0x002084c8                system__interruptsB
+                0x002084cc                system__interruptsS
+                0x002084d0                system__tasking__protected_objectsB
+                0x002084d4                system__tasking__protected_objectsS
+                0x002084d8                system__multiprocessors__fair_locksB
+                0x002084dc                system__multiprocessors__fair_locksS
+                0x002084e0                system__multiprocessors__spin_locksB
+                0x002084e4                system__multiprocessors__spin_locksS
+                0x002084e8                system__tasking__protected_objects__single_entryB
+                0x002084ec                system__tasking__protected_objects__single_entryS
+                0x002084f0                system__tasking__protected_objects__multiprocessorsB
+                0x002084f4                system__tasking__protected_objects__multiprocessorsS
+                0x002084f8                nxt__displayB
+                0x002084fc                nxt__displayS
+                0x00208500                memory_copyB
+                0x00208504                memory_copyS
+                0x00208508                nxt__fontsS
+                0x0020850c                nxt__lcdB
+                0x00208510                nxt__lcdS
+                0x00208514                nxt__spiB
+                0x00208518                nxt__spiS
+                0x0020851c                nxt__registersS
+                0x00208520                system__unsigned_typesS
+                0x00208524                nxt__buffersB
+                0x00208528                nxt__buffersS
+                0x0020852c                nxt__filteringB
+                0x00208530                nxt__filteringS
+                0x00208534                nxt__prioritiesS
+                0x00208538                system__tasking__restricted__stagesB
+                0x0020853c                system__tasking__restricted__stagesS
+                0x00208540                system__tasking__restrictedS
+                0x00208544                nxt__light_sensorsB
+                0x00208548                nxt__light_sensorsS
+                0x0020854c                nxt__sensor_portsB
+                0x00208550                nxt__sensor_portsS
+                0x00208554                nxt__touch_sensorsB
+                0x00208558                nxt__touch_sensorsS
+                0x0020855c                nxt__last_chanceB
+                0x00208560                nxt__last_chanceS
+                0x00208564                nxt__audioB
+                0x00208568                nxt__audioS
+                0x0020856c                nxt__light_sensors__ctorsB
+                0x00208570                nxt__light_sensors__ctorsS
+                0x00208574                nxt__mallocB
+                0x00208578                nxt__mallocS
+ .rodata        0x0020857c        0x8 ./i-c.o
+                0x0020857c                interfaces__c__nul
+                0x00208580                interfaces__c__wide_nul
+ .rodata        0x00208584       0x30 ./system.o
+                0x00208584                system__system_name
+                0x00208585                system__default_bit_order
+                0x00208588                system__max_priority
+                0x0020858c                system__max_interrupt_priority
+                0x00208590                system__default_priority
+                0x00208594                system__null_address
+                0x00208598                system__backend_divide_checks
+                0x00208599                system__backend_overflow_checks
+                0x0020859a                system__command_line_args
+                0x0020859b                system__configurable_run_time
+                0x0020859c                system__denorm
+                0x0020859d                system__duration_32_bits
+                0x0020859e                system__exit_status_supported
+                0x0020859f                system__fractional_fixed_ops
+                0x002085a0                system__frontend_layout
+                0x002085a1                system__machine_overflows
+                0x002085a2                system__machine_rounds
+                0x002085a3                system__preallocated_stacks
+                0x002085a4                system__signed_zeros
+                0x002085a5                system__stack_check_default
+                0x002085a6                system__stack_check_probes
+                0x002085a7                system__stack_check_limits
+                0x002085a8                system__support_64_bit_divides
+                0x002085a9                system__support_aggregates
+                0x002085aa                system__support_composite_assign
+                0x002085ab                system__support_composite_compare
+                0x002085ac                system__support_long_shifts
+                0x002085ad                system__always_compatible_rep
+                0x002085ae                system__suppress_standard_library
+                0x002085af                system__use_ada_main_program_name
+                0x002085b0                system__zcx_by_default
+                0x002085b1                system__gcc_zcx_support
+ .rodata        0x002085b4        0x4 ./a-except.o
+                0x002085b4                ada__exceptions__null_id
+ .rodata        0x002085b8        0x8 ./s-maccod.o
+                0x002085b8                system__machine_code__no_input_operands
+                0x002085bc                system__machine_code__no_output_operands
+ .rodata        0x002085c0       0x30 ./s-parame.o
+                0x002085c0                system__parameters__unspecified_size
+                0x002085c4                system__parameters__dynamic
+                0x002085c8                system__parameters__sec_stack_ratio
+                0x002085cc                system__parameters__sec_stack_dynamic
+                0x002085d0                system__parameters__default_stack_size
+                0x002085d4                system__parameters__minimum_stack_size
+                0x002085d8                system__parameters__stack_grows_down
+                0x002085dc                system__parameters__c_malloc_linkname
+                0x002085ec                system__parameters__garbage_collected
+                0x002085ed                system__parameters__single_lock
+                0x002085ee                system__parameters__no_abort
+                0x002085ef                system__parameters__runtime_traces
+ .rodata        0x002085f0        0xd ./s-stoele.o
+ *fill*         0x002085fd        0x3 00
+ .rodata        0x00208600        0xc ./s-bbpara.o
+                0x00208600                system__bb__parameters__clock_frequency
+                0x00208604                system__bb__parameters__interrupt_levels
+                0x00208608                system__bb__parameters__multiprocessor
+ .rodata        0x0020860c        0x1 ./s-multip.o
+                0x0020860c                system__multiprocessors__not_a_specific_cpu
+ *fill*         0x0020860d        0x3 00
+ .rodata        0x00208610        0x4 ./s-bbthre.o
+                0x00208610                system__bb__threads__null_thread_id
+ .rodata        0x00208614        0xc ./s-bbinte.o
+                0x0020861c                system__bb__interrupts__no_interrupt
+ .rodata        0x00208620        0x8 ./s-bbtime.o
+                0x00208620                system__bb__time__tick
+                0x00208624                system__bb__time__ticks_per_second
+ .rodata        0x00208628       0x14 ./s-bbcppr.o
+                0x00208628                system__bb__cpu_primitives__flag_f
+                0x0020862c                system__bb__cpu_primitives__flag_i
+                0x00208630                system__bb__cpu_primitives__sp
+                0x00208634                system__bb__cpu_primitives__lr
+                0x00208638                system__bb__cpu_primitives__arg
+ .rodata        0x0020863c        0xc ./s-osinte.o
+                0x0020863c                system__os_interface__no_interrupt
+                0x00208640                system__os_interface__null_thread_id
+                0x00208644                system__os_interface__lwp_self
+ .rodata        0x00208648        0x1 ./s-mufalo.o
+                0x00208648                system__multiprocessors__fair_locks__multiprocessor
+ .rodata        0x00208649        0x1 ./s-tasinf.o
+                0x00208649                system__task_info__unspecified_task_info
+ *fill*         0x0020864a        0x6 00
+ .rodata        0x00208650       0x40 ./a-reatim.o
+                0x00208660                ada__real_time__time_first
+                0x00208664                ada__real_time__time_last
+                0x00208668                ada__real_time__time_span_first
+                0x00208670                ada__real_time__time_span_last
+                0x00208678                ada__real_time__time_span_zero
+                0x00208680                ada__real_time__time_span_unit
+                0x00208688                ada__real_time__tick
+ .rodata        0x00208690        0xd ./a-retide.o
+ *fill*         0x0020869d        0x3 00
+ .rodata        0x002086a0       0x24 ./s-taskin.o
+                0x002086b8                system__tasking__null_task
+                0x002086bc                system__tasking__library_task_level
+                0x002086c0                system__tasking__unspecified_priority
+ .rodata        0x002086c4       0x64 ./a-tags.o
+                0x002086f4                ada__tags__tag_errorE
+                0x00208708                ada__tags__R2s
+                0x0020870c                ada__tags__no_tag
+                0x00208710                ada__tags__dt_predef_prims_size
+                0x00208714                ada__tags__dt_offset_to_top_size
+                0x00208718                ada__tags__dt_typeinfo_ptr_size
+                0x0020871c                ada__tags__dt_offset_to_top_offset
+                0x00208720                ada__tags__dt_predef_prims_offset
+                0x00208724                ada__tags__max_predef_prims
+ .rodata        0x00208728        0xd ./s-secsta.o
+ *fill*         0x00208735        0x3 00
+ .rodata        0x00208738       0x14 ./s-taprob.o
+                0x00208748                system__tasking__protected_objects__null_po
+ .rodata        0x0020874c        0xe ./s-tposen.o
+                0x00208759                system__tasking__protected_objects__single_entry__multiprocessor
+ *fill*         0x0020875a        0x2 00
+ .rodata        0x0020875c        0x4 ./s-interr.o
+                0x0020875c                system__interrupts__default_interrupt_priority
+ .rodata        0x00208760        0xd ./a-interr.o
+ *fill*         0x0020876d        0x3 00
+ .rodata        0x00208770       0x28 ./s-tarest.o
+ .rodata        0x00208798       0x13 ./memory_compare.o
+ .rodata        0x002087ab       0x10 ./memory_copy.o
+ .rodata        0x002087bb        0xf ./memory_set.o
+ .rodata        0x002087ca        0xf ./nxt-malloc.o
+ *fill*         0x002087d9        0x3 00
+ .rodata        0x002087dc       0xe4 ./nxt-audio.o
+ .rodata        0x002088c0       0x38 ./nxt-last_chance.o
+ .rodata        0x002088f8      0x1dc ./nxt-fonts.o
+                0x002088f8                nxt__fonts__font5x8
+ .rodata        0x00208ad4        0x4 ./nxt-priorities.o
+                0x00208ad4                nxt__priorities__avr_io_pump_priority
+ .rodata        0x00208ad8        0x8 ./nxt-spi.o
+ .rodata        0x00208ae0       0x34 ./nxt-display.o
+ .rodata        0x00208b14       0x14 ./nxt-twi.o
+ .rodata        0x00208b28       0x50 ./nxt-avr_io.o
+                0x00208b28                nxt__avr_io__avr_string
+                0x00208b68                nxt__avr_io__null_outgoing_msg
+                0x00208b74                nxt__avr_io__avr_address
+ .rodata        0x00208b78       0x1c ./nxt-avr.o
+                0x00208b90                nxt__avr__button_inputs__no_valueXn
+ .rodata        0x00208b94       0x15 ./nxt-sensor_ports.o
+ *fill*         0x00208ba9        0x3 00
+ .rodata        0x00208bac       0x94 ./nxt-light_sensors.o
+                0x00208bac                nxt__light_sensors__light_sensorP
+                0x00208bb0                nxt__light_sensors__light_sensorY
+                0x00208bb4                nxt__light_sensors__light_sensorE8s
+                0x00208bd4                nxt__light_sensors__light_sensorB12s
+                0x00208bf0                nxt__light_sensors__light_sensorR10s
+                0x00208c00                nxt__light_sensors__light_sensorT
+ .rodata        0x00208c40       0x1c ./nxt-light_sensors-ctors.o
+ .rodata        0x00208c5c       0x68 ./nxt-touch_sensors.o
+                0x00208c5c                nxt__touch_sensors__touch_sensorP
+                0x00208c60                nxt__touch_sensors__touch_sensorY
+                0x00208c64                nxt__touch_sensors__touch_sensorE10s
+                0x00208c84                nxt__touch_sensors__touch_sensorB14s
+                0x00208ca0                nxt__touch_sensors__touch_sensorR12s
+                0x00208cb0                nxt__touch_sensors__touch_sensorT
+ .rodata        0x00208cc4       0x38 ./tasks.o
+                0x00208d00                . = ALIGN (0x10)
+ *fill*         0x00208cfc        0x4 00
+
+.vfp11_veneer   0x00200040        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00200040        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.ARM.extab      0x00208d00        0x0
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x00208d00        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .ARM.extab     0x00208d00        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .ARM.extab     0x00208d00        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                0x00208d00                PROVIDE (__exidx_start, .)
+
+.ARM.exidx      0x00208d00       0x20
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x00208d00        0x8 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                                 0x10 (size before relaxing)
+ .ARM.exidx     0x00208d08        0x8 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00208d10       0x10 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                  0x8 (size before relaxing)
+                0x00208d20                PROVIDE (__exidx_end, .)
+
+.ram_text       0x00208d20        0x0
+                0x00208d20                . = ALIGN (0x10)
+ *.oram(*.text *.text.* *.glue*)
+                0x00208d20                . = ALIGN (0x10)
+ *.oram(*.rodata *.rodata.*)
+                0x00208d20                . = ALIGN (0x10)
+                0x00208d20                __ramtext_ram_start__ = ADDR (.ram_text)
+                0x00208d20                __ramtext_ram_end__ = (ADDR (.ram_text) + SIZEOF (.ram_text))
+                0x00208d20                __ramtext_load_start__ = LOADADDR (.ram_text)
+                0x00208d20                __ramtext_load_end__ = (__ramtext_load_start__ + SIZEOF (.ram_text))
+
+.data           0x00208d20      0x130
+ *(*.data *.data.*)
+ .data          0x00208d20        0x2 b~task1.o
+                0x00208d20                ada_main_E
+ .data          0x00208d22        0x0 vectors.o
+ .data          0x00208d22        0x0 init.o
+ .data          0x00208d22        0x0 main.o
+ .data          0x00208d22        0x0 irq.o
+ .data          0x00208d22        0x0 context_switch-bb-arm.o
+ .data          0x00208d22        0x2 ./ada.o
+                0x00208d22                ada_E
+ .data          0x00208d24        0x2 ./interfac.o
+                0x00208d24                interfaces_E
+ .data          0x00208d26        0x2 ./i-c.o
+                0x00208d26                interfaces__c_E
+ .data          0x00208d28        0x2 ./system.o
+                0x00208d28                system_E
+ .data          0x00208d2a        0x2 ./a-except.o
+                0x00208d2a                ada__exceptions_E
+ .data          0x00208d2c        0x2 ./s-bb.o
+                0x00208d2c                system__bb_E
+ .data          0x00208d2e        0x2 ./s-maccod.o
+                0x00208d2e                system__machine_code_E
+ .data          0x00208d30        0x2 ./s-parame.o
+                0x00208d30                system__parameters_E
+ .data          0x00208d32        0x2 ./s-stoele.o
+                0x00208d32                system__storage_elements_E
+ .data          0x00208d34        0x2 ./s-bbpara.o
+                0x00208d34                system__bb__parameters_E
+ .data          0x00208d36        0x2 ./s-bbpere.o
+                0x00208d36                system__bb__peripherals__registers_E
+ .data          0x00208d38        0x2 ./s-multip.o
+                0x00208d38                system__multiprocessors_E
+ .data          0x00208d3a        0x2 ./s-bcprmu.o
+                0x00208d3a                system__bb__cpu_primitives__multiprocessors_E
+ .data          0x00208d3c        0x2 ./s-bbperi.o
+                0x00208d3c                system__bb__peripherals_E
+ *fill*         0x00208d3e        0x2 00
+ .data          0x00208d40       0x14 ./s-bbthqu.o
+                0x00208d40                first_thread_table
+                0x00208d44                __gnat_running_thread_table
+                0x00208d48                system__bb__threads__queues__alarms_table
+                0x00208d4c                system__bb__threads__queues_E
+                0x00208d50                system__bb__threads__queues__global_list
+ .data          0x00208d54        0x4 ./s-bbthre.o
+                0x00208d54                system__bb__threads__initialized
+                0x00208d56                system__bb__threads_E
+ .data          0x00208d58        0x8 ./s-bbinte.o
+                0x00208d58                system__bb__interrupts__interrupt_being_handled
+                0x00208d5c                system__bb__interrupts_E
+ .data          0x00208d60        0x2 ./s-bbtime.o
+                0x00208d60                system__bb__time_E
+ .data          0x00208d62        0x2 ./s-bbcppr.o
+                0x00208d62                system__bb__cpu_primitives_E
+ .data          0x00208d64        0x8 ./s-bbprot.o
+                0x00208d64                system__bb__protection_E
+                0x00208d68                system__bb__protection__wakeup_served_entry_callback
+ .data          0x00208d6c        0x4 ./s-musplo.o
+                0x00208d6c                system__multiprocessors__spin_locks_E
+                0x00208d6e                system__multiprocessors__spin_locks__unlocked
+ .data          0x00208d70        0x2 ./s-osinte.o
+                0x00208d70                system__os_interface_E
+ .data          0x00208d72        0x2 ./s-mufalo.o
+                0x00208d72                system__multiprocessors__fair_locks_E
+ .data          0x00208d74        0x2 ./s-tasinf.o
+                0x00208d74                system__task_info_E
+ .data          0x00208d76        0x2 ./s-taspri.o
+                0x00208d76                system__task_primitives_E
+ .data          0x00208d78        0xc ./s-tasdeb.o
+                0x00208d78                system__tasking__debug__last_task
+                0x00208d7c                system__tasking__debug__first_task
+                0x00208d80                system__tasking__debug_E
+ .data          0x00208d84        0x2 ./s-taprop.o
+                0x00208d84                system__task_primitives__operations_E
+ .data          0x00208d86        0x2 ./s-unstyp.o
+                0x00208d86                system__unsigned_types_E
+ .data          0x00208d88        0x2 ./a-reatim.o
+                0x00208d88                ada__real_time_E
+ .data          0x00208d8a        0x2 ./a-retide.o
+                0x00208d8a                ada__real_time__delays_E
+ .data          0x00208d8c       0x18 ./s-taskin.o
+                0x00208d90                __gl_main_cpu
+                0x00208d94                __gl_main_priority
+                0x00208d98                system__tasking__fall_back_handler
+                0x00208da0                system__tasking_E
+ .data          0x00208da4       0x1c ./a-tags.o
+                0x00208da4                ada__tags_E
+                0x00208da8                ada__tags__tag_error
+ .data          0x00208dc0        0x2 ./s-secsta.o
+                0x00208dc0                system__secondary_stack_E
+ .data          0x00208dc2        0x2 ./s-taprob.o
+                0x00208dc2                system__tasking__protected_objects_E
+ .data          0x00208dc4        0x2 ./s-tpobmu.o
+                0x00208dc4                system__tasking__protected_objects__multiprocessors_E
+ .data          0x00208dc6        0x2 ./s-tposen.o
+                0x00208dc6                system__tasking__protected_objects__single_entry_E
+ .data          0x00208dc8        0x2 ./s-interr.o
+                0x00208dc8                system__interrupts_E
+ .data          0x00208dca        0x2 ./a-interr.o
+                0x00208dca                ada__interrupts_E
+ .data          0x00208dcc        0x2 ./s-tasres.o
+                0x00208dcc                system__tasking__restricted_E
+ .data          0x00208dce        0x2 ./s-tarest.o
+                0x00208dce                system__tasking__restricted__stages_E
+ .data          0x00208dd0        0x2 ./memory_compare.o
+                0x00208dd0                memory_compare_E
+ .data          0x00208dd2        0x2 ./memory_copy.o
+                0x00208dd2                memory_copy_E
+ .data          0x00208dd4        0x2 ./memory_set.o
+                0x00208dd4                memory_set_E
+ .data          0x00208dd6        0x2 ./nxt.o
+                0x00208dd6                nxt_E
+ .data          0x00208dd8        0x2 ./nxt-malloc.o
+                0x00208dd8                nxt__malloc_E
+ .data          0x00208dda        0x0 ./nxt-registers.o
+ .data          0x00208dda        0x2 ./nxt-audio.o
+                0x00208dda                nxt__audio_E
+ .data          0x00208ddc        0x2 ./nxt-buffers.o
+                0x00208ddc                nxt__buffers_E
+ .data          0x00208dde        0x2 ./nxt-filtering.o
+                0x00208dde                nxt__filtering_E
+ .data          0x00208de0        0x2 ./nxt-last_chance.o
+                0x00208de0                nxt__last_chance_E
+ .data          0x00208de2        0x2 ./nxt-fonts.o
+                0x00208de2                nxt__fonts_E
+ .data          0x00208de4        0x2 ./nxt-priorities.o
+                0x00208de4                nxt__priorities_E
+ *fill*         0x00208de6        0x2 00
+ .data          0x00208de8        0xc ./nxt-spi.o
+                0x00208df0                nxt__spi_E
+ .data          0x00208df4        0x2 ./nxt-lcd.o
+                0x00208df4                nxt__lcd_E
+ .data          0x00208df6        0x2 ./nxt-display.o
+                0x00208df6                nxt__display_E
+ .data          0x00208df8        0xc ./nxt-twi.o
+                0x00208e00                nxt__twi_E
+ .data          0x00208e04        0xc ./nxt-avr_io.o
+                0x00208e04                nxt__avr_io__current_power_settings
+                0x00208e08                nxt__avr_io__current_output_modes
+                0x00208e0c                nxt__avr_io__current_input_power
+                0x00208e0e                nxt__avr_io_E
+ .data          0x00208e10        0x4 ./nxt-avr.o
+                0x00208e12                nxt__avr_E
+ .data          0x00208e14        0x2 ./nxt-sensor_ports.o
+                0x00208e14                nxt__sensor_ports_E
+ .data          0x00208e16        0x2 ./nxt-light_sensors.o
+                0x00208e16                nxt__light_sensors_E
+ .data          0x00208e18        0x2 ./nxt-light_sensors-ctors.o
+                0x00208e18                nxt__light_sensors__ctors_E
+ .data          0x00208e1a        0x2 ./nxt-touch_sensors.o
+                0x00208e1a                nxt__touch_sensors_E
+ .data          0x00208e1c       0x2c ./tasks.o
+                0x00208e1c                tasks__touchonevent
+                0x00208e20                tasks__touchoffevent
+                0x00208e24                tasks__eventTA
+                0x00208e2c                tasks__motortaskTKE
+                0x00208e2d                tasks__eventdispatchertaskTKE
+                0x00208e2e                tasks__helloworldtaskTKE
+                0x00208e30                tasks__J20s
+                0x00208e34                tasks__J32s
+                0x00208e38                tasks__J44s
+                0x00208e3a                tasks_E
+                0x00208e3c                tasks__motortaskTKZ
+                0x00208e40                tasks__eventdispatchertaskTKZ
+                0x00208e44                tasks__helloworldtaskTKZ
+ .data          0x00208e48        0x0 ./task1.o
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .data          0x00208e48        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+                0x00208e50                . = ALIGN (0x10)
+ *fill*         0x00208e48        0x8 00
+                0x00208d20                __data_ram_start__ = ADDR (.data)
+                0x00208e50                __data_ram_end__ = (ADDR (.data) + SIZEOF (.data))
+                0x00208d20                __data_load_start__ = LOADADDR (.data)
+                0x00208e50                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+
+.stack          0x00208e50      0x480
+                0x00208ed0                . = (. + 0x80)
+ *fill*         0x00208e50       0x80 00
+                0x00208ed0                . = ALIGN (0x10)
+                0x00208ed0                __irq_stack__ = .
+                0x00208ed0                __system_stack_bottom__ = .
+                0x00208ed0                __stack_bottom = .
+                0x002092d0                . = (. + 0x400)
+ *fill*         0x00208ed0      0x400 00
+                0x002092d0                . = ALIGN (0x10)
+                0x002092d0                __system_stack__ = .
+                0x002092d0                __stack_top = .
+                0x002092d0                __system_stack_top__ = .
+                0x00208e50                __stack_start__ = ADDR (.stack)
+                0x002092d0                __stack_end__ = (ADDR (.stack) + SIZEOF (.stack))
+
+.bss            0x002092d0     0x5040
+ *(*.bss *.bss.*)
+ .bss           0x002092d0        0x0 b~task1.o
+ .bss           0x002092d0        0x0 vectors.o
+ .bss           0x002092d0        0x0 init.o
+ .bss           0x002092d0        0x0 main.o
+ .bss           0x002092d0        0x0 irq.o
+ .bss           0x002092d0        0x0 context_switch-bb-arm.o
+ .bss           0x002092d0        0x0 ./ada.o
+ .bss           0x002092d0        0x0 ./interfac.o
+ .bss           0x002092d0        0x0 ./i-c.o
+ .bss           0x002092d0        0x0 ./system.o
+ .bss           0x002092d0        0x0 ./a-except.o
+ .bss           0x002092d0        0x0 ./s-bb.o
+ .bss           0x002092d0        0x0 ./s-maccod.o
+ .bss           0x002092d0        0x0 ./s-parame.o
+ .bss           0x002092d0        0x0 ./s-stoele.o
+ .bss           0x002092d0        0x0 ./s-bbpara.o
+ .bss           0x002092d0        0x0 ./s-bbpere.o
+ .bss           0x002092d0        0x0 ./s-multip.o
+ .bss           0x002092d0        0x0 ./s-bcprmu.o
+ .bss           0x002092d0        0x0 ./s-bbperi.o
+ .bss           0x002092d0        0x0 ./s-bbthqu.o
+ .bss           0x002092d0      0x408 ./s-bbthre.o
+                0x002092d0                system__bb__threads__slave_stacks
+                0x002096d0                slave_stack_table
+ .bss           0x002096d8       0x80 ./s-bbinte.o
+                0x002096d8                system__bb__interrupts__interrupt_handlers
+ .bss           0x00209758        0x4 ./s-bbtime.o
+ .bss           0x0020975c        0x0 ./s-bbcppr.o
+ .bss           0x0020975c        0x0 ./s-bbprot.o
+ .bss           0x0020975c        0x0 ./s-musplo.o
+ .bss           0x0020975c        0x0 ./s-osinte.o
+ .bss           0x0020975c        0x0 ./s-mufalo.o
+ .bss           0x0020975c        0x0 ./s-tasinf.o
+ .bss           0x0020975c        0x0 ./s-taspri.o
+ .bss           0x0020975c        0x0 ./s-tasdeb.o
+ .bss           0x0020975c        0x0 ./s-taprop.o
+ .bss           0x0020975c        0x0 ./s-unstyp.o
+ *fill*         0x0020975c        0x4 00
+ .bss           0x00209760        0x8 ./a-reatim.o
+                0x00209760                ada__real_time__time_unit
+ .bss           0x00209768        0x0 ./a-retide.o
+ .bss           0x00209768      0x2b0 ./s-taskin.o
+                0x00209a10                tasking_error
+ .bss           0x00209a18        0x0 ./a-tags.o
+ .bss           0x00209a18        0x4 ./s-secsta.o
+                0x00209a18                system__secondary_stack__ss_pool
+ .bss           0x00209a1c        0x0 ./s-taprob.o
+ .bss           0x00209a1c        0x8 ./s-tpobmu.o
+ .bss           0x00209a24        0x0 ./s-tposen.o
+ .bss           0x00209a24      0x108 ./s-interr.o
+                0x00209a24                system__interrupts__user_handlers
+ .bss           0x00209b2c        0x0 ./a-interr.o
+ .bss           0x00209b2c        0x0 ./s-tasres.o
+ .bss           0x00209b2c        0x0 ./s-tarest.o
+ .bss           0x00209b2c        0x0 ./memory_compare.o
+ .bss           0x00209b2c        0x0 ./memory_copy.o
+ .bss           0x00209b2c        0x0 ./memory_set.o
+ .bss           0x00209b2c        0x0 ./nxt.o
+ .bss           0x00209b2c        0x0 ./nxt-malloc.o
+ .bss           0x00209b2c        0x0 ./nxt-registers.o
+ .bss           0x00209b2c      0x334 ./nxt-audio.o
+ .bss           0x00209e60        0x0 ./nxt-buffers.o
+ .bss           0x00209e60        0x0 ./nxt-filtering.o
+ .bss           0x00209e60        0x0 ./nxt-last_chance.o
+ .bss           0x00209e60        0x0 ./nxt-fonts.o
+ .bss           0x00209e60        0x0 ./nxt-priorities.o
+ .bss           0x00209e60       0x24 ./nxt-spi.o
+ .bss           0x00209e84        0x0 ./nxt-lcd.o
+ .bss           0x00209e84       0x88 ./nxt-display.o
+ .bss           0x00209f0c       0x2c ./nxt-twi.o
+ .bss           0x00209f38        0x0 ./nxt-avr_io.o
+ .bss           0x00209f38     0x1130 ./nxt-avr.o
+                0x00209f94                nxt__avr__button
+                0x00209f98                nxt__avr__raw_input
+                0x00209fa0                nxt__avr__raw_battery
+ .bss           0x0020b068       0x40 ./nxt-sensor_ports.o
+                0x0020b068                nxt__sensor_ports__sensor_pins
+ .bss           0x0020b0a8        0x0 ./nxt-light_sensors.o
+ .bss           0x0020b0a8        0x0 ./nxt-light_sensors-ctors.o
+ .bss           0x0020b0a8        0x0 ./nxt-touch_sensors.o
+ .bss           0x0020b0a8     0x325c ./tasks.o
+                0x0020b0a8                tasks__photodetector
+                0x0020b0bc                tasks__event
+                0x0020b0e4                tasks__bumper
+                0x0020b0ec                tasks___chain
+                0x0020b0f0                tasks__motortask
+                0x0020c1a0                tasks__eventdispatchertask
+                0x0020d250                tasks__helloworldtask
+                0x0020e300                tasks__R48s
+ .bss           0x0020e304        0x0 ./task1.o
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .bss           0x0020e304        0x0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+                0x0020e310                . = ALIGN (0x10)
+ *fill*         0x0020e304        0xc 00
+                0x0020e310                __bss_end__ = .
+                0x002092d0                __bss_start__ = ADDR (.bss)
+                0x0020e310                __bss_end__ = (ADDR (.bss) + SIZEOF (.bss))
+                0x0020e310                __free_ram_start__ = __bss_end__
+                0x00210000                __free_ram_end__ = (RAM_BASE + RAM_SIZE)
+                0x0020e310                REPORTME_RAM_TOP = __bss_end__
+                0x00001cf0                REPORTME_FREE_RAM_SIZE = (__free_ram_end__ - __free_ram_start__)
+OUTPUT(task1 elf32-littlearm)
+
+.debug_abbrev   0x00000000     0x55d6
+ .debug_abbrev  0x00000000       0xc1 b~task1.o
+ .debug_abbrev  0x000000c1       0x14 vectors.o
+ .debug_abbrev  0x000000d5       0x14 init.o
+ .debug_abbrev  0x000000e9       0x90 main.o
+ .debug_abbrev  0x00000179       0x14 irq.o
+ .debug_abbrev  0x0000018d       0x14 context_switch-bb-arm.o
+ .debug_abbrev  0x000001a1        0x1 ./ada.o
+ .debug_abbrev  0x000001a2       0x2a ./interfac.o
+ .debug_abbrev  0x000001cc       0x5e ./i-c.o
+ .debug_abbrev  0x0000022a       0x69 ./system.o
+ .debug_abbrev  0x00000293       0xce ./a-except.o
+ .debug_abbrev  0x00000361        0x1 ./s-bb.o
+ .debug_abbrev  0x00000362       0x51 ./s-maccod.o
+ .debug_abbrev  0x000003b3       0xba ./s-parame.o
+ .debug_abbrev  0x0000046d       0x88 ./s-stoele.o
+ .debug_abbrev  0x000004f5       0x44 ./s-bbpara.o
+ .debug_abbrev  0x00000539       0xe8 ./s-bbpere.o
+ .debug_abbrev  0x00000621       0x59 ./s-multip.o
+ .debug_abbrev  0x0000067a       0x7f ./s-bcprmu.o
+ .debug_abbrev  0x000006f9       0xac ./s-bbperi.o
+ .debug_abbrev  0x000007a5      0x1f8 ./s-bbthqu.o
+ .debug_abbrev  0x0000099d      0x1ec ./s-bbthre.o
+ .debug_abbrev  0x00000b89      0x291 ./s-bbinte.o
+ .debug_abbrev  0x00000e1a      0x20c ./s-bbtime.o
+ .debug_abbrev  0x00001026      0x177 ./s-bbcppr.o
+ .debug_abbrev  0x0000119d       0x78 ./s-bbprot.o
+ .debug_abbrev  0x00001215       0xc0 ./s-musplo.o
+ .debug_abbrev  0x000012d5       0xdb ./s-osinte.o
+ .debug_abbrev  0x000013b0      0x171 ./s-mufalo.o
+ .debug_abbrev  0x00001521       0x51 ./s-tasinf.o
+ .debug_abbrev  0x00001572       0x2a ./s-taspri.o
+ .debug_abbrev  0x0000159c      0x176 ./s-tasdeb.o
+ .debug_abbrev  0x00001712      0x257 ./s-taprop.o
+ .debug_abbrev  0x00001969       0x1d ./s-unstyp.o
+ .debug_abbrev  0x00001986      0x157 ./a-reatim.o
+ .debug_abbrev  0x00001add       0x97 ./a-retide.o
+ .debug_abbrev  0x00001b74      0x389 ./s-taskin.o
+ .debug_abbrev  0x00001efd      0x201 ./a-tags.o
+ .debug_abbrev  0x000020fe      0x1c1 ./s-secsta.o
+ .debug_abbrev  0x000022bf      0x1c8 ./s-taprob.o
+ .debug_abbrev  0x00002487      0x1f6 ./s-tpobmu.o
+ .debug_abbrev  0x0000267d      0x292 ./s-tposen.o
+ .debug_abbrev  0x0000290f      0x1c1 ./s-interr.o
+ .debug_abbrev  0x00002ad0       0xd4 ./a-interr.o
+ .debug_abbrev  0x00002ba4        0x1 ./s-tasres.o
+ .debug_abbrev  0x00002ba5      0x2d5 ./s-tarest.o
+ .debug_abbrev  0x00002e7a      0x15c ./memory_compare.o
+ .debug_abbrev  0x00002fd6      0x176 ./memory_copy.o
+ .debug_abbrev  0x0000314c      0x17a ./memory_set.o
+ .debug_abbrev  0x000032c6       0x1f ./nxt.o
+ .debug_abbrev  0x000032e5       0x58 ./nxt-malloc.o
+ .debug_abbrev  0x0000333d       0x3b ./nxt-registers.o
+ .debug_abbrev  0x00003378      0x4ae ./nxt-audio.o
+ .debug_abbrev  0x00003826        0x1 ./nxt-buffers.o
+ .debug_abbrev  0x00003827        0x1 ./nxt-filtering.o
+ .debug_abbrev  0x00003828       0x67 ./nxt-last_chance.o
+ .debug_abbrev  0x0000388f       0xba ./nxt-fonts.o
+ .debug_abbrev  0x00003949       0x42 ./nxt-priorities.o
+ .debug_abbrev  0x0000398b      0x2c9 ./nxt-spi.o
+ .debug_abbrev  0x00003c54      0x1cd ./nxt-lcd.o
+ .debug_abbrev  0x00003e21      0x2d8 ./nxt-display.o
+ .debug_abbrev  0x000040f9      0x2e9 ./nxt-twi.o
+ .debug_abbrev  0x000043e2      0x1d2 ./nxt-avr_io.o
+ .debug_abbrev  0x000045b4      0x33e ./nxt-avr.o
+ .debug_abbrev  0x000048f2      0x1dd ./nxt-sensor_ports.o
+ .debug_abbrev  0x00004acf      0x17e ./nxt-light_sensors.o
+ .debug_abbrev  0x00004c4d      0x157 ./nxt-light_sensors-ctors.o
+ .debug_abbrev  0x00004da4      0x11f ./nxt-touch_sensors.o
+ .debug_abbrev  0x00004ec3      0x343 ./tasks.o
+ .debug_abbrev  0x00005206       0x35 ./task1.o
+ .debug_abbrev  0x0000523b       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000524f       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00005263       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00005277       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .debug_abbrev  0x0000528b       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x0000529f       0x6e /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_abbrev  0x0000530d      0x162 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x0000546f      0x153 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x000055c2       0x14 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+
+.debug_info     0x00000000    0x11f48
+ .debug_info    0x00000000      0xba8 b~task1.o
+ .debug_info    0x00000ba8       0xbf vectors.o
+ .debug_info    0x00000c67       0xbc init.o
+ .debug_info    0x00000d23       0xbe main.o
+ .debug_info    0x00000de1       0xbb irq.o
+ .debug_info    0x00000e9c       0xcd context_switch-bb-arm.o
+ .debug_info    0x00000f69        0x0 ./ada.o
+ .debug_info    0x00000f69       0x73 ./interfac.o
+ .debug_info    0x00000fdc       0xdf ./i-c.o
+ .debug_info    0x000010bb      0x2db ./system.o
+ .debug_info    0x00001396      0x11f ./a-except.o
+ .debug_info    0x000014b5        0x0 ./s-bb.o
+ .debug_info    0x000014b5       0x9c ./s-maccod.o
+ .debug_info    0x00001551      0x1b4 ./s-parame.o
+ .debug_info    0x00001705      0x1cf ./s-stoele.o
+ .debug_info    0x000018d4       0x7f ./s-bbpara.o
+ .debug_info    0x00001953      0xde8 ./s-bbpere.o
+ .debug_info    0x0000273b       0x6e ./s-multip.o
+ .debug_info    0x000027a9       0xae ./s-bcprmu.o
+ .debug_info    0x00002857       0xf2 ./s-bbperi.o
+ .debug_info    0x00002949      0x550 ./s-bbthqu.o
+ .debug_info    0x00002e99      0x46a ./s-bbthre.o
+ .debug_info    0x00003303      0x657 ./s-bbinte.o
+ .debug_info    0x0000395a      0x3a5 ./s-bbtime.o
+ .debug_info    0x00003cff      0x2b0 ./s-bbcppr.o
+ .debug_info    0x00003faf       0xaf ./s-bbprot.o
+ .debug_info    0x0000405e      0x13d ./s-musplo.o
+ .debug_info    0x0000419b      0x213 ./s-osinte.o
+ .debug_info    0x000043ae      0x29d ./s-mufalo.o
+ .debug_info    0x0000464b       0x64 ./s-tasinf.o
+ .debug_info    0x000046af       0x4d ./s-taspri.o
+ .debug_info    0x000046fc      0x4e1 ./s-tasdeb.o
+ .debug_info    0x00004bdd      0x80e ./s-taprop.o
+ .debug_info    0x000053eb       0x76 ./s-unstyp.o
+ .debug_info    0x00005461      0x631 ./a-reatim.o
+ .debug_info    0x00005a92       0xf1 ./a-retide.o
+ .debug_info    0x00005b83      0x9ff ./s-taskin.o
+ .debug_info    0x00006582      0x594 ./a-tags.o
+ .debug_info    0x00006b16      0x29b ./s-secsta.o
+ .debug_info    0x00006db1      0x684 ./s-taprob.o
+ .debug_info    0x00007435      0x63b ./s-tpobmu.o
+ .debug_info    0x00007a70      0x969 ./s-tposen.o
+ .debug_info    0x000083d9      0x2e6 ./s-interr.o
+ .debug_info    0x000086bf      0x1e5 ./a-interr.o
+ .debug_info    0x000088a4        0x0 ./s-tasres.o
+ .debug_info    0x000088a4      0x8bf ./s-tarest.o
+ .debug_info    0x00009163      0x201 ./memory_compare.o
+ .debug_info    0x00009364      0x2f9 ./memory_copy.o
+ .debug_info    0x0000965d      0x1f7 ./memory_set.o
+ .debug_info    0x00009854       0x2a ./nxt.o
+ .debug_info    0x0000987e       0x6f ./nxt-malloc.o
+ .debug_info    0x000098ed       0x43 ./nxt-registers.o
+ .debug_info    0x00009930     0x186f ./nxt-audio.o
+ .debug_info    0x0000b19f        0x0 ./nxt-buffers.o
+ .debug_info    0x0000b19f        0x0 ./nxt-filtering.o
+ .debug_info    0x0000b19f       0x9f ./nxt-last_chance.o
+ .debug_info    0x0000b23e       0xfe ./nxt-fonts.o
+ .debug_info    0x0000b33c       0x4b ./nxt-priorities.o
+ .debug_info    0x0000b387      0xbcf ./nxt-spi.o
+ .debug_info    0x0000bf56      0x3a5 ./nxt-lcd.o
+ .debug_info    0x0000c2fb      0x7df ./nxt-display.o
+ .debug_info    0x0000cada      0xd48 ./nxt-twi.o
+ .debug_info    0x0000d822      0x83c ./nxt-avr_io.o
+ .debug_info    0x0000e05e     0x10b5 ./nxt-avr.o
+ .debug_info    0x0000f113      0x474 ./nxt-sensor_ports.o
+ .debug_info    0x0000f587      0x4bb ./nxt-light_sensors.o
+ .debug_info    0x0000fa42      0x25e ./nxt-light_sensors-ctors.o
+ .debug_info    0x0000fca0      0x215 ./nxt-touch_sensors.o
+ .debug_info    0x0000feb5      0xf33 ./tasks.o
+ .debug_info    0x00010de8       0x45 ./task1.o
+ .debug_info    0x00010e2d       0xc9 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_info    0x00010ef6       0xc9 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_info    0x00010fbf       0xc9 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00011088       0xc3 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .debug_info    0x0001114b       0xc3 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x0001120e       0xf0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_info    0x000112fe      0x5e1 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_info    0x000118df      0x5a0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .debug_info    0x00011e7f       0xc9 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+
+.debug_line     0x00000000     0x4d9c
+ .debug_line    0x00000000       0xbf b~task1.o
+ .debug_line    0x000000bf       0x7f vectors.o
+ .debug_line    0x0000013e       0xf2 init.o
+ .debug_line    0x00000230       0x8a main.o
+ .debug_line    0x000002ba       0x84 irq.o
+ .debug_line    0x0000033e       0x8e context_switch-bb-arm.o
+ .debug_line    0x000003cc        0x0 ./ada.o
+ .debug_line    0x000003cc       0x1d ./interfac.o
+ .debug_line    0x000003e9       0x84 ./i-c.o
+ .debug_line    0x0000046d       0x87 ./system.o
+ .debug_line    0x000004f4       0xb7 ./a-except.o
+ .debug_line    0x000005ab        0x0 ./s-bb.o
+ .debug_line    0x000005ab       0x89 ./s-maccod.o
+ .debug_line    0x00000634       0xaa ./s-parame.o
+ .debug_line    0x000006de       0xc0 ./s-stoele.o
+ .debug_line    0x0000079e       0x89 ./s-bbpara.o
+ .debug_line    0x00000827       0x88 ./s-bbpere.o
+ .debug_line    0x000008af       0xaa ./s-multip.o
+ .debug_line    0x00000959       0xb0 ./s-bcprmu.o
+ .debug_line    0x00000a09       0xb2 ./s-bbperi.o
+ .debug_line    0x00000abb      0x167 ./s-bbthqu.o
+ .debug_line    0x00000c22      0x16b ./s-bbthre.o
+ .debug_line    0x00000d8d      0x1c2 ./s-bbinte.o
+ .debug_line    0x00000f4f      0x172 ./s-bbtime.o
+ .debug_line    0x000010c1       0xc9 ./s-bbcppr.o
+ .debug_line    0x0000118a       0xd0 ./s-bbprot.o
+ .debug_line    0x0000125a       0xb0 ./s-musplo.o
+ .debug_line    0x0000130a       0xb7 ./s-osinte.o
+ .debug_line    0x000013c1       0xdf ./s-mufalo.o
+ .debug_line    0x000014a0       0x89 ./s-tasinf.o
+ .debug_line    0x00001529       0x1d ./s-taspri.o
+ .debug_line    0x00001546      0x10c ./s-tasdeb.o
+ .debug_line    0x00001652      0x15b ./s-taprop.o
+ .debug_line    0x000017ad       0x1d ./s-unstyp.o
+ .debug_line    0x000017ca      0x1fe ./a-reatim.o
+ .debug_line    0x000019c8       0xb1 ./a-retide.o
+ .debug_line    0x00001a79      0x1aa ./s-taskin.o
+ .debug_line    0x00001c23       0xe2 ./a-tags.o
+ .debug_line    0x00001d05       0xc1 ./s-secsta.o
+ .debug_line    0x00001dc6      0x14d ./s-taprob.o
+ .debug_line    0x00001f13      0x15f ./s-tpobmu.o
+ .debug_line    0x00002072      0x197 ./s-tposen.o
+ .debug_line    0x00002209       0xf0 ./s-interr.o
+ .debug_line    0x000022f9       0xb9 ./a-interr.o
+ .debug_line    0x000023b2        0x0 ./s-tasres.o
+ .debug_line    0x000023b2      0x175 ./s-tarest.o
+ .debug_line    0x00002527      0x102 ./memory_compare.o
+ .debug_line    0x00002629      0x164 ./memory_copy.o
+ .debug_line    0x0000278d       0xf5 ./memory_set.o
+ .debug_line    0x00002882       0x1d ./nxt.o
+ .debug_line    0x0000289f       0xaa ./nxt-malloc.o
+ .debug_line    0x00002949       0x1d ./nxt-registers.o
+ .debug_line    0x00002966      0x4d9 ./nxt-audio.o
+ .debug_line    0x00002e3f        0x0 ./nxt-buffers.o
+ .debug_line    0x00002e3f        0x0 ./nxt-filtering.o
+ .debug_line    0x00002e3f       0xd8 ./nxt-last_chance.o
+ .debug_line    0x00002f17       0x87 ./nxt-fonts.o
+ .debug_line    0x00002f9e       0x8c ./nxt-priorities.o
+ .debug_line    0x0000302a      0x26a ./nxt-spi.o
+ .debug_line    0x00003294       0xe2 ./nxt-lcd.o
+ .debug_line    0x00003376      0x2db ./nxt-display.o
+ .debug_line    0x00003651      0x274 ./nxt-twi.o
+ .debug_line    0x000038c5      0x232 ./nxt-avr_io.o
+ .debug_line    0x00003af7      0x351 ./nxt-avr.o
+ .debug_line    0x00003e48      0x1c2 ./nxt-sensor_ports.o
+ .debug_line    0x0000400a      0x199 ./nxt-light_sensors.o
+ .debug_line    0x000041a3      0x1c5 ./nxt-light_sensors-ctors.o
+ .debug_line    0x00004368      0x15f ./nxt-touch_sensors.o
+ .debug_line    0x000044c7      0x30b ./tasks.o
+ .debug_line    0x000047d2       0x39 ./task1.o
+ .debug_line    0x0000480b       0xa2 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_line    0x000048ad       0xae /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_line    0x0000495b       0x79 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000049d4       0x7a /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .debug_line    0x00004a4e       0x7c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x00004aca       0x79 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_line    0x00004b43       0xf0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_line    0x00004c33       0xe3 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .debug_line    0x00004d16       0x86 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+
+.debug_loc      0x00000000     0x62d7
+ .debug_loc     0x00000000       0x40 b~task1.o
+ .debug_loc     0x00000040       0x53 main.o
+ .debug_loc     0x00000093       0x33 ./a-except.o
+ .debug_loc     0x000000c6       0x13 ./s-parame.o
+ .debug_loc     0x000000d9       0xa8 ./s-stoele.o
+ .debug_loc     0x00000181       0x26 ./s-bbperi.o
+ .debug_loc     0x000001a7      0x401 ./s-bbthqu.o
+ .debug_loc     0x000005a8      0x2df ./s-bbthre.o
+ .debug_loc     0x00000887      0x140 ./s-bbinte.o
+ .debug_loc     0x000009c7      0x102 ./s-bbtime.o
+ .debug_loc     0x00000ac9       0x6d ./s-bbcppr.o
+ .debug_loc     0x00000b36       0x60 ./s-bbprot.o
+ .debug_loc     0x00000b96       0x26 ./s-musplo.o
+ .debug_loc     0x00000bbc      0x1e4 ./s-mufalo.o
+ .debug_loc     0x00000da0      0x360 ./s-taprop.o
+ .debug_loc     0x00001100      0x6f3 ./a-reatim.o
+ .debug_loc     0x000017f3       0x51 ./a-retide.o
+ .debug_loc     0x00001844      0x277 ./s-taskin.o
+ .debug_loc     0x00001abb      0x2fa ./a-tags.o
+ .debug_loc     0x00001db5      0x15a ./s-secsta.o
+ .debug_loc     0x00001f0f      0x149 ./s-taprob.o
+ .debug_loc     0x00002058       0xe5 ./s-tpobmu.o
+ .debug_loc     0x0000213d      0x2a3 ./s-tposen.o
+ .debug_loc     0x000023e0      0x11b ./s-interr.o
+ .debug_loc     0x000024fb      0x15e ./a-interr.o
+ .debug_loc     0x00002659      0x257 ./s-tarest.o
+ .debug_loc     0x000028b0      0x116 ./memory_compare.o
+ .debug_loc     0x000029c6      0x223 ./memory_copy.o
+ .debug_loc     0x00002be9       0xc6 ./memory_set.o
+ .debug_loc     0x00002caf       0x33 ./nxt-malloc.o
+ .debug_loc     0x00002ce2      0xa5c ./nxt-audio.o
+ .debug_loc     0x0000373e       0x87 ./nxt-last_chance.o
+ .debug_loc     0x000037c5      0x1db ./nxt-spi.o
+ .debug_loc     0x000039a0      0x164 ./nxt-lcd.o
+ .debug_loc     0x00003b04      0x584 ./nxt-display.o
+ .debug_loc     0x00004088      0x298 ./nxt-twi.o
+ .debug_loc     0x00004320      0x2c4 ./nxt-avr_io.o
+ .debug_loc     0x000045e4      0x2c7 ./nxt-avr.o
+ .debug_loc     0x000048ab      0x1a7 ./nxt-sensor_ports.o
+ .debug_loc     0x00004a52       0xfe ./nxt-light_sensors.o
+ .debug_loc     0x00004b50       0x98 ./nxt-light_sensors-ctors.o
+ .debug_loc     0x00004be8       0x13 ./nxt-touch_sensors.o
+ .debug_loc     0x00004bfb      0x2bc ./tasks.o
+ .debug_loc     0x00004eb7       0x20 ./task1.o
+ .debug_loc     0x00004ed7       0xa0 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_loc     0x00004f77      0x9d4 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_loc     0x0000594b      0x98c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+
+.debug_aranges  0x00000000      0x7f8
+ .debug_aranges
+                0x00000000       0x20 b~task1.o
+ .debug_aranges
+                0x00000020       0x20 vectors.o
+ .debug_aranges
+                0x00000040       0x20 init.o
+ .debug_aranges
+                0x00000060       0x20 main.o
+ .debug_aranges
+                0x00000080       0x20 irq.o
+ .debug_aranges
+                0x000000a0       0x20 context_switch-bb-arm.o
+ .debug_aranges
+                0x000000c0       0x18 ./i-c.o
+ .debug_aranges
+                0x000000d8       0x20 ./a-except.o
+ .debug_aranges
+                0x000000f8       0x18 ./s-maccod.o
+ .debug_aranges
+                0x00000110       0x20 ./s-parame.o
+ .debug_aranges
+                0x00000130       0x20 ./s-stoele.o
+ .debug_aranges
+                0x00000150       0x18 ./s-bbpere.o
+ .debug_aranges
+                0x00000168       0x20 ./s-multip.o
+ .debug_aranges
+                0x00000188       0x20 ./s-bcprmu.o
+ .debug_aranges
+                0x000001a8       0x20 ./s-bbperi.o
+ .debug_aranges
+                0x000001c8       0x20 ./s-bbthqu.o
+ .debug_aranges
+                0x000001e8       0x20 ./s-bbthre.o
+ .debug_aranges
+                0x00000208       0x20 ./s-bbinte.o
+ .debug_aranges
+                0x00000228       0x20 ./s-bbtime.o
+ .debug_aranges
+                0x00000248       0x20 ./s-bbcppr.o
+ .debug_aranges
+                0x00000268       0x20 ./s-bbprot.o
+ .debug_aranges
+                0x00000288       0x20 ./s-musplo.o
+ .debug_aranges
+                0x000002a8       0x20 ./s-mufalo.o
+ .debug_aranges
+                0x000002c8       0x18 ./s-taspri.o
+ .debug_aranges
+                0x000002e0       0x20 ./s-tasdeb.o
+ .debug_aranges
+                0x00000300       0x20 ./s-taprop.o
+ .debug_aranges
+                0x00000320       0x18 ./s-unstyp.o
+ .debug_aranges
+                0x00000338       0x20 ./a-reatim.o
+ .debug_aranges
+                0x00000358       0x20 ./a-retide.o
+ .debug_aranges
+                0x00000378       0x20 ./s-taskin.o
+ .debug_aranges
+                0x00000398       0x20 ./a-tags.o
+ .debug_aranges
+                0x000003b8       0x20 ./s-secsta.o
+ .debug_aranges
+                0x000003d8       0x20 ./s-taprob.o
+ .debug_aranges
+                0x000003f8       0x20 ./s-tpobmu.o
+ .debug_aranges
+                0x00000418       0x20 ./s-tposen.o
+ .debug_aranges
+                0x00000438       0x20 ./s-interr.o
+ .debug_aranges
+                0x00000458       0x20 ./a-interr.o
+ .debug_aranges
+                0x00000478       0x20 ./s-tarest.o
+ .debug_aranges
+                0x00000498       0x20 ./memory_compare.o
+ .debug_aranges
+                0x000004b8       0x20 ./memory_copy.o
+ .debug_aranges
+                0x000004d8       0x20 ./memory_set.o
+ .debug_aranges
+                0x000004f8       0x20 ./nxt-malloc.o
+ .debug_aranges
+                0x00000518       0x20 ./nxt-audio.o
+ .debug_aranges
+                0x00000538       0x20 ./nxt-last_chance.o
+ .debug_aranges
+                0x00000558       0x20 ./nxt-spi.o
+ .debug_aranges
+                0x00000578       0x20 ./nxt-lcd.o
+ .debug_aranges
+                0x00000598       0x20 ./nxt-display.o
+ .debug_aranges
+                0x000005b8       0x20 ./nxt-twi.o
+ .debug_aranges
+                0x000005d8       0x20 ./nxt-avr_io.o
+ .debug_aranges
+                0x000005f8       0x20 ./nxt-avr.o
+ .debug_aranges
+                0x00000618       0x20 ./nxt-sensor_ports.o
+ .debug_aranges
+                0x00000638       0x20 ./nxt-light_sensors.o
+ .debug_aranges
+                0x00000658       0x20 ./nxt-light_sensors-ctors.o
+ .debug_aranges
+                0x00000678       0x20 ./nxt-touch_sensors.o
+ .debug_aranges
+                0x00000698       0x20 ./tasks.o
+ .debug_aranges
+                0x000006b8       0x20 ./task1.o
+ .debug_aranges
+                0x000006d8       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x000006f8       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000718       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000738       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .debug_aranges
+                0x00000758       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .debug_aranges
+                0x00000778       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_aranges
+                0x00000798       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_aranges
+                0x000007b8       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x000007d8       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+
+.debug_str      0x00000000     0xdafe
+ .debug_str     0x00000000     0x1456 b~task1.o
+                               0x148e (size before relaxing)
+ .debug_str     0x00001456      0x127 main.o
+                                0x13e (size before relaxing)
+ .debug_str     0x0000157d      0x17f ./interfac.o
+                                0x1b3 (size before relaxing)
+ .debug_str     0x000016fc      0x241 ./i-c.o
+                                0x27f (size before relaxing)
+ .debug_str     0x0000193d      0x46c ./system.o
+                                0x4c0 (size before relaxing)
+ .debug_str     0x00001da9       0xf9 ./a-except.o
+                                0x1af (size before relaxing)
+ .debug_str     0x00001ea2      0x181 ./s-maccod.o
+                                0x215 (size before relaxing)
+ .debug_str     0x00002023      0x31e ./s-parame.o
+                                0x383 (size before relaxing)
+ .debug_str     0x00002341      0x211 ./s-stoele.o
+                                0x265 (size before relaxing)
+ .debug_str     0x00002552       0xe1 ./s-bbpara.o
+                                0x143 (size before relaxing)
+ .debug_str     0x00002633     0x266e ./s-bbpere.o
+                               0x26dc (size before relaxing)
+ .debug_str     0x00004ca1      0x13a ./s-multip.o
+                                0x16e (size before relaxing)
+ .debug_str     0x00004ddb      0x152 ./s-bcprmu.o
+                                0x1d4 (size before relaxing)
+ .debug_str     0x00004f2d      0x1e6 ./s-bbperi.o
+                                0x23b (size before relaxing)
+ .debug_str     0x00005113      0x5c6 ./s-bbthqu.o
+                                0x718 (size before relaxing)
+ .debug_str     0x000056d9      0x361 ./s-bbthre.o
+                                0x6e5 (size before relaxing)
+ .debug_str     0x00005a3a      0x3ce ./s-bbinte.o
+                                0xa0c (size before relaxing)
+ .debug_str     0x00005e08      0x1b1 ./s-bbtime.o
+                                0x5d9 (size before relaxing)
+ .debug_str     0x00005fb9      0x2ae ./s-bbcppr.o
+                                0x42a (size before relaxing)
+ .debug_str     0x00006267      0x132 ./s-bbprot.o
+                                0x1e2 (size before relaxing)
+ .debug_str     0x00006399      0x1c3 ./s-musplo.o
+                                0x204 (size before relaxing)
+ .debug_str     0x0000655c      0x101 ./s-osinte.o
+                                0x400 (size before relaxing)
+ .debug_str     0x0000665d      0x221 ./s-mufalo.o
+                                0x345 (size before relaxing)
+ .debug_str     0x0000687e      0x14e ./s-tasinf.o
+                                0x182 (size before relaxing)
+ .debug_str     0x000069cc       0x69 ./s-taspri.o
+                                0x103 (size before relaxing)
+ .debug_str     0x00006a35      0x567 ./s-tasdeb.o
+                                0x99b (size before relaxing)
+ .debug_str     0x00006f9c      0x479 ./s-taprop.o
+                                0xdf7 (size before relaxing)
+ .debug_str     0x00007415      0x1e9 ./s-unstyp.o
+                                0x22f (size before relaxing)
+ .debug_str     0x000075fe      0x4cc ./a-reatim.o
+                                0x579 (size before relaxing)
+ .debug_str     0x00007aca       0xfd ./a-retide.o
+                                0x274 (size before relaxing)
+ .debug_str     0x00007bc7      0x476 ./s-taskin.o
+                                0xe01 (size before relaxing)
+ .debug_str     0x0000803d      0x435 ./a-tags.o
+                                0x60a (size before relaxing)
+ .debug_str     0x00008472      0x28b ./s-secsta.o
+                                0x3eb (size before relaxing)
+ .debug_str     0x000086fd      0x24f ./s-taprob.o
+                                0xc19 (size before relaxing)
+ .debug_str     0x0000894c      0x264 ./s-tpobmu.o
+                                0xcb7 (size before relaxing)
+ .debug_str     0x00008bb0      0x5ee ./s-tposen.o
+                               0x1074 (size before relaxing)
+ .debug_str     0x0000919e      0x3a3 ./s-interr.o
+                                0x47d (size before relaxing)
+ .debug_str     0x00009541      0x1b9 ./a-interr.o
+                                0x21b (size before relaxing)
+ .debug_str     0x000096fa      0x360 ./s-tarest.o
+                                0xe3d (size before relaxing)
+ .debug_str     0x00009a5a      0x1ea ./memory_compare.o
+                                0x2f3 (size before relaxing)
+ .debug_str     0x00009c44      0x1fd ./memory_copy.o
+                                0x359 (size before relaxing)
+ .debug_str     0x00009e41      0x15a ./memory_set.o
+                                0x2e0 (size before relaxing)
+ .debug_str     0x00009f9b       0x72 ./nxt.o
+                                 0xa6 (size before relaxing)
+ .debug_str     0x0000a00d       0x81 ./nxt-malloc.o
+                                 0xf9 (size before relaxing)
+ .debug_str     0x0000a08e       0xa8 ./nxt-registers.o
+                                 0xff (size before relaxing)
+ .debug_str     0x0000a136      0xb3a ./nxt-audio.o
+                               0x1bdb (size before relaxing)
+ .debug_str     0x0000ac70       0xa3 ./nxt-last_chance.o
+                                0x15b (size before relaxing)
+ .debug_str     0x0000ad13      0x148 ./nxt-fonts.o
+                                0x1af (size before relaxing)
+ .debug_str     0x0000ae5b       0x92 ./nxt-priorities.o
+                                 0xed (size before relaxing)
+ .debug_str     0x0000aeed      0x2d7 ./nxt-spi.o
+                               0x12fb (size before relaxing)
+ .debug_str     0x0000b1c4      0x24b ./nxt-lcd.o
+                                0x304 (size before relaxing)
+ .debug_str     0x0000b40f      0x5b8 ./nxt-display.o
+                                0x76e (size before relaxing)
+ .debug_str     0x0000b9c7      0x317 ./nxt-twi.o
+                               0x12a9 (size before relaxing)
+ .debug_str     0x0000bcde      0x92a ./nxt-avr_io.o
+                                0xa81 (size before relaxing)
+ .debug_str     0x0000c608      0x739 ./nxt-avr.o
+                               0x1620 (size before relaxing)
+ .debug_str     0x0000cd41      0x365 ./nxt-sensor_ports.o
+                                0x714 (size before relaxing)
+ .debug_str     0x0000d0a6      0x2e8 ./nxt-light_sensors.o
+                                0x49f (size before relaxing)
+ .debug_str     0x0000d38e      0x10e ./nxt-light_sensors-ctors.o
+                                0x311 (size before relaxing)
+ .debug_str     0x0000d49c       0xac ./nxt-touch_sensors.o
+                                0x2be (size before relaxing)
+ .debug_str     0x0000d548      0x3bd ./tasks.o
+                               0x13aa (size before relaxing)
+ .debug_str     0x0000d905        0xb ./task1.o
+                                 0xa9 (size before relaxing)
+ .debug_str     0x0000d910       0xfe /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                                0x130 (size before relaxing)
+ .debug_str     0x0000da0e       0xe6 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                                0x1e5 (size before relaxing)
+ .debug_str     0x0000daf4        0xa /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                0x1e6 (size before relaxing)
+
+.comment        0x00000000       0x37
+ .comment       0x00000000       0x37 b~task1.o
+                                 0x38 (size before relaxing)
+ .comment       0x00000000       0x38 main.o
+ .comment       0x00000000       0x38 ./ada.o
+ .comment       0x00000000       0x38 ./interfac.o
+ .comment       0x00000000       0x38 ./i-c.o
+ .comment       0x00000000       0x38 ./system.o
+ .comment       0x00000000       0x38 ./a-except.o
+ .comment       0x00000000       0x38 ./s-bb.o
+ .comment       0x00000000       0x38 ./s-maccod.o
+ .comment       0x00000000       0x38 ./s-parame.o
+ .comment       0x00000000       0x38 ./s-stoele.o
+ .comment       0x00000000       0x38 ./s-bbpara.o
+ .comment       0x00000000       0x38 ./s-bbpere.o
+ .comment       0x00000000       0x38 ./s-multip.o
+ .comment       0x00000000       0x38 ./s-bcprmu.o
+ .comment       0x00000000       0x38 ./s-bbperi.o
+ .comment       0x00000000       0x38 ./s-bbthqu.o
+ .comment       0x00000000       0x38 ./s-bbthre.o
+ .comment       0x00000000       0x38 ./s-bbinte.o
+ .comment       0x00000000       0x38 ./s-bbtime.o
+ .comment       0x00000000       0x38 ./s-bbcppr.o
+ .comment       0x00000000       0x38 ./s-bbprot.o
+ .comment       0x00000000       0x38 ./s-musplo.o
+ .comment       0x00000000       0x38 ./s-osinte.o
+ .comment       0x00000000       0x38 ./s-mufalo.o
+ .comment       0x00000000       0x38 ./s-tasinf.o
+ .comment       0x00000000       0x38 ./s-taspri.o
+ .comment       0x00000000       0x38 ./s-tasdeb.o
+ .comment       0x00000000       0x38 ./s-taprop.o
+ .comment       0x00000000       0x38 ./s-unstyp.o
+ .comment       0x00000000       0x38 ./a-reatim.o
+ .comment       0x00000000       0x38 ./a-retide.o
+ .comment       0x00000000       0x38 ./s-taskin.o
+ .comment       0x00000000       0x38 ./a-tags.o
+ .comment       0x00000000       0x38 ./s-secsta.o
+ .comment       0x00000000       0x38 ./s-taprob.o
+ .comment       0x00000000       0x38 ./s-tpobmu.o
+ .comment       0x00000000       0x38 ./s-tposen.o
+ .comment       0x00000000       0x38 ./s-interr.o
+ .comment       0x00000000       0x38 ./a-interr.o
+ .comment       0x00000000       0x38 ./s-tasres.o
+ .comment       0x00000000       0x38 ./s-tarest.o
+ .comment       0x00000000       0x38 ./memory_compare.o
+ .comment       0x00000000       0x38 ./memory_copy.o
+ .comment       0x00000000       0x38 ./memory_set.o
+ .comment       0x00000000       0x38 ./nxt.o
+ .comment       0x00000000       0x38 ./nxt-malloc.o
+ .comment       0x00000000       0x38 ./nxt-registers.o
+ .comment       0x00000000       0x38 ./nxt-audio.o
+ .comment       0x00000000       0x38 ./nxt-buffers.o
+ .comment       0x00000000       0x38 ./nxt-filtering.o
+ .comment       0x00000000       0x38 ./nxt-last_chance.o
+ .comment       0x00000000       0x38 ./nxt-fonts.o
+ .comment       0x00000000       0x38 ./nxt-priorities.o
+ .comment       0x00000000       0x38 ./nxt-spi.o
+ .comment       0x00000000       0x38 ./nxt-lcd.o
+ .comment       0x00000000       0x38 ./nxt-display.o
+ .comment       0x00000000       0x38 ./nxt-twi.o
+ .comment       0x00000000       0x38 ./nxt-avr_io.o
+ .comment       0x00000000       0x38 ./nxt-avr.o
+ .comment       0x00000000       0x38 ./nxt-sensor_ports.o
+ .comment       0x00000000       0x38 ./nxt-light_sensors.o
+ .comment       0x00000000       0x38 ./nxt-light_sensors-ctors.o
+ .comment       0x00000000       0x38 ./nxt-touch_sensors.o
+ .comment       0x00000000       0x38 ./tasks.o
+ .comment       0x00000000       0x38 ./task1.o
+ .comment       0x00000000       0x38 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .comment       0x00000000       0x38 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .comment       0x00000000       0x38 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+
+.ARM.attributes
+                0x00000000       0x2e
+ .ARM.attributes
+                0x00000000       0x2e b~task1.o
+ .ARM.attributes
+                0x0000002e       0x14 vectors.o
+ .ARM.attributes
+                0x00000042       0x16 init.o
+ .ARM.attributes
+                0x00000058       0x30 main.o
+ .ARM.attributes
+                0x00000088       0x14 irq.o
+ .ARM.attributes
+                0x0000009c       0x16 context_switch-bb-arm.o
+ .ARM.attributes
+                0x000000b2       0x2e ./ada.o
+ .ARM.attributes
+                0x000000e0       0x2e ./interfac.o
+ .ARM.attributes
+                0x0000010e       0x2e ./i-c.o
+ .ARM.attributes
+                0x0000013c       0x2e ./system.o
+ .ARM.attributes
+                0x0000016a       0x2e ./a-except.o
+ .ARM.attributes
+                0x00000198       0x2e ./s-bb.o
+ .ARM.attributes
+                0x000001c6       0x2e ./s-maccod.o
+ .ARM.attributes
+                0x000001f4       0x2e ./s-parame.o
+ .ARM.attributes
+                0x00000222       0x2e ./s-stoele.o
+ .ARM.attributes
+                0x00000250       0x2e ./s-bbpara.o
+ .ARM.attributes
+                0x0000027e       0x2e ./s-bbpere.o
+ .ARM.attributes
+                0x000002ac       0x2e ./s-multip.o
+ .ARM.attributes
+                0x000002da       0x2e ./s-bcprmu.o
+ .ARM.attributes
+                0x00000308       0x2e ./s-bbperi.o
+ .ARM.attributes
+                0x00000336       0x2e ./s-bbthqu.o
+ .ARM.attributes
+                0x00000364       0x2e ./s-bbthre.o
+ .ARM.attributes
+                0x00000392       0x2e ./s-bbinte.o
+ .ARM.attributes
+                0x000003c0       0x2e ./s-bbtime.o
+ .ARM.attributes
+                0x000003ee       0x2e ./s-bbcppr.o
+ .ARM.attributes
+                0x0000041c       0x2e ./s-bbprot.o
+ .ARM.attributes
+                0x0000044a       0x2e ./s-musplo.o
+ .ARM.attributes
+                0x00000478       0x2e ./s-osinte.o
+ .ARM.attributes
+                0x000004a6       0x2e ./s-mufalo.o
+ .ARM.attributes
+                0x000004d4       0x2e ./s-tasinf.o
+ .ARM.attributes
+                0x00000502       0x2e ./s-taspri.o
+ .ARM.attributes
+                0x00000530       0x2e ./s-tasdeb.o
+ .ARM.attributes
+                0x0000055e       0x2e ./s-taprop.o
+ .ARM.attributes
+                0x0000058c       0x2e ./s-unstyp.o
+ .ARM.attributes
+                0x000005ba       0x2e ./a-reatim.o
+ .ARM.attributes
+                0x000005e8       0x2e ./a-retide.o
+ .ARM.attributes
+                0x00000616       0x2e ./s-taskin.o
+ .ARM.attributes
+                0x00000644       0x2e ./a-tags.o
+ .ARM.attributes
+                0x00000672       0x2e ./s-secsta.o
+ .ARM.attributes
+                0x000006a0       0x2e ./s-taprob.o
+ .ARM.attributes
+                0x000006ce       0x2e ./s-tpobmu.o
+ .ARM.attributes
+                0x000006fc       0x2e ./s-tposen.o
+ .ARM.attributes
+                0x0000072a       0x2e ./s-interr.o
+ .ARM.attributes
+                0x00000758       0x2e ./a-interr.o
+ .ARM.attributes
+                0x00000786       0x2e ./s-tasres.o
+ .ARM.attributes
+                0x000007b4       0x2e ./s-tarest.o
+ .ARM.attributes
+                0x000007e2       0x2e ./memory_compare.o
+ .ARM.attributes
+                0x00000810       0x2e ./memory_copy.o
+ .ARM.attributes
+                0x0000083e       0x2e ./memory_set.o
+ .ARM.attributes
+                0x0000086c       0x2e ./nxt.o
+ .ARM.attributes
+                0x0000089a       0x2e ./nxt-malloc.o
+ .ARM.attributes
+                0x000008c8       0x2e ./nxt-registers.o
+ .ARM.attributes
+                0x000008f6       0x2e ./nxt-audio.o
+ .ARM.attributes
+                0x00000924       0x2e ./nxt-buffers.o
+ .ARM.attributes
+                0x00000952       0x2e ./nxt-filtering.o
+ .ARM.attributes
+                0x00000980       0x2e ./nxt-last_chance.o
+ .ARM.attributes
+                0x000009ae       0x2e ./nxt-fonts.o
+ .ARM.attributes
+                0x000009dc       0x2e ./nxt-priorities.o
+ .ARM.attributes
+                0x00000a0a       0x2e ./nxt-spi.o
+ .ARM.attributes
+                0x00000a38       0x2e ./nxt-lcd.o
+ .ARM.attributes
+                0x00000a66       0x2e ./nxt-display.o
+ .ARM.attributes
+                0x00000a94       0x2e ./nxt-twi.o
+ .ARM.attributes
+                0x00000ac2       0x2e ./nxt-avr_io.o
+ .ARM.attributes
+                0x00000af0       0x2e ./nxt-avr.o
+ .ARM.attributes
+                0x00000b1e       0x2e ./nxt-sensor_ports.o
+ .ARM.attributes
+                0x00000b4c       0x2e ./nxt-light_sensors.o
+ .ARM.attributes
+                0x00000b7a       0x2e ./nxt-light_sensors-ctors.o
+ .ARM.attributes
+                0x00000ba8       0x2e ./nxt-touch_sensors.o
+ .ARM.attributes
+                0x00000bd6       0x2e ./tasks.o
+ .ARM.attributes
+                0x00000c04       0x2e ./task1.o
+ .ARM.attributes
+                0x00000c32       0x18 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000c4a       0x18 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x00000c62       0x16 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000c78       0x18 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+ .ARM.attributes
+                0x00000c90       0x18 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x00000ca8       0x30 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .ARM.attributes
+                0x00000cd8       0x30 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .ARM.attributes
+                0x00000d08       0x30 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+ .ARM.attributes
+                0x00000d38       0x18 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+
+.debug_frame    0x00000000     0x22e8
+ .debug_frame   0x00000000       0x44 b~task1.o
+ .debug_frame   0x00000044       0x70 main.o
+ .debug_frame   0x000000b4       0x30 ./i-c.o
+ .debug_frame   0x000000e4       0x28 ./a-except.o
+ .debug_frame   0x0000010c       0x30 ./s-maccod.o
+ .debug_frame   0x0000013c       0x20 ./s-parame.o
+ .debug_frame   0x0000015c       0x98 ./s-stoele.o
+ .debug_frame   0x000001f4       0x40 ./s-bbpere.o
+ .debug_frame   0x00000234       0x20 ./s-multip.o
+ .debug_frame   0x00000254       0x50 ./s-bcprmu.o
+ .debug_frame   0x000002a4       0x50 ./s-bbperi.o
+ .debug_frame   0x000002f4      0x118 ./s-bbthqu.o
+ .debug_frame   0x0000040c      0x168 ./s-bbthre.o
+ .debug_frame   0x00000574       0xdc ./s-bbinte.o
+ .debug_frame   0x00000650       0x98 ./s-bbtime.o
+ .debug_frame   0x000006e8       0x60 ./s-bbcppr.o
+ .debug_frame   0x00000748       0x58 ./s-bbprot.o
+ .debug_frame   0x000007a0       0x60 ./s-musplo.o
+ .debug_frame   0x00000800       0xcc ./s-mufalo.o
+ .debug_frame   0x000008cc       0x20 ./s-taspri.o
+ .debug_frame   0x000008ec       0x20 ./s-tasdeb.o
+ .debug_frame   0x0000090c      0x18c ./s-taprop.o
+ .debug_frame   0x00000a98       0x20 ./s-unstyp.o
+ .debug_frame   0x00000ab8      0x278 ./a-reatim.o
+ .debug_frame   0x00000d30       0x38 ./a-retide.o
+ .debug_frame   0x00000d68       0xec ./s-taskin.o
+ .debug_frame   0x00000e54       0xd0 ./a-tags.o
+ .debug_frame   0x00000f24       0x78 ./s-secsta.o
+ .debug_frame   0x00000f9c       0x94 ./s-taprob.o
+ .debug_frame   0x00001030       0x70 ./s-tpobmu.o
+ .debug_frame   0x000010a0       0xc8 ./s-tposen.o
+ .debug_frame   0x00001168       0xa0 ./s-interr.o
+ .debug_frame   0x00001208       0xd4 ./a-interr.o
+ .debug_frame   0x000012dc       0xec ./s-tarest.o
+ .debug_frame   0x000013c8       0x28 ./memory_compare.o
+ .debug_frame   0x000013f0       0x40 ./memory_copy.o
+ .debug_frame   0x00001430       0x28 ./memory_set.o
+ .debug_frame   0x00001458       0x28 ./nxt-malloc.o
+ .debug_frame   0x00001480      0x1a8 ./nxt-audio.o
+ .debug_frame   0x00001628       0x2c ./nxt-last_chance.o
+ .debug_frame   0x00001654       0xac ./nxt-spi.o
+ .debug_frame   0x00001700       0x94 ./nxt-lcd.o
+ .debug_frame   0x00001794      0x210 ./nxt-display.o
+ .debug_frame   0x000019a4       0xec ./nxt-twi.o
+ .debug_frame   0x00001a90      0x190 ./nxt-avr_io.o
+ .debug_frame   0x00001c20      0x1ac ./nxt-avr.o
+ .debug_frame   0x00001dcc       0xc4 ./nxt-sensor_ports.o
+ .debug_frame   0x00001e90      0x110 ./nxt-light_sensors.o
+ .debug_frame   0x00001fa0       0x30 ./nxt-light_sensors-ctors.o
+ .debug_frame   0x00001fd0       0x50 ./nxt-touch_sensors.o
+ .debug_frame   0x00002020      0x198 ./tasks.o
+ .debug_frame   0x000021b8       0x28 ./task1.o
+ .debug_frame   0x000021e0       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00002200       0x20 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+ .debug_frame   0x00002220       0x50 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+ .debug_frame   0x00002270       0x3c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_frame   0x000022ac       0x3c /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+
+.debug_ranges   0x00000000      0x568
+ .debug_ranges  0x00000000       0x18 ./s-bbthqu.o
+ .debug_ranges  0x00000018       0x30 ./s-bbinte.o
+ .debug_ranges  0x00000048       0x18 ./s-taprop.o
+ .debug_ranges  0x00000060       0x60 ./s-taskin.o
+ .debug_ranges  0x000000c0       0x18 ./s-tposen.o
+ .debug_ranges  0x000000d8       0x18 ./memory_compare.o
+ .debug_ranges  0x000000f0      0x130 ./nxt-audio.o
+ .debug_ranges  0x00000220       0x60 ./nxt-spi.o
+ .debug_ranges  0x00000280       0x50 ./nxt-lcd.o
+ .debug_ranges  0x000002d0       0x78 ./nxt-display.o
+ .debug_ranges  0x00000348       0x60 ./nxt-twi.o
+ .debug_ranges  0x000003a8       0x18 ./nxt-avr_io.o
+ .debug_ranges  0x000003c0       0x18 ./nxt-light_sensors-ctors.o
+ .debug_ranges  0x000003d8       0x30 ./tasks.o
+ .debug_ranges  0x00000408       0xa8 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+ .debug_ranges  0x000004b0       0xb8 /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+
+Cross Reference Table
+
+Symbol                                            File
+__aeabi_idiv                                      /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+                                                  ./nxt-light_sensors.o
+                                                  ./nxt-display.o
+                                                  ./nxt-audio.o
+__aeabi_idiv0                                     /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+__aeabi_idivmod                                   /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+                                                  ./nxt-avr.o
+                                                  ./nxt-audio.o
+__aeabi_ldiv0                                     /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_dvmd_tls.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+__aeabi_ldivmod                                   /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+                                                  ./nxt-display.o
+                                                  ./a-reatim.o
+__aeabi_uidiv                                     /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                                                  ./nxt-audio.o
+                                                  ./a-reatim.o
+__aeabi_uidivmod                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                                                  ./s-stoele.o
+__aeabi_uldivmod                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+                                                  ./a-reatim.o
+__aeabi_unwind_cpp_pr0                            main.o
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+__bss_end__                                       init.o
+__bss_start__                                     init.o
+__clzsi2                                          /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_clzsi2.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+__data_load_end__                                 init.o
+__data_load_start__                               init.o
+__data_ram_start__                                init.o
+__divdi3                                          /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+__divsi3                                          /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_divsi3.o)
+__gl_main_cpu                                     ./s-taskin.o
+__gl_main_priority                                ./s-taskin.o
+                                                  b~task1.o
+__gnarl_disable_execution_time                    ./s-bbprot.o
+__gnarl_scheduling_event                          ./s-bbprot.o
+__gnat_ada_main_program_name                      b~task1.o
+__gnat_get_secondary_stack                        ./s-taskin.o
+                                                  ./s-secsta.o
+__gnat_initialize_slave                           ./s-taskin.o
+__gnat_last_chance_handler                        ./nxt-last_chance.o
+                                                  main.o
+                                                  ./tasks.o
+                                                  ./nxt-light_sensors-ctors.o
+                                                  ./nxt-sensor_ports.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-avr_io.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-display.o
+                                                  ./nxt-audio.o
+                                                  ./nxt-malloc.o
+                                                  ./memory_set.o
+                                                  ./memory_copy.o
+                                                  ./memory_compare.o
+                                                  ./s-tarest.o
+                                                  ./a-interr.o
+                                                  ./s-tposen.o
+                                                  ./s-taprob.o
+                                                  ./s-secsta.o
+                                                  ./a-tags.o
+                                                  ./s-taskin.o
+                                                  ./a-retide.o
+                                                  ./a-reatim.o
+                                                  ./s-stoele.o
+                                                  ./a-except.o
+__gnat_malloc                                     ./nxt-malloc.o
+                                                  ./nxt-light_sensors-ctors.o
+__gnat_running_thread_table                       ./s-bbthqu.o
+                                                  ./s-bbthre.o
+                                                  context_switch-bb-arm.o
+__gnat_version                                    b~task1.o
+__gnu_ldivmod_helper                              /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_ldivmod.o)
+__gnu_uldivmod_helper                             /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_aeabi_uldivmod.o)
+__irq_stack__                                     irq.o
+                                                  init.o
+__ramtext_load_end__                              init.o
+__ramtext_load_start__                            init.o
+__ramtext_ram_start__                             init.o
+__stack_bottom                                    ./s-bbthre.o
+__stack_end__                                     init.o
+__stack_start__                                   init.o
+__stack_top                                       ./s-bbthre.o
+__system_stack__                                  init.o
+__udivdi3                                         /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivdi3.o)
+                                                  /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(bpabi.o)
+__udivsi3                                         /home/lego/Documents/gnatmindstorms2011/bin/../lib/gcc/arm-eabi/4.5.3/libgcc.a(_udivsi3.o)
+__vectors_load_end__                              init.o
+__vectors_load_start__                            init.o
+__vectors_ram_start__                             init.o
+_ada_task1                                        ./task1.o
+                                                  b~task1.o
+adaS                                              b~task1.o
+ada_E                                             ./ada.o
+ada__exceptionsB                                  b~task1.o
+ada__exceptionsS                                  b~task1.o
+ada__exceptions_E                                 ./a-except.o
+ada__exceptions__null_id                          ./a-except.o
+ada__exceptions__raise_exception                  ./a-except.o
+ada__interruptsB                                  b~task1.o
+ada__interruptsS                                  b~task1.o
+ada__interrupts_E                                 ./a-interr.o
+ada__interrupts__E3sIP                            ./a-interr.o
+ada__interrupts__attach_handler                   ./a-interr.o
+ada__interrupts__current_handler                  ./a-interr.o
+ada__interrupts__detach_handler                   ./a-interr.o
+ada__interrupts__exchange_handler                 ./a-interr.o
+ada__interrupts__is_attached                      ./a-interr.o
+ada__interrupts__is_reserved                      ./a-interr.o
+ada__interrupts__reference                        ./a-interr.o
+ada__real_timeB                                   b~task1.o
+ada__real_timeS                                   b~task1.o
+ada__real_time_E                                  ./a-reatim.o
+                                                  b~task1.o
+ada__real_time__Oadd                              ./a-reatim.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-lcd.o
+ada__real_time__Oadd__2                           ./a-reatim.o
+ada__real_time__Oadd__3                           ./a-reatim.o
+                                                  ./nxt-avr.o
+ada__real_time__Odivide                           ./a-reatim.o
+ada__real_time__Odivide__2                        ./a-reatim.o
+ada__real_time__Omultiply                         ./a-reatim.o
+ada__real_time__Omultiply__2                      ./a-reatim.o
+                                                  ./nxt-avr.o
+ada__real_time__Osubtract                         ./a-reatim.o
+ada__real_time__Osubtract__2                      ./a-reatim.o
+ada__real_time__Osubtract__3                      ./a-reatim.o
+ada__real_time__Osubtract__4                      ./a-reatim.o
+ada__real_time___elabb                            ./a-reatim.o
+                                                  b~task1.o
+ada__real_time___elabs                            ./a-reatim.o
+                                                  b~task1.o
+ada__real_time__clock                             ./a-reatim.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-lcd.o
+ada__real_time__delaysB                           b~task1.o
+ada__real_time__delaysS                           b~task1.o
+ada__real_time__delays_E                          ./a-retide.o
+ada__real_time__delays__delay_until               ./a-retide.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-lcd.o
+ada__real_time__delays__to_duration               ./a-retide.o
+ada__real_time__microseconds                      ./a-reatim.o
+ada__real_time__milliseconds                      ./a-reatim.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-lcd.o
+ada__real_time__minutes                           ./a-reatim.o
+ada__real_time__nanoseconds                       ./a-reatim.o
+ada__real_time__seconds                           ./a-reatim.o
+ada__real_time__split                             ./a-reatim.o
+ada__real_time__tick                              ./a-reatim.o
+ada__real_time__time_first                        ./a-reatim.o
+ada__real_time__time_last                         ./a-reatim.o
+ada__real_time__time_of                           ./a-reatim.o
+ada__real_time__time_span_first                   ./a-reatim.o
+ada__real_time__time_span_last                    ./a-reatim.o
+ada__real_time__time_span_unit                    ./a-reatim.o
+ada__real_time__time_span_zero                    ./a-reatim.o
+ada__real_time__time_unit                         ./a-reatim.o
+ada__real_time__to_duration                       ./a-reatim.o
+ada__real_time__to_time_span                      ./a-reatim.o
+ada__tagsB                                        b~task1.o
+ada__tagsS                                        b~task1.o
+ada__tags_E                                       ./a-tags.o
+ada__tags__R2s                                    ./a-tags.o
+ada__tags__address_arrayIP                        ./a-tags.o
+ada__tags__dispatch_table_wrapperIP               ./a-tags.o
+ada__tags__dt_offset_to_top_offset                ./a-tags.o
+ada__tags__dt_offset_to_top_size                  ./a-tags.o
+ada__tags__dt_predef_prims_offset                 ./a-tags.o
+ada__tags__dt_predef_prims_size                   ./a-tags.o
+ada__tags__dt_typeinfo_ptr_size                   ./a-tags.o
+ada__tags__expanded_name                          ./a-tags.o
+ada__tags__external_tag                           ./a-tags.o
+ada__tags__max_predef_prims                       ./a-tags.o
+ada__tags__no_dispatch_table_wrapperIP            ./a-tags.o
+ada__tags__no_tag                                 ./a-tags.o
+ada__tags__parent_tag                             ./a-tags.o
+ada__tags__tag_error                              ./a-tags.o
+ada__tags__tag_errorE                             ./a-tags.o
+ada__tags__tag_tableIP                            ./a-tags.o
+ada__tags__type_specific_dataIP                   ./a-tags.o
+ada_main_E                                        b~task1.o
+adainit                                           b~task1.o
+context_switch                                    context_switch-bb-arm.o
+                                                  ./s-bbprot.o
+                                                  ./s-bbinte.o
+context_switch_needed                             ./s-bbprot.o
+                                                  ./s-bbinte.o
+data_abort_C                                      main.o
+                                                  init.o
+data_abort_handler                                init.o
+                                                  vectors.o
+data_abort_pc                                     main.o
+                                                  init.o
+first_thread_table                                ./s-bbthqu.o
+                                                  ./s-bbthre.o
+                                                  context_switch-bb-arm.o
+interfaces(char, signed)                          b~task1.o
+interfacesS                                       b~task1.o
+interfaces_E                                      ./interfac.o
+interfaces__c_E                                   ./i-c.o
+interfaces__c__char_arrayIP                       ./i-c.o
+interfaces__c__nul                                ./i-c.o
+interfaces__c__wchar_arrayIP                      ./i-c.o
+interfaces__c__wide_nul                           ./i-c.o
+irq_handler                                       irq.o
+                                                  vectors.o
+irq_handler_ada                                   ./s-bbinte.o
+                                                  irq.o
+main                                              b~task1.o
+                                                  main.o
+memcmp                                            ./memory_compare.o
+                                                  ./s-tarest.o
+memcpy                                            ./memory_copy.o
+                                                  ./nxt-avr.o
+                                                  ./nxt-avr_io.o
+                                                  ./nxt-display.o
+                                                  ./a-tags.o
+memmove                                           ./memory_copy.o
+memory_compareB                                   b~task1.o
+memory_compareS                                   b~task1.o
+memory_compare_E                                  ./memory_compare.o
+memory_copyB                                      b~task1.o
+memory_copyS                                      b~task1.o
+memory_copy_E                                     ./memory_copy.o
+memory_setB                                       b~task1.o
+memory_setS                                       b~task1.o
+memory_set_E                                      ./memory_set.o
+memset                                            ./memory_set.o
+                                                  ./nxt-avr.o
+nxt(bool, float __restrict, float,...)(long double, short, signed) b~task1.o
+nxt(long, char, double, signed)                   b~task1.o
+nxt(short, int *, signed)                         b~task1.o
+nxtS                                              b~task1.o
+nxt_E                                             ./nxt.o
+nxt__audioB                                       b~task1.o
+nxt__audioS                                       b~task1.o
+nxt__audio_E                                      ./nxt-audio.o
+                                                  b~task1.o
+nxt__audio__TamplificationBIP                     ./nxt-audio.o
+nxt__audio__Tdouble_bufferBIP                     ./nxt-audio.o
+nxt__audio__Tsample_bufferBIP                     ./nxt-audio.o
+nxt__audio__Tsound_sampleBIP                      ./nxt-audio.o
+nxt__audio___elabb                                ./nxt-audio.o
+                                                  b~task1.o
+nxt__audio__generatorTVIP                         ./nxt-audio.o
+nxt__audio__mute                                  ./nxt-audio.o
+nxt__audio__play_sample                           ./nxt-audio.o
+nxt__audio__play_tone                             ./nxt-audio.o
+                                                  ./nxt-last_chance.o
+nxt__audio__time_remaining                        ./nxt-audio.o
+nxt__audio__unmute                                ./nxt-audio.o
+nxt__audio__waveformIP                            ./nxt-audio.o
+nxt__avrB                                         b~task1.o
+nxt__avrS                                         b~task1.o
+nxt__avr_E                                        ./nxt-avr.o
+                                                  b~task1.o
+nxt__avr___elabb                                  ./nxt-avr.o
+                                                  b~task1.o
+nxt__avr__await_data_available                    ./nxt-avr.o
+nxt__avr__button                                  ./nxt-avr.o
+                                                  ./tasks.o
+nxt__avr__button_inputs__filterIPXn               ./nxt-avr.o
+nxt__avr__button_inputs__filteredXn               ./nxt-avr.o
+nxt__avr__button_inputs__no_valueXn               ./nxt-avr.o
+nxt__avr__outgoing_messages__bufferIPXn           ./nxt-avr.o
+nxt__avr__outgoing_messages__clearXn              ./nxt-avr.o
+nxt__avr__outgoing_messages__contentIPXn          ./nxt-avr.o
+nxt__avr__outgoing_messages__emptyXn              ./nxt-avr.o
+nxt__avr__outgoing_messages__extentXn             ./nxt-avr.o
+nxt__avr__outgoing_messages__fullXn               ./nxt-avr.o
+nxt__avr__outgoing_messages__insertXn             ./nxt-avr.o
+nxt__avr__outgoing_messages__removeXn             ./nxt-avr.o
+nxt__avr__power_down                              ./nxt-avr.o
+                                                  ./tasks.o
+nxt__avr__pumpTKVIP                               ./nxt-avr.o
+nxt__avr__raw_battery                             ./nxt-avr.o
+nxt__avr__raw_input                               ./nxt-avr.o
+                                                  ./tasks.o
+                                                  ./nxt-touch_sensors.o
+                                                  ./nxt-light_sensors.o
+nxt__avr__set_input_power                         ./nxt-avr.o
+                                                  ./nxt-sensor_ports.o
+nxt__avr__set_power                               ./nxt-avr.o
+                                                  ./tasks.o
+nxt__avr_ioB                                      b~task1.o
+nxt__avr_ioS                                      b~task1.o
+nxt__avr_io_E                                     ./nxt-avr_io.o
+                                                  b~task1.o
+nxt__avr_io__Tincoming_message_as_bytesBIP        ./nxt-avr_io.o
+nxt__avr_io__Tmotor_braking_modesBIP              ./nxt-avr_io.o
+nxt__avr_io__Toutgoing_message_as_bytesBIP        ./nxt-avr_io.o
+nxt__avr_io__Tport_bitsBIP                        ./nxt-avr_io.o
+nxt__avr_io__Tpwm_output_valuesBIP                ./nxt-avr_io.o
+nxt__avr_io__Traw_adc_inputsBIP                   ./nxt-avr_io.o
+nxt__avr_io__avr_address                          ./nxt-avr_io.o
+nxt__avr_io__avr_string                           ./nxt-avr_io.o
+nxt__avr_io__battery_reading                      ./nxt-avr_io.o
+nxt__avr_io__current_input_power                  ./nxt-avr_io.o
+nxt__avr_io__current_output_modes                 ./nxt-avr_io.o
+nxt__avr_io__current_power_settings               ./nxt-avr_io.o
+nxt__avr_io__decoded_button                       ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__incoming_avr_messageIP               ./nxt-avr_io.o
+nxt__avr_io__null_outgoing_msg                    ./nxt-avr_io.o
+nxt__avr_io__outgoing_avr_messageIP               ./nxt-avr_io.o
+nxt__avr_io__power_down_message                   ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__raw_inputs                           ./nxt-avr_io.o
+nxt__avr_io__receive_from_avr                     ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__send_initialization                  ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__send_to_avr                          ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__sensor_power_controlIP               ./nxt-avr_io.o
+nxt__avr_io__set_motor_message                    ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__avr_io__set_sensor_power_message             ./nxt-avr_io.o
+                                                  ./nxt-avr.o
+nxt__buffersB                                     b~task1.o
+nxt__buffers_E                                    ./nxt-buffers.o
+nxt__displayB                                     b~task1.o
+nxt__displayS                                     b~task1.o
+nxt__display_E                                    ./nxt-display.o
+                                                  b~task1.o
+nxt__display__TscreenBIP                          ./nxt-display.o
+nxt__display___elabb                              ./nxt-display.o
+                                                  b~task1.o
+nxt__display__clear_screen                        ./nxt-display.o
+nxt__display__clear_screen_noupdate               ./nxt-display.o
+nxt__display__newline                             ./nxt-display.o
+                                                  ./tasks.o
+                                                  ./nxt-last_chance.o
+nxt__display__newline_noupdate                    ./nxt-display.o
+nxt__display__put                                 ./nxt-display.o
+                                                  ./nxt-last_chance.o
+nxt__display__put__2                              ./nxt-display.o
+nxt__display__put_hex                             ./nxt-display.o
+nxt__display__put_hex__2                          ./nxt-display.o
+                                                  ./tasks.o
+nxt__display__put_hex__3                          ./nxt-display.o
+nxt__display__put_line                            ./nxt-display.o
+                                                  ./tasks.o
+                                                  ./nxt-last_chance.o
+nxt__display__put_noupdate                        ./nxt-display.o
+nxt__display__put_noupdate__2                     ./nxt-display.o
+                                                  ./tasks.o
+                                                  ./nxt-last_chance.o
+nxt__display__put_noupdate__3                     ./nxt-display.o
+                                                  ./tasks.o
+                                                  ./nxt-last_chance.o
+nxt__display__put_noupdate__4                     ./nxt-display.o
+nxt__display__screen_update                       ./nxt-display.o
+nxt__display__set_pos                             ./nxt-display.o
+nxt__filteringB                                   b~task1.o
+nxt__filteringS                                   b~task1.o
+nxt__filtering_E                                  ./nxt-filtering.o
+                                                  b~task1.o
+nxt__fontsS                                       b~task1.o
+nxt__fonts_E                                      ./nxt-fonts.o
+nxt__fonts__font5x8                               ./nxt-fonts.o
+                                                  ./nxt-display.o
+nxt__last_chanceB                                 b~task1.o
+nxt__last_chanceS                                 b~task1.o
+nxt__last_chance_E                                ./nxt-last_chance.o
+                                                  b~task1.o
+nxt__lcdB                                         b~task1.o
+nxt__lcd_E                                        ./nxt-lcd.o
+                                                  b~task1.o
+nxt__lcd__command                                 ./nxt-lcd.o
+nxt__lcd__lcd_lineIP                              ./nxt-lcd.o
+nxt__lcd__power_on                                ./nxt-lcd.o
+                                                  ./nxt-display.o
+nxt__lcd__set_all_pixels_on                       ./nxt-lcd.o
+nxt__lcd__set_inverse_display                     ./nxt-lcd.o
+nxt__lcd__write                                   ./nxt-lcd.o
+                                                  ./nxt-display.o
+nxt__light_sensors(int, double)                   ./nxt-light_sensors.o
+nxt__light_sensorsB                               b~task1.o
+nxt__light_sensorsS                               b~task1.o
+nxt__light_sensors_E                              ./nxt-light_sensors.o
+nxt__light_sensors___alignment                    ./nxt-light_sensors.o
+nxt__light_sensors___size                         ./nxt-light_sensors.o
+nxt__light_sensors__calibrate_high                ./nxt-light_sensors.o
+nxt__light_sensors__calibrate_low                 ./nxt-light_sensors.o
+nxt__light_sensors__ctorsB                        b~task1.o
+nxt__light_sensors__ctorsS                        b~task1.o
+nxt__light_sensors__ctors_E                       ./nxt-light_sensors-ctors.o
+nxt__light_sensors__ctors__make                   ./nxt-light_sensors-ctors.o
+                                                  ./tasks.o
+nxt__light_sensors__enable_floodlight             ./nxt-light_sensors.o
+                                                  ./nxt-light_sensors-ctors.o
+nxt__light_sensors__floodlight_color              ./nxt-light_sensors.o
+nxt__light_sensors__floodlight_on                 ./nxt-light_sensors.o
+nxt__light_sensors__get_high                      ./nxt-light_sensors.o
+nxt__light_sensors__get_low                       ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorB12s              ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorE8s               ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorIP                ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorP                 ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorR10s              ./nxt-light_sensors.o
+nxt__light_sensors__light_sensorT                 ./nxt-light_sensors.o
+                                                  ./nxt-light_sensors-ctors.o
+nxt__light_sensors__light_sensorY                 ./nxt-light_sensors.o
+nxt__light_sensors__light_value                   ./nxt-light_sensors.o
+                                                  ./tasks.o
+nxt__light_sensors__normalized_light_value        ./nxt-light_sensors.o
+nxt__light_sensors__set_high                      ./nxt-light_sensors.o
+nxt__light_sensors__set_low                       ./nxt-light_sensors.o
+nxt__mallocB                                      b~task1.o
+nxt__mallocS                                      b~task1.o
+nxt__malloc_E                                     ./nxt-malloc.o
+nxt__prioritiesS                                  b~task1.o
+nxt__priorities_E                                 ./nxt-priorities.o
+nxt__priorities__avr_io_pump_priority             ./nxt-priorities.o
+nxt__registersS                                   b~task1.o
+nxt__sensor_portsB                                b~task1.o
+nxt__sensor_portsS                                b~task1.o
+nxt__sensor_ports_E                               ./nxt-sensor_ports.o
+                                                  b~task1.o
+nxt__sensor_ports__Tdigital_pinsBIP               ./nxt-sensor_ports.o
+nxt__sensor_ports___elabs                         ./nxt-sensor_ports.o
+                                                  b~task1.o
+nxt__sensor_ports__current_state                  ./nxt-sensor_ports.o
+nxt__sensor_ports__port_pinsIP                    ./nxt-sensor_ports.o
+nxt__sensor_ports__reset                          ./nxt-sensor_ports.o
+nxt__sensor_ports__reset_all_ports                ./nxt-sensor_ports.o
+nxt__sensor_ports__sensor_pins                    ./nxt-sensor_ports.o
+nxt__sensor_ports__set_input_power                ./nxt-sensor_ports.o
+                                                  ./nxt-light_sensors-ctors.o
+nxt__sensor_ports__set_pin_mode                   ./nxt-sensor_ports.o
+                                                  ./nxt-light_sensors-ctors.o
+nxt__sensor_ports__set_pin_state                  ./nxt-sensor_ports.o
+                                                  ./nxt-light_sensors-ctors.o
+                                                  ./nxt-light_sensors.o
+nxt__spiB                                         b~task1.o
+nxt__spi_E                                        ./nxt-spi.o
+                                                  b~task1.o
+nxt__spi___elabb                                  ./nxt-spi.o
+                                                  b~task1.o
+nxt__spi__send                                    ./nxt-spi.o
+                                                  ./nxt-lcd.o
+nxt__spi__spiTVIP                                 ./nxt-spi.o
+nxt__touch_sensors(long double *,...)(short, short,...)(double) ./nxt-touch_sensors.o
+                                                  ./tasks.o
+nxt__touch_sensorsB                               b~task1.o
+nxt__touch_sensorsS                               b~task1.o
+nxt__touch_sensors_E                              ./nxt-touch_sensors.o
+nxt__touch_sensors___alignment                    ./nxt-touch_sensors.o
+nxt__touch_sensors___size                         ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorB14s              ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorE10s              ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorIP                ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorP                 ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorR12s              ./nxt-touch_sensors.o
+nxt__touch_sensors__touch_sensorT                 ./nxt-touch_sensors.o
+                                                  ./tasks.o
+nxt__touch_sensors__touch_sensorY                 ./nxt-touch_sensors.o
+nxt__twi(long double,...)(char, void)             ./nxt-twi.o
+                                                  ./nxt-avr_io.o
+nxt__twiB                                         b~task1.o
+nxt__twiS                                         b~task1.o
+nxt__twi_E                                        ./nxt-twi.o
+                                                  b~task1.o
+nxt__twi___elabb                                  ./nxt-twi.o
+                                                  b~task1.o
+nxt__twi__send                                    ./nxt-twi.o
+                                                  ./nxt-avr_io.o
+nxt__twi__twiTVIP                                 ./nxt-twi.o
+nxt_main                                          main.o
+                                                  init.o
+prefetch_abort_handler                            init.o
+                                                  vectors.o
+put_exception                                     ./nxt-display.o
+                                                  main.o
+reserved_handler                                  init.o
+                                                  vectors.o
+slave_stack_table                                 ./s-bbthre.o
+start                                             init.o
+                                                  vectors.o
+swi_handler                                       init.o
+                                                  vectors.o
+system(bool, bool, signed)                        b~task1.o
+systemS                                           b~task1.o
+system_E                                          ./system.o
+system__always_compatible_rep                     ./system.o
+system__backend_divide_checks                     ./system.o
+system__backend_overflow_checks                   ./system.o
+system__bb_E                                      ./s-bb.o
+system__bb__cpu_primitives(long, long double)     ./s-bbcppr.o
+system__bb__cpu_primitives(short,  *)             ./s-bbcppr.o
+system__bb__cpu_primitivesB                       b~task1.o
+system__bb__cpu_primitivesS                       b~task1.o
+system__bb__cpu_primitives_E                      ./s-bbcppr.o
+system__bb__cpu_primitives__Tcontext_bufferBIP    ./s-bbcppr.o
+system__bb__cpu_primitives__arg                   ./s-bbcppr.o
+system__bb__cpu_primitives__disable_interrupts    ./s-bbcppr.o
+                                                  ./s-tpobmu.o
+                                                  ./s-bbprot.o
+system__bb__cpu_primitives__enable_interrupts     ./s-bbcppr.o
+                                                  ./s-tpobmu.o
+                                                  ./s-bbprot.o
+system__bb__cpu_primitives__flag_f                ./s-bbcppr.o
+system__bb__cpu_primitives__flag_i                ./s-bbcppr.o
+system__bb__cpu_primitives__initialize_context    ./s-bbcppr.o
+                                                  ./s-bbthre.o
+system__bb__cpu_primitives__initialize_floating_point ./s-bbcppr.o
+                                                  ./s-bbthre.o
+system__bb__cpu_primitives__multiprocessorsB      b~task1.o
+system__bb__cpu_primitives__multiprocessorsS      b~task1.o
+system__bb__cpu_primitives__multiprocessors_E     ./s-bcprmu.o
+system__bb__cpu_primitives__multiprocessors__current_cpu ./s-bcprmu.o
+                                                  ./s-mufalo.o
+                                                  ./s-bbthre.o
+                                                  ./s-bbthqu.o
+system__bb__cpu_primitives__multiprocessors__poke_cpu ./s-bcprmu.o
+                                                  ./s-tpobmu.o
+system__bb__cpu_primitives__multiprocessors__start_all_cpus ./s-bcprmu.o
+system__bb__cpu_primitives__multiprocessors__start_cpu ./s-bcprmu.o
+system__bb__interruptsB                           b~task1.o
+system__bb__interruptsS                           b~task1.o
+system__bb__interrupts_E                          ./s-bbinte.o
+                                                  b~task1.o
+system__bb__interrupts__Tinterrupt_handlersBIP    ./s-bbinte.o
+system__bb__interrupts___elabb                    ./s-bbinte.o
+                                                  b~task1.o
+system__bb__interrupts__attach_handler            ./s-bbinte.o
+                                                  ./s-interr.o
+system__bb__interrupts__attach_handler__2         ./s-bbinte.o
+                                                  ./s-bbtime.o
+system__bb__interrupts__current_interrupt         ./s-bbinte.o
+                                                  ./s-taprop.o
+system__bb__interrupts__disable_interrupt         ./s-bbinte.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+                                                  ./nxt-audio.o
+                                                  ./s-bbtime.o
+system__bb__interrupts__enable_interrupt          ./s-bbinte.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+                                                  ./nxt-audio.o
+                                                  ./s-bbtime.o
+system__bb__interrupts__initialize_interrupts     ./s-bbinte.o
+                                                  ./s-bbthre.o
+system__bb__interrupts__interrupt_being_handled   ./s-bbinte.o
+system__bb__interrupts__interrupt_handlers        ./s-bbinte.o
+system__bb__interrupts__no_interrupt              ./s-bbinte.o
+system__bb__interrupts__within_interrupt_stack    ./s-bbinte.o
+system__bb__parametersS                           b~task1.o
+system__bb__parameters_E                          ./s-bbpara.o
+system__bb__parameters__clock_frequency           ./s-bbpara.o
+system__bb__parameters__interrupt_levels          ./s-bbpara.o
+system__bb__parameters__multiprocessor            ./s-bbpara.o
+system__bb__peripheralsB                          b~task1.o
+system__bb__peripheralsS                          b~task1.o
+system__bb__peripherals_E                         ./s-bbperi.o
+system__bb__peripherals__initialize_board         ./s-bbperi.o
+                                                  ./s-bbthre.o
+system__bb__peripherals__level_of_interrupt       ./s-bbperi.o
+system__bb__peripherals__priority_of_interrupt    ./s-bbperi.o
+system__bb__peripherals__registersS               b~task1.o
+system__bb__peripherals__registers_E              ./s-bbpere.o
+system__bb__peripherals__registers__Tadc_cdrBIP   ./s-bbpere.o
+system__bb__peripherals__registers__Taic_smr_arrayBIP ./s-bbpere.o
+system__bb__peripherals__registers__Taic_svr_arrayBIP ./s-bbpere.o
+system__bb__peripherals__ticks_per_second         ./s-bbperi.o
+                                                  ./a-reatim.o
+system__bb__protectionB                           b~task1.o
+system__bb__protectionS                           b~task1.o
+system__bb__protection_E                          ./s-bbprot.o
+system__bb__protection__enter_kernel              ./s-bbprot.o
+                                                  ./s-bbtime.o
+                                                  ./s-bbthre.o
+system__bb__protection__leave_kernel              ./s-bbprot.o
+                                                  ./s-bbtime.o
+                                                  ./s-bbthre.o
+system__bb__protection__wakeup_served_entry_callback ./s-bbprot.o
+                                                  ./s-tpobmu.o
+system__bb__threads(short, long,...)(...)( *)     ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threadsB                              b~task1.o
+system__bb__threadsS                              b~task1.o
+system__bb__threads_E                             ./s-bbthre.o
+system__bb__threads__Tslave_stacksBIP             ./s-bbthre.o
+system__bb__threads__Tslave_stacks_tableBIP       ./s-bbthre.o
+system__bb__threads__get_affinity                 ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__get_atcb                     ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__get_cpu                      ./s-bbthre.o
+                                                  ./s-taprop.o
+                                                  ./s-bbthqu.o
+system__bb__threads__get_priority                 ./s-bbthre.o
+                                                  ./s-taprop.o
+                                                  ./s-bbinte.o
+system__bb__threads__initialize                   ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__initialize_slave_environment ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__initialized                  ./s-bbthre.o
+system__bb__threads__null_thread_id               ./s-bbthre.o
+system__bb__threads__queuesB                      b~task1.o
+system__bb__threads__queuesS                      b~task1.o
+system__bb__threads__queues_E                     ./s-bbthqu.o
+system__bb__threads__queues__alarms_table         ./s-bbthqu.o
+system__bb__threads__queues__change_priority      ./s-bbthqu.o
+                                                  ./s-bbinte.o
+                                                  ./s-bbthre.o
+system__bb__threads__queues__current_priority     ./s-bbthqu.o
+                                                  ./s-tpobmu.o
+system__bb__threads__queues__extract              ./s-bbthqu.o
+                                                  ./s-bbprot.o
+                                                  ./s-bbtime.o
+                                                  ./s-bbthre.o
+system__bb__threads__queues__extract_first_alarm  ./s-bbthqu.o
+                                                  ./s-bbtime.o
+system__bb__threads__queues__first_thread         ./s-bbthqu.o
+                                                  ./s-bbprot.o
+system__bb__threads__queues__get_next_alarm_time  ./s-bbthqu.o
+                                                  ./s-bbtime.o
+system__bb__threads__queues__global_list          ./s-bbthqu.o
+                                                  ./s-bbthre.o
+system__bb__threads__queues__insert               ./s-bbthqu.o
+                                                  ./s-bbprot.o
+                                                  ./s-bbtime.o
+                                                  ./s-bbthre.o
+system__bb__threads__queues__insert_alarm         ./s-bbthqu.o
+                                                  ./s-bbtime.o
+system__bb__threads__queues__running_thread       ./s-bbthqu.o
+                                                  ./s-tpobmu.o
+                                                  ./s-bbprot.o
+                                                  ./s-bbthre.o
+system__bb__threads__queues__wakeup_expired_alarms ./s-bbthqu.o
+system__bb__threads__queues__yield                ./s-bbthqu.o
+                                                  ./s-bbtime.o
+system__bb__threads__set_atcb                     ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__set_priority                 ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__slave_stacks                 ./s-bbthre.o
+system__bb__threads__thread_create                ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__threads__thread_descriptorIP          ./s-bbthre.o
+system__bb__threads__thread_self                  ./s-bbthre.o
+                                                  ./s-bbtime.o
+                                                  ./s-bbinte.o
+system__bb__threads__wakeup                       ./s-bbthre.o
+                                                  ./s-taprop.o
+system__bb__timeB                                 b~task1.o
+system__bb__timeS                                 b~task1.o
+system__bb__time_E                                ./s-bbtime.o
+system__bb__time__clock                           ./s-bbtime.o
+                                                  ./s-taprop.o
+                                                  ./s-bbprot.o
+                                                  ./s-bbthqu.o
+system__bb__time__delay_until                     ./s-bbtime.o
+                                                  ./s-taprop.o
+system__bb__time__get_next_timeout                ./s-bbtime.o
+                                                  ./s-bbthqu.o
+system__bb__time__initialize_timers               ./s-bbtime.o
+                                                  ./s-bbthre.o
+system__bb__time__tick                            ./s-bbtime.o
+system__bb__time__ticks_per_second                ./s-bbtime.o
+system__bb__time__update_alarm                    ./s-bbtime.o
+                                                  ./s-bbthqu.o
+system__command_line_args                         ./system.o
+system__configurable_run_time                     ./system.o
+system__default_bit_order                         ./system.o
+system__default_priority                          ./system.o
+system__denorm                                    ./system.o
+system__duration_32_bits                          ./system.o
+system__exit_status_supported                     ./system.o
+system__fractional_fixed_ops                      ./system.o
+system__frontend_layout                           ./system.o
+system__gcc_zcx_support                           ./system.o
+system__interruptsB                               b~task1.o
+system__interruptsS                               b~task1.o
+system__interrupts_E                              ./s-interr.o
+system__interrupts__E3sIP                         ./s-interr.o
+system__interrupts__default_handler               ./s-interr.o
+system__interrupts__default_interrupt_priority    ./s-interr.o
+system__interrupts__handler_arrayIP               ./s-interr.o
+system__interrupts__handler_itemIP                ./s-interr.o
+system__interrupts__install_handler               ./s-interr.o
+system__interrupts__install_restricted_handlers   ./s-interr.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+                                                  ./nxt-audio.o
+system__interrupts__user_handlers                 ./s-interr.o
+system__machine_codeS                             b~task1.o
+system__machine_code_E                            ./s-maccod.o
+system__machine_code__asm_input_operand_listIP    ./s-maccod.o
+system__machine_code__asm_output_operand_listIP   ./s-maccod.o
+system__machine_code__no_input_operands           ./s-maccod.o
+system__machine_code__no_output_operands          ./s-maccod.o
+system__machine_overflows                         ./system.o
+system__machine_rounds                            ./system.o
+system__max_interrupt_priority                    ./system.o
+system__max_priority                              ./system.o
+system__multiprocessorsB                          b~task1.o
+system__multiprocessorsS                          b~task1.o
+system__multiprocessors_E                         ./s-multip.o
+system__multiprocessors__fair_locksB              b~task1.o
+system__multiprocessors__fair_locksS              b~task1.o
+system__multiprocessors__fair_locks_E             ./s-mufalo.o
+system__multiprocessors__fair_locks__Tspinning_arrayBIP ./s-mufalo.o
+system__multiprocessors__fair_locks__fair_lockIP  ./s-mufalo.o
+system__multiprocessors__fair_locks__initialize   ./s-mufalo.o
+                                                  ./s-taprob.o
+system__multiprocessors__fair_locks__lock         ./s-mufalo.o
+                                                  ./s-tpobmu.o
+system__multiprocessors__fair_locks__locked       ./s-mufalo.o
+system__multiprocessors__fair_locks__multiprocessor ./s-mufalo.o
+system__multiprocessors__fair_locks__next_spinning ./s-mufalo.o
+system__multiprocessors__fair_locks__try_lock     ./s-mufalo.o
+system__multiprocessors__fair_locks__unlock       ./s-mufalo.o
+                                                  ./s-tpobmu.o
+system__multiprocessors__not_a_specific_cpu       ./s-multip.o
+system__multiprocessors__number_of_cpus           ./s-multip.o
+                                                  ./s-tarest.o
+                                                  ./s-taskin.o
+system__multiprocessors__spin_locksB              b~task1.o
+system__multiprocessors__spin_locksS              b~task1.o
+system__multiprocessors__spin_locks_E             ./s-musplo.o
+system__multiprocessors__spin_locks__lock         ./s-musplo.o
+system__multiprocessors__spin_locks__locked       ./s-musplo.o
+                                                  ./s-mufalo.o
+system__multiprocessors__spin_locks__spin_lockIP  ./s-musplo.o
+system__multiprocessors__spin_locks__try_lock     ./s-musplo.o
+                                                  ./s-mufalo.o
+system__multiprocessors__spin_locks__unlock       ./s-musplo.o
+                                                  ./s-mufalo.o
+system__multiprocessors__spin_locks__unlocked     ./s-musplo.o
+system__null_address                              ./system.o
+system__os_interfaceS                             b~task1.o
+system__os_interface_E                            ./s-osinte.o
+system__os_interface__lwp_self                    ./s-osinte.o
+system__os_interface__no_interrupt                ./s-osinte.o
+system__os_interface__null_thread_id              ./s-osinte.o
+system__parametersB                               b~task1.o
+system__parametersS                               b~task1.o
+system__parameters_E                              ./s-parame.o
+system__parameters__adjust_storage_size           ./s-parame.o
+                                                  ./s-taskin.o
+system__parameters__c_malloc_linkname             ./s-parame.o
+system__parameters__default_stack_size            ./s-parame.o
+system__parameters__dynamic                       ./s-parame.o
+system__parameters__garbage_collected             ./s-parame.o
+system__parameters__minimum_stack_size            ./s-parame.o
+system__parameters__no_abort                      ./s-parame.o
+system__parameters__runtime_traces                ./s-parame.o
+system__parameters__sec_stack_dynamic             ./s-parame.o
+system__parameters__sec_stack_ratio               ./s-parame.o
+system__parameters__single_lock                   ./s-parame.o
+system__parameters__stack_grows_down              ./s-parame.o
+system__parameters__unspecified_size              ./s-parame.o
+system__preallocated_stacks                       ./system.o
+system__secondary_stackB                          b~task1.o
+system__secondary_stackS                          b~task1.o
+system__secondary_stack_E                         ./s-secsta.o
+system__secondary_stack__memoryIP                 ./s-secsta.o
+system__secondary_stack__ss_allocate              ./s-secsta.o
+                                                  ./nxt-light_sensors-ctors.o
+                                                  ./a-tags.o
+system__secondary_stack__ss_init                  ./s-secsta.o
+                                                  ./s-tarest.o
+                                                  ./s-taskin.o
+system__secondary_stack__ss_mark                  ./s-secsta.o
+system__secondary_stack__ss_pool                  ./s-secsta.o
+system__secondary_stack__ss_release               ./s-secsta.o
+system__signed_zeros                              ./system.o
+system__stack_check_default                       ./system.o
+system__stack_check_limits                        ./system.o
+system__stack_check_probes                        ./system.o
+system__storage_elementsB                         b~task1.o
+system__storage_elementsS                         b~task1.o
+system__storage_elements_E                        ./s-stoele.o
+system__storage_elements__Oadd                    ./s-stoele.o
+system__storage_elements__Oadd__2                 ./s-stoele.o
+system__storage_elements__Omod                    ./s-stoele.o
+system__storage_elements__Osubtract               ./s-stoele.o
+system__storage_elements__Osubtract__2            ./s-stoele.o
+system__storage_elements__storage_arrayIP         ./s-stoele.o
+system__storage_elements__to_address              ./s-stoele.o
+system__storage_elements__to_integer              ./s-stoele.o
+system__support_64_bit_divides                    ./system.o
+system__support_aggregates                        ./system.o
+system__support_composite_assign                  ./system.o
+system__support_composite_compare                 ./system.o
+system__support_long_shifts                       ./system.o
+system__suppress_standard_library                 ./system.o
+system__system_name                               ./system.o
+system__task_infoB                                b~task1.o
+system__task_infoS                                b~task1.o
+system__task_info_E                               ./s-tasinf.o
+system__task_info__unspecified_task_info          ./s-tasinf.o
+system__task_primitivesS                          b~task1.o
+system__task_primitives_E                         ./s-taspri.o
+system__task_primitives__operations(short, long,...)(...)( *) ./s-taprop.o
+                                                  ./s-tarest.o
+                                                  ./s-tposen.o
+                                                  ./s-taskin.o
+system__task_primitives__operations(short,...)(long, float) ./s-taprop.o
+                                                  ./s-tarest.o
+                                                  ./s-tposen.o
+                                                  ./s-tpobmu.o
+                                                  ./s-taskin.o
+                                                  ./a-retide.o
+system__task_primitives__operationsB              b~task1.o
+system__task_primitives__operationsS              b~task1.o
+system__task_primitives__operations_E             ./s-taprop.o
+system__task_primitives__operations__create_task  ./s-taprop.o
+                                                  ./s-tarest.o
+system__task_primitives__operations__delay_until  ./s-taprop.o
+                                                  ./a-retide.o
+system__task_primitives__operations__enter_task   ./s-taprop.o
+                                                  ./s-tarest.o
+system__task_primitives__operations__get_affinity ./s-taprop.o
+system__task_primitives__operations__get_cpu      ./s-taprop.o
+                                                  ./s-tpobmu.o
+system__task_primitives__operations__get_priority ./s-taprop.o
+                                                  ./s-tpobmu.o
+                                                  ./s-taprob.o
+system__task_primitives__operations__get_thread_id ./s-taprop.o
+system__task_primitives__operations__initialize   ./s-taprop.o
+                                                  ./s-taskin.o
+system__task_primitives__operations__initialize_slave ./s-taprop.o
+                                                  ./s-taskin.o
+system__task_primitives__operations__initialize_tcb ./s-taprop.o
+                                                  ./s-taskin.o
+system__task_primitives__operations__is_task_context ./s-taprop.o
+system__task_primitives__operations__monotonic_clock ./s-taprop.o
+                                                  ./a-reatim.o
+system__task_primitives__operations__set_priority ./s-taprop.o
+                                                  ./s-tarest.o
+                                                  ./s-taprob.o
+                                                  ./s-taskin.o
+system__task_primitives__operations__wakeup       ./s-taprop.o
+                                                  ./s-tposen.o
+                                                  ./s-tpobmu.o
+system__task_primitives__private_dataIP           ./s-taspri.o
+system__tasking(short,...)(long, float)           ./s-taskin.o
+                                                  ./s-tarest.o
+                                                  ./s-taprob.o
+system__taskingB                                  b~task1.o
+system__taskingS                                  b~task1.o
+system__tasking_E                                 ./s-taskin.o
+system__tasking__E5sIP                            ./s-taskin.o
+system__tasking__Tenvironment_tableBIP            ./s-taskin.o
+system__tasking__activation_chainIP               ./s-taskin.o
+system__tasking__debugB                           b~task1.o
+system__tasking__debugS                           b~task1.o
+system__tasking__debug_E                          ./s-tasdeb.o
+system__tasking__debug__add_task_id               ./s-tasdeb.o
+                                                  ./s-taprop.o
+system__tasking__debug__first_task                ./s-tasdeb.o
+system__tasking__debug__last_task                 ./s-tasdeb.o
+system__tasking__fall_back_handler                ./s-taskin.o
+                                                  ./s-tarest.o
+system__tasking__initialize                       ./s-taskin.o
+                                                  ./s-tarest.o
+                                                  ./s-taprob.o
+                                                  ./a-reatim.o
+system__tasking__initialize_atcb                  ./s-taskin.o
+                                                  ./s-tarest.o
+system__tasking__library_task_level               ./s-taskin.o
+system__tasking__null_task                        ./s-taskin.o
+system__tasking__protected_objectsB               b~task1.o
+system__tasking__protected_objectsS               b~task1.o
+system__tasking__protected_objects_E              ./s-taprob.o
+                                                  b~task1.o
+system__tasking__protected_objects___elabb        ./s-taprob.o
+                                                  b~task1.o
+system__tasking__protected_objects__entry_bodyIP  ./s-taprob.o
+system__tasking__protected_objects__initialize_protection ./s-taprob.o
+                                                  ./nxt-audio.o
+                                                  ./s-tposen.o
+system__tasking__protected_objects__lock          ./s-taprob.o
+                                                  ./nxt-audio.o
+                                                  ./s-tposen.o
+system__tasking__protected_objects__multiprocessors(short,...)(long double, void,...)(double) ./s-tpobmu.o
+system__tasking__protected_objects__multiprocessorsB b~task1.o
+system__tasking__protected_objects__multiprocessorsS b~task1.o
+system__tasking__protected_objects__multiprocessors_E ./s-tpobmu.o
+                                                  b~task1.o
+system__tasking__protected_objects__multiprocessors___elabb ./s-tpobmu.o
+                                                  b~task1.o
+system__tasking__protected_objects__multiprocessors__entry_call_listIP ./s-tpobmu.o
+system__tasking__protected_objects__multiprocessors__wakeup_served_entry ./s-tpobmu.o
+system__tasking__protected_objects__null_po       ./s-taprob.o
+system__tasking__protected_objects__protectionIP  ./s-taprob.o
+system__tasking__protected_objects__single_entryB b~task1.o
+system__tasking__protected_objects__single_entryS b~task1.o
+system__tasking__protected_objects__single_entry_E ./s-tposen.o
+system__tasking__protected_objects__single_entry__complete_single_entry_body ./s-tposen.o
+                                                  ./tasks.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+system__tasking__protected_objects__single_entry__initialize_protection_entry ./s-tposen.o
+                                                  ./tasks.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+system__tasking__protected_objects__single_entry__lock_entry ./s-tposen.o
+                                                  ./tasks.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+system__tasking__protected_objects__single_entry__multiprocessor ./s-tposen.o
+system__tasking__protected_objects__single_entry__protected_count_entry ./s-tposen.o
+system__tasking__protected_objects__single_entry__protected_single_entry_call ./s-tposen.o
+                                                  ./tasks.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+system__tasking__protected_objects__single_entry__protected_single_entry_caller ./s-tposen.o
+system__tasking__protected_objects__single_entry__service_entry ./s-tposen.o
+                                                  ./tasks.o
+                                                  ./nxt-twi.o
+                                                  ./nxt-spi.o
+system__tasking__protected_objects__single_entry__unlock_entry ./s-tposen.o
+system__tasking__protected_objects__unlock        ./s-taprob.o
+                                                  ./nxt-audio.o
+                                                  ./s-tposen.o
+system__tasking__restrictedS                      b~task1.o
+system__tasking__restricted_E                     ./s-tasres.o
+system__tasking__restricted__stagesB              b~task1.o
+system__tasking__restricted__stagesS              b~task1.o
+system__tasking__restricted__stages_E             ./s-tarest.o
+                                                  b~task1.o
+system__tasking__restricted__stages___elabb       ./s-tarest.o
+                                                  b~task1.o
+system__tasking__restricted__stages__activate_restricted_tasks ./s-tarest.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+system__tasking__restricted__stages__complete_restricted_activation ./s-tarest.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+system__tasking__restricted__stages__complete_restricted_task ./s-tarest.o
+system__tasking__restricted__stages__create_restricted_task ./s-tarest.o
+                                                  ./tasks.o
+                                                  ./nxt-avr.o
+system__tasking__restricted__stages__finalize_global_tasks ./s-tarest.o
+system__tasking__restricted__stages__restricted_terminated ./s-tarest.o
+system__tasking__storage_size                     ./s-taskin.o
+system__tasking__unspecified_priority             ./s-taskin.o
+system__unsigned_typesS                           b~task1.o
+system__unsigned_types_E                          ./s-unstyp.o
+system__unsigned_types__packed_bytes1IP           ./s-unstyp.o
+system__use_ada_main_program_name                 ./system.o
+system__zcx_by_default                            ./system.o
+task1B                                            b~task1.o
+tasking_error                                     ./s-taskin.o
+tasks(sI *,  *)                                   ./tasks.o
+tasksB                                            b~task1.o
+tasksS                                            b~task1.o
+tasks_E                                           ./tasks.o
+                                                  b~task1.o
+tasks__J20s                                       ./tasks.o
+tasks__J32s                                       ./tasks.o
+tasks__J44s                                       ./tasks.o
+tasks__R48s                                       ./tasks.o
+tasks___chain                                     ./tasks.o
+tasks___elabb                                     ./tasks.o
+                                                  b~task1.o
+tasks___elabs                                     ./tasks.o
+                                                  b~task1.o
+tasks__background                                 ./tasks.o
+                                                  ./task1.o
+tasks__bumper                                     ./tasks.o
+tasks__event                                      ./tasks.o
+tasks__eventTA                                    ./tasks.o
+tasks__eventTVIP                                  ./tasks.o
+tasks__event__signalN                             ./tasks.o
+tasks__event__signalP                             ./tasks.o
+tasks__event__wait_B5s                            ./tasks.o
+tasks__event__wait_E4s                            ./tasks.o
+tasks__eventdispatchertask                        ./tasks.o
+tasks__eventdispatchertaskTKB                     ./tasks.o
+tasks__eventdispatchertaskTKE                     ./tasks.o
+tasks__eventdispatchertaskTKVIP                   ./tasks.o
+tasks__eventdispatchertaskTKZ                     ./tasks.o
+tasks__helloworldtask                             ./tasks.o
+tasks__helloworldtaskTKB                          ./tasks.o
+tasks__helloworldtaskTKE                          ./tasks.o
+tasks__helloworldtaskTKVIP                        ./tasks.o
+tasks__helloworldtaskTKZ                          ./tasks.o
+tasks__motortask                                  ./tasks.o
+tasks__motortaskTKB                               ./tasks.o
+tasks__motortaskTKE                               ./tasks.o
+tasks__motortaskTKVIP                             ./tasks.o
+tasks__motortaskTKZ                               ./tasks.o
+tasks__photodetector                              ./tasks.o
+tasks__touchoffevent                              ./tasks.o
+tasks__touchonevent                               ./tasks.o
+undef_handler                                     init.o
+                                                  vectors.o

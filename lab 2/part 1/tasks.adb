@@ -16,12 +16,7 @@ package body Tasks is
 
    -------------
    --  Tasks  --
-   -------------   
-   task HelloworldTask is
-      -- define its priority higher than the main procedure --
-      pragma Storage_Size (4096); --  task memory allocation --
-   end HelloworldTask;
-
+   -------------
    task body HelloworldTask is
       Next_Time : Time := Clock;
       --Period_Display: Duration := Milliseconds(300);

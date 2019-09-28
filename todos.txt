@@ -1,0 +1,14 @@
+Task 1:
+  - define periods
+
+Task 2:
+  - are the priorities right?
+  - remove 10ms in EventDispatcherTask
+
+  - How to wait for two events?
+
+
+Task 3:
+  - 
+
+Task 4:
