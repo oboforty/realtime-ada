@@ -7,6 +7,8 @@ with NXT.Last_Chance;
 with NXT.Light_Sensors; use NXT.Light_Sensors;
 with NXT.Light_Sensors.Ctors; use NXT.Light_Sensors.Ctors;
 with NXT.Touch_Sensors;  use NXT.Touch_Sensors;
+with NXT.Ultrasonic_Sensors;        use NXT.Ultrasonic_Sensors;
+with NXT.Ultrasonic_Sensors.Ctors;  use NXT.Ultrasonic_Sensors.Ctors;
 with System;
 
 
@@ -14,30 +16,30 @@ package Tasks is
 
   procedure Background;
 
-
+  procedure UpPriority(newPriorit: Integer; newDuration: Integer; newSpeed: PWM_Value);
   -- TASKS
   task MotorTask is
     -- Define priority
     pragma Priority (System.Priority'First + 4);
-    pragma Storage_Size(4096);
+    pragma Storage_Size(2048);
   end MotorTask;
 
   task ButtonpressTask is
     -- Define priority
-    pragma Priority (System.Priority'First + 3);
-    pragma Storage_Size(4096);
+    pragma Priority (System.Priority'First + 2);
+    pragma Storage_Size(2048);
   end ButtonpressTask;
 
-  -- task DistanceTask is
+  task DistanceTask is
     -- Define priority
-    -- pragma Priority (System.Priority'First + 2);
-  --  pragma Storage_Size(4096);
-  -- end DistanceTask;
+    pragma Priority (System.Priority'First + 3);
+   pragma Storage_Size(2048);
+  end DistanceTask;
 
   task DisplayTask is
     -- Define priority
     pragma Priority (System.Priority'First + 1);
-    pragma Storage_Size(4096);
+    pragma Storage_Size(2048);
   end DisplayTask;
 
 
@@ -53,8 +55,8 @@ package Tasks is
   driving_command: Driving_Command_Type;
 
   PRIO_IDLE: Integer := 1;
+  PRIO_DISTANCE: Integer := 2;
   PRIO_BUTTON: Integer := 3;
-  --PRIO_DISTANCE: Integer := ?;
 
 
   private
@@ -65,5 +67,8 @@ package Tasks is
 
   -- [1] Push/Touch sensor
   Bumper : Touch_Sensor (Sensor_1);
+
+  -- [2] Ultrasonic
+  Sonar : Ultrasonic_Sensor := Make (Sensor_2);
 
 end Tasks;

@@ -17,13 +17,13 @@ package Tasks is
   -- TASKS
   task MotorTask is
     -- Define priority and mem alloc
-    pragma Priority (System.Priority'First + 3);
+    pragma Priority (System.Priority'First + 2);
     pragma Storage_Size(4096);
   end MotorTask;
 
   task EventdispatcherTask is
     -- Define priority and mem alloc
-    pragma Priority (System.Priority'First + 2);
+    pragma Priority (System.Priority'First + 3);
     pragma Storage_Size(4096);
   end EventdispatcherTask;
 
@@ -53,7 +53,7 @@ package Tasks is
     procedure Signal(event_id : in Integer);
   private
     -- assign priority that is ceiling of the user tasks priorities --
-    pragma Priority (System.Priority'First + 1);
+    pragma Priority (System.Priority'First + 5);
 
     -- Event data declaration
     Current_event_id : Integer;

@@ -37,32 +37,42 @@ package body Tasks is
   task body MotorTask is
     Speed : constant PWM_Value := -100;
     Stop : constant PWM_Value := 0;
-
+    CurrEvent : Integer := 0;
+    PrevEvent : Integer := 0;
+    Ispressed : Boolean := false;
+    OnGround : Boolean := false;
     Next_Time : Time := Clock;
   begin
     -- A task that waits for an interrupt and starts/stops the motors accordingly
     loop
-      -- TODO: itt:
-      -- how do we wait for 2 events?
-
-      -- Event.wait(TouchOnEvent);
-      -- Event.wait(TouchOffEvent);
-      -- Event.wait(GroundEnteredEvent);
-      -- Event.wait(GroundLeftEvent);
-
-
       -- Start the motors on button push
-      Event.wait(TouchOnEvent);
-      Set_Power(Motor_A, Speed, False);
-      Set_Power(Motor_B, Speed, False);
+      --Event.wait(TouchOnEvent);
+      Event.wait(CurrEvent);
 
-      -- -- Stop the motors on buttonr release
-      Event.wait(TouchOffEvent);
-      Set_Power(Motor_A, Stop, False);
-      Set_Power(Motor_B, Stop, False);
 
-      -- 10 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(300);
+      if (CurrEvent = TouchOnEvent) then
+        Ispressed := True;
+      elsif (CurrEvent = TouchOffEvent) then
+        Ispressed := False;
+      end if;
+
+      if (CurrEvent = GroundEnteredEvent) then
+        OnGround := True;
+      elsif (CurrEvent = GroundLeftEvent) then
+        OnGround := False;
+      end if;
+
+      if (OnGround and Ispressed) then
+        Set_Power(Motor_A, Speed, False);
+        Set_Power(Motor_B, Speed, False);
+      else
+         Set_Power(Motor_A, Stop, False);
+         Set_Power(Motor_B, Stop, False);
+      end if;
+
+
+      -- 100 ms absolute delay
+      Next_Time := Next_Time + Milliseconds(100);
       delay until Next_Time;
     end loop;
   end MotorTask;
@@ -83,7 +93,7 @@ package body Tasks is
         Power_Down;
       end if;
 
-      -- detect push sensor and create event
+      -- -- detect push sensor and create event
       if Pressed(Bumper) then
         if (not btn_pressed) then
           btn_pressed := True;
@@ -96,8 +106,8 @@ package body Tasks is
         end if;
       end if;
 
-      -- detect light sensor values and create event
-      if (PhotoDetector.Light_Value > 20) then
+      -- -- detect light sensor values and create event
+      if (PhotoDetector.Light_Value > 20)then
         if (over_ground) then
           -- the idea is that too big of a light would mean the end of the table is reached
           -- so therefore, we left the safe ground
@@ -117,7 +127,7 @@ package body Tasks is
       end if;
 
       -- 10 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(300);
+      Next_Time := Next_Time + Milliseconds(100);
       delay until Next_Time;
     end loop;
   end EventdispatcherTask;
