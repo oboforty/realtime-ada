@@ -25,8 +25,8 @@ package Tasks is
   --  Define periods and times  --
 
   --  Define used sensor ports  --
-  -- [4] Light Sensor
-  PhotoDetector : Light_Sensor := Make(Sensor_4, Floodlight_On => False);
+  -- [3] Light Sensor
+  PhotoDetector : Light_Sensor := Make(Sensor_3);
 
   --  Init sensors --
 
