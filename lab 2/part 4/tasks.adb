@@ -33,6 +33,16 @@ package body Tasks is
     driving_command.is_moving := leftSpeed /= 0 or rightSpeed /= 0;
   end UpPriorityTurn;
 
+  function clamp (v: Float) return Float is
+  begin
+    if v > 1.0 then
+      return 1.0;
+    elsif v < 0.0 then
+      return 0.0;
+    else
+      return v;
+    end if;
+  end clamp;
 
   -------------
   --  Tasks  --
@@ -98,8 +108,10 @@ package body Tasks is
 
             if (not driving_command.is_moving) then 
               -- stop and 2nd press
-              UpPriority(PRIO_BUTTON, 60000, 85);
+              driving_command.has_started := True;
+              UpPriority(PRIO_BUTTON, 2000, PWM_Value(SPEED_MAX-SPEED_MIN));
             else
+              driving_command.has_started := False;
               UpPriority(PRIO_BUTTON, 0, 0);
             end if;
           end if;
@@ -113,8 +125,8 @@ package body Tasks is
       end if;
 
 
-      -- 10 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(10);
+      -- 100 ms absolute delay
+      Next_Time := Next_Time + Milliseconds(100);
       delay until Next_Time;
     end loop;
   end ButtonpressTask;
@@ -130,40 +142,19 @@ package body Tasks is
     -- chill a bit
     delay until Clock + Milliseconds(100);
 
-    Sonar.Set_Mode (Ping);
-
+    Sonar.Set_Mode(Ping);
+ 
     loop
       Sonar.Ping;
       Sonar.Get_Distance(Distance);
 
-
-      -- if (Distance <= 50) then
-      --   if (driving_command.update_priority <= PRIO_DISTANCE) then
-      --     -- decrease the speed gradually
-
-      --     if (Distance <= 20) then
-      --       -- Put_Noupdate("Halt!!");
-      --       -- New_Line;
-      --       UpPriority(PRIO_DISTANCE,0,0);
-            
-      --       UpPriority(PRIO_DISTANCE,1000,-50);
-      --     elsif (Distance <= 30) then
-      --       -- Put_Noupdate("Slow!!");
-      --       -- New_Line;
-
-      --       UpPriority(PRIO_DISTANCE,driving_command.duration,10);
-      --     elsif (Distance <= 40) then
-      --       UpPriority(PRIO_DISTANCE,driving_command.duration,30);
-      --     elsif (Distance <= 50) then
-      --       UpPriority(PRIO_DISTANCE,driving_command.duration,40);
-      --     end if;
-
-          
-      --   end if;
-
-      -- end if;
-
-
+      if (driving_command.has_started) then
+        if (Distance <= 25) then
+          UpPriority(PRIO_DISTANCE, 500, 0);
+        else
+          UpPriority(PRIO_DISTANCE, 500, PWM_Value(SPEED_MAX-SPEED_MIN));
+        end if;
+      end if;
 
       -- 100 ms absolute delay
       Next_Time := Next_Time + Milliseconds(100);
@@ -172,7 +163,7 @@ package body Tasks is
   end DistanceTask;
 
   task body DisplayTask is
-
+ 
     Next_Time : Time := Clock;
   begin
     -- task body starts here ---
@@ -198,50 +189,45 @@ package body Tasks is
     light_edge: Integer := -1;
 
     reading: Integer := -1;
+    norm_light_val: Float := -1.0;
 
     Next_Time : Time := Clock;
   begin
     -- @TEMPORAL
     -- FOR DEBUGGING
-    track_edge_black := 31;
-    track_edge_white := 47;
+    track_edge_black := 10;
+    track_edge_white := 90;
 
     -- task body starts here ---
-    Put_Line("Push buttons to calibrate!");
-
+ 
     Calib_Loop:
     loop
+      Clear_Screen_Noupdate;
+      Put_Noupdate("-----------");
+      New_Line;
+      Put_Noupdate(PhotoDetector.Light_Value);
+      New_Line;
+
+      Put_Noupdate(track_edge_white);
+      Put_Noupdate(" | ");
+      Put_Noupdate(track_edge_black);
+      Put_Noupdate(" | ");
+      New_Line;
+      Put_Noupdate("-----------");
+      New_Line;
 
       -- calibration buttons
       if NXT.AVR.Button = Right_Button then
         track_edge_black := PhotoDetector.Light_Value;
-
-        -- wait for black line
-        Clear_Screen_Noupdate; 
-        Put_Noupdate("Calibrated black: ");
-        Put_Noupdate(track_edge_black);
-        New_Line;
       end if;
 
       if NXT.AVR.Button = Left_Button then
         track_edge_white := PhotoDetector.Light_Value;
-
-        -- wait for white line
-        Clear_Screen_Noupdate; 
-        Put_Noupdate("Calibrated white: ");
-        Put_Noupdate(track_edge_white);
-        New_Line;
       end if;
 
       if NXT.AVR.Button = Middle_Button then
         if track_edge_black /= -1 and then track_edge_white /= -1 then
           light_edge := (track_edge_white + track_edge_black) / 2;
-
-          Clear_Screen_Noupdate; 
-          Put_Noupdate("Ready: ");
-          Put_Noupdate(light_edge);
-          New_Line;
-
           exit Calib_Loop;
         end if;
       end if;
@@ -257,27 +243,32 @@ package body Tasks is
     loop
       reading := PhotoDetector.Light_Value;
 
-      Clear_Screen_Noupdate; 
+      -- PD controller
+      norm_light_val := clamp(Float(reading - track_edge_black) / Float(track_edge_white - track_edge_black));
+
+      Clear_Screen_Noupdate;
       Put_Noupdate("V: ");
-      Put_Noupdate(light_edge);
+      Put_Noupdate(reading);
       New_Line;
+
+      -- Put_Noupdate("[");
+      -- Put_Noupdate(track_edge_black);
+      -- Put_Noupdate(",");
+      -- Put_Noupdate(track_edge_white);
+      -- Put_Noupdate("]");
+      -- New_Line;
+
 
       if (driving_command.is_moving) then
 
-        if (reading > light_edge+2) then
-          Put_Noupdate("[W] Turn right");
-          New_Line;
+        UpPriorityTurn(PRIO_BUTTON, 100, PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(0.0+norm_light_val)), PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(1.0-norm_light_val)));
 
-          UpPriorityTurn(PRIO_BUTTON, 500, 100, 70);
-
-        elsif (reading < light_edge-2) then
-          Put_Noupdate("[B] Turn left");
-          New_Line;
-
-          UpPriorityTurn(PRIO_BUTTON, 500, 70, 100);
-        else
-          UpPriority(PRIO_BUTTON, 1000, 85);
-        end if;
+        Put_Noupdate("Rm: ");
+        Put_Noupdate(Integer(driving_command.speed_right));
+        New_Line;
+        Put_Noupdate("Lm: ");
+        Put_Noupdate(Integer(driving_command.speed_left));
+        New_Line;
       else
         Put_Noupdate("I am stopped.");
         New_Line;

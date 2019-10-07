@@ -3,10 +3,11 @@ Task 1:
 
 Task 2:
   - are the priorities right?
-  - remove 10ms in EventDispatcherTask
+----> remove 10ms in EventDispatcherTask
 
 Task 3:
-  - Before we are done with the program, there is a potential problem to be taken care of. The global record "driving_command" is shared by several tasks that are writing to and reading from it. Do you need to protect it in any way? If so, do that.
-  - display task that outputs some BS
+----> Before we are done with the program, there is a potential problem to be taken care of. The global record "driving_command" is shared by several tasks that are writing to and reading from it. Do you need to protect it in any way? If so, do that.
+----> display task that outputs some BS
 
 Task 4:
+----> distance task

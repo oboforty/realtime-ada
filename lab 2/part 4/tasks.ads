@@ -24,7 +24,7 @@ package Tasks is
   task MotorTask is
     -- Define priority
     pragma Priority (System.Priority'First + 6);
-    pragma Storage_Size(2048);
+    pragma Storage_Size(1024);
   end MotorTask;
 
   task ButtonpressTask is
@@ -48,7 +48,7 @@ package Tasks is
   task CalibrationTask is
     -- Define priority
     pragma Priority (System.Priority'First + 2);
-    pragma Storage_Size(2048);
+    pragma Storage_Size(1024);
   end CalibrationTask;
 
   -- Records
@@ -59,6 +59,7 @@ package Tasks is
       speed_right: PWM_Value;
 
       is_moving: Boolean := False;
+      has_started: Boolean := False;
 
       update_priority: Integer := 0;
     end record;
@@ -69,17 +70,30 @@ package Tasks is
   PRIO_DISTANCE: Integer := 2;
   PRIO_BUTTON: Integer := 3;
 
+  -- forward speed value
+
+  -- Min and Max speeds for both wheels turning
+  SPEED_MAX: Float := 30.0;
+  SPEED_MIN: Float := 10.0;
+
+
+  TRACK_THRESHOLD: Integer := 4;
+
 
   private
 
   --  Init sensors --
-  -- [3] Light Sensor
-  PhotoDetector : Light_Sensor := Make(Sensor_3);
-
   -- [1] Push/Touch sensor
   Bumper : Touch_Sensor (Sensor_1);
 
+  -- [2]
+
+
+  -- [3] Light Sensor --
+  PhotoDetector : Light_Sensor := Make(Sensor_3, True);
+
   -- [2] Ultrasonic
   Sonar : Ultrasonic_Sensor := Make (Sensor_2);
+
 
 end Tasks;
