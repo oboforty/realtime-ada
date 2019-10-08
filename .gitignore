@@ -3,3 +3,10 @@
 
 # Ada Library Information
 *.ali
+
+
+.idea/
+.pyc
+__pycache__/
+*.py[cod]
+*$py.class
