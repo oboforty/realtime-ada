@@ -53,10 +53,8 @@ package body Tasks is
 
     loop
       -- Define a task "MotorcontrolTask" that "executes" the "driving command". 
-      -- 50 ms delay needs 20 cycles to make 1000 ms
 
       if (driving_command.duration > 0) then
-        -- TODO: ITT: what is the driving period length?
         driving_command.duration := driving_command.duration - 20;
 
         -- if the motor still has time to work, then we set the speed
@@ -73,8 +71,8 @@ package body Tasks is
       Set_Power(Motor_A, driving_command.speed_left, False);
       Set_Power(Motor_B, driving_command.speed_right, False);
 
-      -- 50 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(50);
+      -- absolute delay
+      Next_Time := Next_Time + Milliseconds(PERIOD_MOTOR);
       delay until Next_Time;
     end loop;
   end MotorTask;
@@ -88,13 +86,9 @@ package body Tasks is
     -- task body starts here ---
 
     -- chill a bit
-    delay until Clock + Milliseconds(100);
+    delay until Clock + Milliseconds(200);
 
     loop
-      -- TODO: write a function change_driving_command with update_priority, speed and driving_duration
-      --   as parameters that can be used by tasks to update the record.
-
-
       -- detect push sensor and create event
       if Pressed(Bumper) then
         if (not btn_pressed) then
@@ -109,7 +103,7 @@ package body Tasks is
             if (not driving_command.is_moving) then 
               -- stop and 2nd press
               driving_command.has_started := True;
-              UpPriority(PRIO_BUTTON, 2000, PWM_Value(SPEED_MAX-SPEED_MIN));
+              UpPriority(PRIO_BUTTON, 500, PWM_Value(SPEED_MAX-SPEED_MIN));
             else
               driving_command.has_started := False;
               UpPriority(PRIO_BUTTON, 0, 0);
@@ -125,8 +119,8 @@ package body Tasks is
       end if;
 
 
-      -- 100 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(100);
+      -- absolute delay
+      Next_Time := Next_Time + Milliseconds(PERIOD_BTNSTOP);
       delay until Next_Time;
     end loop;
   end ButtonpressTask;
@@ -149,15 +143,15 @@ package body Tasks is
       Sonar.Get_Distance(Distance);
 
       if (driving_command.has_started) then
-        if (Distance <= 25) then
+        if (Distance <= 20) then
           UpPriority(PRIO_DISTANCE, 500, 0);
         else
-          UpPriority(PRIO_DISTANCE, 500, PWM_Value(SPEED_MAX-SPEED_MIN));
+          UpPriority(PRIO_DISTANCE, 500, PWM_Value(SPEED_FORWARD));
         end if;
       end if;
 
       -- 100 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(100);
+      Next_Time := Next_Time + Milliseconds(PERIOD_DISTANCE);
       delay until Next_Time;
     end loop;
   end DistanceTask;
@@ -176,8 +170,8 @@ package body Tasks is
         Power_Down;
       end if;
 
-      -- 100 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(100);
+      -- absolute delay
+      Next_Time := Next_Time + Milliseconds(PERIOD_DISPLAY);
       delay until Next_Time;
     end loop;
   end DisplayTask;
@@ -187,6 +181,7 @@ package body Tasks is
     track_edge_black: Integer := -1;
     track_edge_white: Integer := -1;
     light_edge: Integer := -1;
+    Prev_Light_val: Integer := -1;
 
     reading: Integer := -1;
     norm_light_val: Float := -1.0;
@@ -232,8 +227,8 @@ package body Tasks is
         end if;
       end if;
 
-      -- 100 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(100);
+      -- absolute delay
+      Next_Time := Next_Time + Milliseconds(PERIOD_CALIBRATION);
       delay until Next_Time;
     end loop Calib_Loop;
 
@@ -260,9 +255,14 @@ package body Tasks is
 
 
       if (driving_command.is_moving) then
-
-        UpPriorityTurn(PRIO_BUTTON, 100, PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(0.0+norm_light_val)), PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(1.0-norm_light_val)));
-
+        if (norm_light_val >= 0.4 and then norm_light_val <= 0.6) then
+	  norm_light_val := 0.5;
+	  UpPriority(PRIO_BUTTON, 500, PWM_Value(SPEED_FORWARD));
+	else
+	  
+        
+          UpPriorityTurn(PRIO_BUTTON, 500, PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(0.0+norm_light_val)), PWM_Value(SPEED_MIN+(SPEED_MAX-SPEED_MIN)*(1.0-norm_light_val)));
+	end if;
         Put_Noupdate("Rm: ");
         Put_Noupdate(Integer(driving_command.speed_right));
         New_Line;
@@ -274,8 +274,8 @@ package body Tasks is
         New_Line;
       end if;
 
-      -- 200 ms absolute delay
-      Next_Time := Next_Time + Milliseconds(200);
+      -- absolute delay
+      Next_Time := Next_Time + Milliseconds(PERIOD_CALIBRATION);
       delay until Next_Time;
     end loop Reading_Loop;
 

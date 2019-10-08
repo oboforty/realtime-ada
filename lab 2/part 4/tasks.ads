@@ -73,11 +73,23 @@ package Tasks is
   -- forward speed value
 
   -- Min and Max speeds for both wheels turning
-  SPEED_MAX: Float := 30.0;
-  SPEED_MIN: Float := 10.0;
+  SPEED_MAX: Float := 38.0;
+  SPEED_MIN: Float := 18.0;
+  -- speed when it moves in a straight
+  SPEED_FORWARD: Float := 17.0;
+
+  
+  
+
+  -- Task periods
+  PERIOD_DISTANCE: Integer := 400;
+  PERIOD_MOTOR : Integer := 50;
+  PERIOD_CALIBRATION : Integer := 100;
+  PERIOD_DISPLAY : Integer := 500;
+  PERIOD_BTNSTOP : Integer := 300;
 
 
-  TRACK_THRESHOLD: Integer := 4;
+--  TRACK_THRESHOLD: Integer := 4;
 
 
   private
