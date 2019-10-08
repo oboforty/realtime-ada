@@ -5,7 +5,7 @@
 *.ali
 
 
-.idea/
+lab 3/.idea/
 .pyc
 __pycache__/
 *.py[cod]

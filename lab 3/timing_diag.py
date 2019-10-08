@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-def draw(times, max_T, marks=None, arrows=None):
+def draw(times, max_T, marks=None, arrows=None, show_outlines=False):
     if arrows is None:
         arrows = []
 
@@ -37,7 +37,10 @@ def draw(times, max_T, marks=None, arrows=None):
 
 
     for i,task in enumerate(times):
-        plt.step(t, datas[task] + y_lines[N-i], 'r', linewidth=2, where='post')
+        if show_outlines:
+            plt.step(t, datas[task] + y_lines[N-i], 'r', linewidth=2, where='post')
+
+        plt.fill_between(t, datas[task] + y_lines[N-i], y_lines[N-i], step='post')
     plt.ylim([-1,2*N+2])
 
 
