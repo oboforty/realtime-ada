@@ -71,14 +71,13 @@ def draw(times, max_T, marks=None, arrows=None, show_outlines=False):
 
 
     # plt.step(t, manchester, 'r', linewidth = 2, where='post')
-
-
     plt.gca().axis('off')
+
+def show():
     plt.show()
+    plt.clf()
 
+def save(fname):
 
-    #bits
-    #bits = [0,0,0,0,0,0,0,0,0,1]
-    #data = np.repeat(bits, 2)
-    # clock = 1 - np.arange(len(data)) % 2
-    # manchester = 1 - np.logical_xor(clock, data)
+    plt.savefig(fname)
+    plt.clf()

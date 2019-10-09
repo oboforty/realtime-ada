@@ -1,15 +1,27 @@
+import os
 import sys
 
 import json
-from timing_diag import draw
+from timing_diag import draw, save, show
 
 
-if len(sys.argv) <= 1:
-    print("Please provide filename:    'draw.py file.json'")
-    sys.exit()
+def draw_save(fn, todraw=True):
+    name,ext = os.path.splitext(os.path.basename(fn))
 
-with open(sys.argv[1], encoding='utf8') as fh:
-    kwargs = json.load(fh)
+    with open(fn, encoding='utf8') as fh:
+        kwargs = json.load(fh)
+
+    draw(**kwargs)
+    save("img/"+name+".png")
 
 
-draw(**kwargs)
+if __name__ == "__main__":
+    if len(sys.argv) <= 1:
+        print("Saving all diagrams to img/")
+        for fn in os.listdir('diagrams'):
+            draw_save('diagrams/'+fn)
+    else:
+        fn = sys.argv[1]
+
+        draw_save(fn)
+        show()
