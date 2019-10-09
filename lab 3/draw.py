@@ -2,10 +2,10 @@ import os
 import sys
 
 import json
-from timing_diag import draw, save, show
+from timing_diag import draw, save, show, close
 
 
-def draw_save(fn, todraw=True):
+def draw_save(fn):
     name,ext = os.path.splitext(os.path.basename(fn))
 
     with open(fn, encoding='utf8') as fh:
@@ -20,8 +20,11 @@ if __name__ == "__main__":
         print("Saving all diagrams to img/")
         for fn in os.listdir('diagrams'):
             draw_save('diagrams/'+fn)
+            close()
     else:
         fn = sys.argv[1]
 
         draw_save(fn)
         show()
+        close()
+

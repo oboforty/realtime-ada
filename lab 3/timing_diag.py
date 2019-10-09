@@ -75,9 +75,10 @@ def draw(times, max_T, marks=None, arrows=None, show_outlines=False):
 
 def show():
     plt.show()
-    plt.clf()
 
 def save(fname):
 
     plt.savefig(fname)
+
+def close():
     plt.clf()
