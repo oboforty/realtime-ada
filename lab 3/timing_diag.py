@@ -30,7 +30,8 @@ def draw(times, max_T, marks=None, arrows=None, show_outlines=False):
 
     # draw bars and texts
     for p in range(0,max_T):
-        plt.axvline(p, ymin=0.12, ymax=0.16,  color='.3', linewidth=0.5 if marks is None or p not in marks else 1.5)
+
+        plt.vlines(p, ymin=y_lines[0]-0.15, ymax=y_lines[0]+0.15,  color='.3', linewidth=0.5 if marks is None or p not in marks else 1.5)
 
         if marks is None or p in marks:
             plt.text(p-0.3, y_lines[0] - 0.4, str(p))
@@ -46,12 +47,22 @@ def draw(times, max_T, marks=None, arrows=None, show_outlines=False):
 
     for i,arr in enumerate(arrows.values()):
 
-        for up,down in arr:
+        for rrr in arr:
+            up, down, jitter = None, None, None
+            if len(rrr) > 2:
+                jitter,up,down = rrr
+            else:
+                if len(rrr) > 0: up = rrr[0]
+                if len(rrr) > 1: down = rrr[1]
+
             if up is not None and up != '-':
-                plt.arrow(t[up+1], y_lines[N-i], 0, 1.4, head_width=0.5, head_length=0.3, head_starts_at_zero=False, zorder=5)
+                plt.arrow(t[up+1], y_lines[N-i], 0, 1.4, head_width=0.5, head_length=0.3, head_starts_at_zero=False, zorder=5, facecolor='#000000')
 
             if down is not None and down != '-':
-                plt.arrow(t[down + 1], y_lines[N-i]+1.7, 0, -1.4, head_width=0.5, head_length=0.3, head_starts_at_zero=False, zorder=5)
+                plt.arrow(t[down + 1], y_lines[N-i]+1.7, 0, -1.4, head_width=0.5, head_length=0.3, head_starts_at_zero=False, zorder=5, facecolor='#000000')
+
+            if jitter is not None and jitter != '-':
+                plt.arrow(t[jitter+1], y_lines[N-i], 0, 1.4, head_width=0.5, head_length=0.3, head_starts_at_zero=False, zorder=5, facecolor='#FFFFFF')
 
 
     # plt.step(t, manchester, 'r', linewidth = 2, where='post')
