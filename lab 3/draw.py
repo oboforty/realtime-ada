@@ -1,9 +1,14 @@
+import sys
+
+import json
 from timing_diag import draw
 
-draw(max_T=20, times={
-    "τ1": [(0,3), (10,13)],
-    "τ2": [(3,5),(13,15),],
-}, marks=[5, 10, 15, 20], arrows={
-    "τ1": [(0,3),(10,13)],
-    "τ2": [(2,3,5),(12,13,15)],
-})
+
+if len(sys.argv) <= 1:
+    print("Please provide filename:    'draw.py file.json'")
+    sys.exit()
+
+with open(sys.argv[1]) as fh:
+    kwargs = json.load(fh)
+
+draw(**kwargs)
