@@ -2,7 +2,7 @@ import os
 import sys
 
 import json
-from timing_diag import draw, save, show, close
+from lib.timing_diag import draw, save, show, close
 
 
 def draw_save(fn):
