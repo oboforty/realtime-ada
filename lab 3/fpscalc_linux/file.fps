@@ -1,0 +1,36 @@
+system Example {
+
+  declarations {
+    tasks tA, tB;
+    indexed T,C,R,D,U,J;
+    priority P;
+  }
+
+  initialise {
+
+    ! Periods
+    T[tA] = 20;
+    T[tB] = 50;
+
+    ! WCETs
+    C[tA] = 5;
+    C[tB] = 30;
+
+    ! Deadlines
+    D[tA] = 10;
+    D[tB] = 50;
+
+    ! Priorities
+    P[tA] = 1;
+    P[tB] = 2;
+
+    J[tA] = 5;
+    J[tB] = 10;
+  }
+
+   formulas {
+    R[i] = C[i] + sigma(hp, ceiling((R[i]+J[j])/T[j]) * C[j]);
+
+    U[i] = sigma(all, C[j]/T[j]);
+  }
+}

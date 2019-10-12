@@ -66,3 +66,18 @@ def RM(a):
 
 def DM(a):
     return a[1][2]
+
+
+def prio_ord(ta):
+  U_sum = 0
+
+  for k,P in ta.items():
+      Ci, Ti, Di, Ji, Bi = unpack(P)
+
+      U_sum += Ci/Ti
+
+  return U_sum
+
+def util_bound(ta):
+  n = len(ta)
+  return n * (2**(1/n) - 1)
